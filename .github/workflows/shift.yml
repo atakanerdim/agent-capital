@@ -1,0 +1,121 @@
+name: shift
+on:
+  schedule:
+    # A trading day is one shift: prices, eight decisions and the revaluation land
+    # in one branch or the day is half-written. Twice, because next door a
+    # scheduled run has been observed to simply not happen, and nobody noticed for
+    # a day. The second attempt sees the first one's pull request and stops.
+    - cron: "23 6 * * *"
+    - cron: "41 14 * * *"
+  workflow_dispatch:
+    inputs:
+      probe_only:
+        description: "Only check the provider chains; place no orders"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  shift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - id: roster
+        name: who is on today
+        run: |
+          DAY=$(date -u +%a | tr 'A-Z' 'a-z')
+          echo "day=$DAY" >> "$GITHUB_OUTPUT"
+          echo "date=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          echo "agents=$(python kernel/runner.py --list --day "$DAY" | tr '\n' ' ')" >> "$GITHUB_OUTPUT"
+
+      - name: probe
+        if: ${{ inputs.probe_only }}
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          python kernel/datacheck.py || true
+          python kernel/healthcheck.py || true
+
+      - name: trading day
+        if: ${{ !inputs.probe_only && steps.roster.outputs.agents != '' }}
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GH_TOKEN: ${{ secrets.AJAN_PAT }}
+          SHIFT_GAP_SEC: "8"
+        run: |
+          set -u
+          DATE="${{ steps.roster.outputs.date }}"
+          DAY="${{ steps.roster.outputs.day }}"
+          BRANCH="shift/$DATE"
+
+          # The second cron of the day must not re-trade a day the first one
+          # already delivered. A "log:" pull request is not a delivery.
+          DELIVERED=$(gh pr list --state all --limit 100 --json title,headRefName \
+            --jq "[.[]|select(.headRefName==\"$BRANCH\" and (.title|startswith(\"log:\")|not))]|length" || echo 0)
+          if [ "$DELIVERED" != "0" ]; then echo "$DATE already delivered"; exit 0; fi
+
+          git config user.name "autonomous-capital-agent"
+          git config user.email "agent@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          rm -f out/pr_queue.json
+
+          SKIPPED=0
+          python kernel/runner.py --day "$DAY" || { SKIPPED=1; echo "::warning::part of the day was skipped"; }
+
+          git add -A
+          if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
+
+          if [ -f out/pr_queue.json ]; then
+            TITLE=$(python -c 'import json;q=json.load(open("out/pr_queue.json"));print(q[0]["title"])')
+            BODY=$(python -c 'import json;q=json.load(open("out/pr_queue.json"));print("\n\n".join(e["body"] for e in q))')
+          else
+            TITLE="log: shift did not deliver $DATE"
+            BODY="No agent produced output. See company/log/ for the reason."
+          fi
+          if [ "$SKIPPED" = "1" ]; then
+            BODY=$(printf '%s\n\nPart of the day was skipped; company/log/ says which agent and why.' "$BODY")
+          fi
+
+          git commit -q -m "$TITLE"
+          git push -f -q origin "$BRANCH"
+          gh pr create --head "$BRANCH" --title "$TITLE" --body "$BODY" \
+            || echo "::warning::pull request not created (it may already exist)"
+          git checkout main
+
+      - name: weekly provider health
+        if: ${{ !inputs.probe_only && steps.roster.outputs.day == 'sun' }}
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GH_TOKEN: ${{ secrets.AJAN_PAT }}
+        run: |
+          DATE="${{ steps.roster.outputs.date }}"
+          git config user.name "autonomous-capital-agent"
+          git config user.email "agent@users.noreply.github.com"
+          git checkout main && git pull --quiet
+          git checkout -B "health/$DATE"
+          python kernel/datacheck.py || true
+          python kernel/healthcheck.py || true
+          git add -A company/data/models.json company/models.json company/log || true
+          git diff --cached --quiet && { echo "nothing to report"; exit 0; }
+          git commit -q -m "log: provider health $DATE"
+          git push -f -q origin "health/$DATE"
+          gh pr create --head "health/$DATE" --title "log: provider health $DATE" \
+            --body "Which language-model links and which price providers answered this week." \
+            || echo "::warning::health PR not created"
+          git checkout main

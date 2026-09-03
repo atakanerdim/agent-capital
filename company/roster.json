@@ -1,0 +1,180 @@
+[
+ {
+  "id": "desk",
+  "ad": "Rafael Costa",
+  "rol": "data and operations",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [
+   "company/data/"
+  ],
+  "logic": "desk",
+  "draft_pr": false
+ },
+ {
+  "id": "momentum",
+  "ad": "Tobias Lindgren",
+  "rol": "advisor, momentum",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [],
+  "logic": null,
+  "draft_pr": false,
+  "driven_by": "desk",
+  "mandate": "Own what is already working. Add to strength, cut what has stopped moving."
+ },
+ {
+  "id": "value",
+  "ad": "Priya Raghunathan",
+  "rol": "advisor, value",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [],
+  "logic": null,
+  "draft_pr": false,
+  "driven_by": "desk",
+  "mandate": "Buy what is cheap against its own history and wait. Price paid is the only edge you control."
+ },
+ {
+  "id": "macro",
+  "ad": "Emeka Nwosu",
+  "rol": "advisor, macro",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [],
+  "logic": null,
+  "draft_pr": false,
+  "driven_by": "desk",
+  "mandate": "Start from the world — rates, oil, the dollar — and let the holdings follow from it."
+ },
+ {
+  "id": "careful",
+  "ad": "Beatriz Salgado",
+  "rol": "advisor, capital preservation",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [],
+  "logic": null,
+  "draft_pr": false,
+  "driven_by": "desk",
+  "mandate": "Lose as little as possible. Cash is a position and drawdown is the number that matters."
+ },
+ {
+  "id": "contrarian",
+  "ad": "Ines Kovac",
+  "rol": "advisor, contrarian",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [],
+  "logic": null,
+  "draft_pr": false,
+  "driven_by": "desk",
+  "mandate": "Take the other side of whatever this desk agrees on. Consensus is the signal."
+ },
+ {
+  "id": "fx",
+  "ad": "Marisol Vega",
+  "rol": "advisor, currencies",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [],
+  "logic": null,
+  "draft_pr": false,
+  "driven_by": "desk",
+  "mandate": "Trade the dollar against the world. Currencies first; everything else is a relative price."
+ },
+ {
+  "id": "metals",
+  "ad": "Anton Weiss",
+  "rol": "advisor, precious metals",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [],
+  "logic": null,
+  "draft_pr": false,
+  "driven_by": "desk",
+  "mandate": "Gold and silver first, and the reasons people reach for them. Patience over activity."
+ },
+ {
+  "id": "index",
+  "ad": "Grace Okonkwo",
+  "rol": "advisor, index",
+  "gunler": [
+   "mon",
+   "tue",
+   "wed",
+   "thu",
+   "fri"
+  ],
+  "alan": [],
+  "logic": null,
+  "draft_pr": false,
+  "driven_by": "desk",
+  "mandate": "Broad funds, few decisions, low turnover. Beat the others by not trading."
+ },
+ {
+  "id": "evaluator",
+  "ad": "Ingrid Halvorsen",
+  "rol": "head of performance",
+  "gunler": [
+   "fri"
+  ],
+  "alan": [],
+  "logic": "review",
+  "draft_pr": false
+ },
+ {
+  "id": "chief",
+  "ad": "Nadira Haq",
+  "rol": "chief investment officer",
+  "gunler": [
+   "sun"
+  ],
+  "alan": [
+   "company/agents/prompts/",
+   "company/constitution.md"
+  ],
+  "logic": "chief",
+  "draft_pr": false
+ }
+]

@@ -1,0 +1,78 @@
+name: ci
+on:
+  pull_request:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: immutable-kernel
+        run: |
+          git fetch origin ${{ github.base_ref }} --quiet
+          CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          echo "$CHANGED"
+          if echo "$CHANGED" | grep -qE '^(kernel/|\.github/workflows/)'; then
+            echo "::error::Constitution art. 2 — kernel and workflow files are immutable."
+            exit 1
+          fi
+      - name: risk-limits-are-not-editable-by-agents
+        run: |
+          CHANGED=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+          if echo "$CHANGED" | grep -qE '^company/agents/logic/risk\.py$'; then
+            echo "::error::Constitution art. 3 — risk limits live outside anything an agent may rewrite."
+            exit 1
+          fi
+      - name: content-guard
+        run: |
+          ADDED=$(git diff -U0 "origin/${{ github.base_ref }}...HEAD" -- '*.md' '*.html' '*.json' '*.js' '*.css' | grep '^+' || true)
+          # The disclaimers themselves contain the words the scan looks for, so the
+          # sentences that state a rule are removed before the rule is applied.
+          FILTERED=$(echo "$ADDED" | grep -viE 'is not advice|not investment advice|nothing here is advice|never financial advice|no money is invested|not a recommendation|is a simulation|imaginary' || true)
+          if echo "$FILTERED" | grep -qiE 'guaranteed (return|profit|yield)|risk[- ]free (return|profit)|you should (buy|sell|invest)|invest with us|our (clients|investors|subscribers)|assets under management|minimum (deposit|investment)'; then
+            echo "::error::Constitution art. 1 — this reads as advice, a solicitation, or a claim to manage money."; exit 1; fi
+          if echo "$ADDED" | grep -qiE '\b(fuck|shit|cunt|bitch|nigger|faggot|whore)\b|kill yourself|deserves to die|i will kill'; then
+            echo "::error::Constitution art. 10 — profanity or threat language detected."; exit 1; fi
+          if echo "$ADDED" | grep -qE 'gsk_[A-Za-z0-9]{16,}|AIza[0-9A-Za-z_\-]{30,}|sk-or-[A-Za-z0-9\-]{16,}|github_pat_[A-Za-z0-9_]{22,}|ghp_[A-Za-z0-9]{30,}'; then
+            echo "::error::Constitution art. 10 — an API key pattern was found in the diff."; exit 1; fi
+  tests:
+    needs: guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install pytest --quiet
+      - name: unit-tests
+        run: pytest -q
+      - name: dry-run
+        env:
+          MOCK_LLM: "1"
+          MOCK_HTTP: "1"
+          SHIFT_DATE: "2026-09-04"
+        run: |
+          python kernel/runner.py --day fri
+          git checkout -- . || true
+          git clean -fd company/data/prices company/data/orders company/data/portfolios company/data/nav company/minutes company/hallway company/log || true
+      - name: site
+        run: |
+          python site/build.py
+          python tests/check_html.py
+          node --check site/app.js
+  merge:
+    needs: [tests]
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.AJAN_PAT }}
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} \
+            --repo "${{ github.repository }}" --squash --delete-branch \
+            || echo "::warning::merge deferred (conflict or race)"
