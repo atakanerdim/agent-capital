@@ -295,8 +295,21 @@ def run(agent, ctx, chat, root):
     # the price book is, so that what was available but never shown stays part of
     # the record. Which of it any advisor actually saw is decided per advisor,
     # below, against the instant that advisor was asked.
+    #
+    # Facts are a convenience; prices are the desk. Nothing about reading a filing
+    # may be allowed to stop the books being marked, so the whole collection runs
+    # inside a net: an outside service that changes its shape, throttles, or
+    # answers with something this code has never seen costs the desk its news for
+    # the day and nothing else. The failure is written into the day's news file
+    # under the same `short` list a provider outage uses, so a month of silence
+    # from a feed is visible in the record rather than absent from it.
     news = _logic(root, "news")
-    day_news = news.fetch(root, date)
+    try:
+        day_news = news.fetch(root, date)
+    except Exception as e:                          # a feed nobody has met before
+        day_news = {"date": date, "fetched_utc": news.now_utc(), "items": [],
+                    "short": [{"family": "all", "instrument": None,
+                               "why": f"{type(e).__name__}: {e}"[:300]}]}
     files[f"company/news/{date}.json"] = \
         json.dumps(day_news, ensure_ascii=False, indent=1) + "\n"
     universe_ids = {i["id"] for i in market.load_universe(root)}

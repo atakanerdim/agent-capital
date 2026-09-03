@@ -109,8 +109,13 @@ def test_the_wardrobe_cannot_invent_a_slot(company):
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not on this machine")
-def test_the_pages_actually_render(company):
-    """Not that app.js parses — that each page put content into its containers."""
+def test_the_pages_have_everything_they_need_to_draw(company):
+    """Not that app.js parses — that the seams between it and the data still meet.
+
+    A page goes blank for three reasons and all three are silent in a browser:
+    a file or key the build stopped publishing, an element id renamed on one side
+    only, and a template the script clones that is not on the page using it.
+    """
     # Two days, because a line needs two points and the chart is one of the
     # things being checked.
     trading_day(company, "2026-09-04", "fri")
@@ -122,17 +127,34 @@ def test_the_pages_actually_render(company):
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node is not on this machine")
-def test_the_render_check_is_not_hollow(company):
-    trading_day(company)
+def test_the_contract_check_is_not_hollow(company):
+    """A key quietly dropped from a published file has to fail, or none of this counts."""
+    trading_day(company, "2026-09-04", "fri")
+    trading_day(company, "2026-09-07", "mon")
     build(company)
-    app = company / "site/app.js"
-    app.write_text(app.read_text(encoding="utf-8").replace(
-        '$("standings").innerHTML = standingsTable(board);',
-        '$("standings").innerHTML = "";', 1), encoding="utf-8")
+    view = company / "site/data/view-standings.json"
+    doc = json.loads(view.read_text(encoding="utf-8"))
+    del doc["series"]
+    view.write_text(json.dumps(doc), encoding="utf-8")
     result = subprocess.run(["node", "tests/render.js"], cwd=company,
                             capture_output=True, text=True)
     assert result.returncode == 1
-    assert "no table was rendered" in result.stderr
+    assert "series" in result.stderr
+
+
+@pytest.mark.skipif(shutil.which("node") is None, reason="node is not on this machine")
+def test_an_element_the_script_reaches_for_cannot_quietly_disappear(company):
+    """The other half of the seam: markup renamed without the script following."""
+    trading_day(company, "2026-09-04", "fri")
+    build(company)
+    page = company / "site/index.html"
+    page.write_text(page.read_text(encoding="utf-8")
+                    .replace('id="standings-body"', 'id="standings-rows"', 1),
+                    encoding="utf-8")
+    result = subprocess.run(["node", "tests/render.js"], cwd=company,
+                            capture_output=True, text=True)
+    assert result.returncode == 1
+    assert "standings-body" in result.stderr
 
 
 def test_the_changelog_only_carries_autonomous_merges(company):

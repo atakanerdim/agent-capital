@@ -59,9 +59,15 @@ def test_a_stylesheet_that_lost_its_selector_is_refused():
 
 
 def test_a_script_with_an_unclosed_string_is_refused():
+    """The real script passes, and the same script with one quote opened does not.
+
+    The sabotage is appended rather than substituted so that it keeps working when
+    the page is redesigned: an editor that rewrites every line of app.js must not
+    also be able to retire the test that guards it.
+    """
     js = (ROOT / "site/app.js").read_text(encoding="utf-8")
     assert _validate().check("app.js", js) is None
-    assert _validate().check("app.js", js.replace('const $ = (id)', 'const $ = "(id)', 1))
+    assert _validate().check("app.js", js + '\nconst leak = "never closed;\n')
 
 
 def test_broken_json_is_refused():

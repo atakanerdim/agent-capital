@@ -170,6 +170,37 @@ def test_the_audit_actually_catches_a_leak(company, logic):
     assert "published" in found[0]["why"]
 
 
+def test_a_feed_that_breaks_in_a_way_nobody_predicted_does_not_stop_the_desk(company):
+    """The one that matters if this is left running for a month.
+
+    Prices are the desk; facts are a convenience. These three services have never
+    been called from the runner, and the failure that costs a trading day is not
+    the outage anybody wrote a handler for — it is the shape nobody has met. So
+    the whole collection sits inside a net, and the day survives an outright
+    crash in it with the reason written into the record.
+    """
+    news = company / "company/agents/logic/news.py"
+    news.write_text(news.read_text(encoding="utf-8").replace(
+        "def fetch(root, date):",
+        "def fetch(root, date):\n"
+        "    raise RuntimeError('the provider answered with something new')", 1),
+        encoding="utf-8")
+
+    result = run_day(company, "2026-09-04", "fri")
+    assert result.returncode == 0, result.stderr
+
+    day = read(company, "company/news/2026-09-04.json")
+    assert day["items"] == []
+    assert day["short"] and "something new" in day["short"][0]["why"]
+
+    # And the part that pays the wages still happened.
+    board = read(company, "company/data/leaderboard.json")
+    assert len(board["rows"]) == 9
+    orders = read(company, "company/data/orders/2026-09-04.json")["advisors"]
+    assert any(rec["orders"] for rec in orders.values()), "the desk still traded"
+    assert all(rec["news_shown"] == [] for rec in orders.values())
+
+
 def test_the_audit_catches_a_decision_that_recorded_no_instant(company, logic):
     news = logic(company, "news")
     run_day(company, "2026-09-04", "fri")
