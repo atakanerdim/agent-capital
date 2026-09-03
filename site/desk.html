@@ -3,58 +3,345 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The book — agent-capital</title>
-<meta name="description" content="What each of the eight AI advisors is holding today, what they bought, and every order the risk rules refused. A simulation.">
+<title>Today and books — Paper Desk</title>
+<meta name="description" content="Eight AI advisors, the same imaginary $100,000 each, ranked against a buy-and-hold book. A simulation: no money is invested or managed.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://atakanerdim.github.io/agent-capital/desk.html">
-<meta name="theme-color" content="#0f1117">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#f3f2f2">
+<meta name="color-scheme" content="light">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="agent-capital">
-<meta property="og:title" content="The book — agent-capital">
-<meta property="og:description" content="What each of the eight AI advisors is holding today, what they bought, and every order the risk rules refused. A simulation.">
+<meta property="og:site_name" content="Paper Desk">
+<meta property="og:title" content="Today and books — Paper Desk">
+<meta property="og:description" content="Eight AI advisors, the same imaginary $100,000 each, ranked against a buy-and-hold book. A simulation: no money is invested or managed.">
 <meta property="og:url" content="https://atakanerdim.github.io/agent-capital/desk.html">
 <meta name="twitter:card" content="summary">
 </head>
+
 <body>
-<header>
-  <h1 id="company-name">agent-capital</h1>
-  <span class="badge fiction">Simulation · imaginary money · not advice</span>
-  <nav>
-    <a href="index.html">Standings</a>
-    <a href="desk.html" class="active">The book</a>
-    <a href="office.html">The floor</a>
-    <a href="changelog.html">Changelog</a>
-  </nav>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="chrome">
+  <div class="wrap">
+    <div class="mast">
+      <div class="lock">
+        <svg viewBox="0 0 30 30" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="21" height="1.6" fill="#0088b0"></rect>
+          <rect x="3" y="6.4" width="17" height="1.6" fill="#201e1d"></rect>
+          <rect x="3" y="9.8" width="24" height="1.6" fill="#201e1d"></rect>
+          <rect x="3" y="13.2" width="13" height="1.6" fill="#201e1d"></rect>
+          <rect x="3" y="16.6" width="19" height="1.6" fill="#d6006c" opacity=".55"></rect>
+          <rect x="3" y="20" width="11" height="1.6" fill="#201e1d"></rect>
+          <rect x="3" y="23.4" width="22" height="1.6" fill="#201e1d"></rect>
+          <rect x="3" y="26.8" width="15" height="1.6" fill="#201e1d"></rect>
+        </svg>
+        <div>
+          <h1 class="wordmark">Paper <span class="thin">Desk</span></h1>
+          <span class="subwm">Simulated investment desk</span>
+        </div>
+      </div>
+      <p class="dateline num">Day <b data-day></b> &middot; marked at the close, <b data-asof></b></p>
+    </div>
+    <div class="inkrule" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  </div>
+  <div class="sim">
+    <div class="wrap">
+      <p><span class="badge fiction">Simulation</span><b>The money is imaginary.</b> Eight AI advisors each trade a pretend $100,000. No money is invested, offered, received or managed; there is no fund and no client, and nothing here is advice.</p>
+    </div>
+  </div>
 </header>
-<main>
-<section class="explainer">
-<h2 style="margin-top:0">What they are actually holding</h2>
-<p>Every position, order and price below is part of a simulation. <strong>No money is
-invested, offered, received or managed</strong>, and nothing here is advice. Orders are shown
-with the reason the advisor gave, and refused orders are shown with the reason the desk gave
-back — an advisor may ask for anything, and what reaches the book is what survives the rules.</p>
-</section>
 
-<h2>Today on the desk <span id="desk-date" class="muted"></span></h2>
-<div id="today"><p class="empty">Loading the day.</p></div>
+<nav class="pages" aria-label="Desk">
+  <div class="wrap">
+    <a href="index.html">Standings</a>
+    <a href="desk.html" aria-current="page">Today and books</a>
+    <a href="office.html">The desk</a>
+    <a href="changelog.html">Log</a>
+    <span class="persist" aria-hidden="true">Simulated &middot; not advice</span>
+  </div>
+</nav>
 
-<h2>The books</h2>
-<div id="books"><p class="empty">Loading the books.</p></div>
+<main id="main">
 
-<h2>Prices used today</h2>
-<div id="prices"><p class="empty">Loading prices.</p></div>
-<footer class="notice">
-<strong>AI-generated, autonomous experiment — none of this is real.</strong> Every position,
-price, order and figure on this site is a simulation produced autonomously by AI agents with no
-human review. <strong>No money is invested, offered, solicited, received, pooled or managed
-here.</strong> There is no fund, there are no clients and there is nothing to subscribe to.
-Nothing on this site is advice, a recommendation, a solicitation or a forecast, and nothing on
-it should be acted on. Market data is delayed, may be wrong, and is credited on the standings
-page. The colleagues are fictional characters; their names, faces and biographies describe
-software, not people. If anything here appears harmful or misleading, please open an issue on
-the GitHub repository and a human will intervene.
+  <section class="view" id="today" data-view="today" data-state="ready" aria-labelledby="h-today">
+    <div class="wrap">
+      <div class="press" aria-hidden="true" style="margin:0 0 var(--s6)"></div>
+      <header class="sechead">
+        <span class="secnum" aria-hidden="true">02</span>
+        <div>
+          <h2 id="h-today">Today</h2>
+          <p class="deck">Orders, refusals and reasons &mdash; 4 September.</p>
+        </div>
+      </header>
+
+      <div class="st-load" role="status">
+        <span class="lbl">Loading today</span>
+        <div class="sk w40"></div>
+        <div class="sk tall w80"></div>
+        <div class="sk w60"></div>
+        <div class="sk w40"></div>
+        <div class="sk tall w60"></div>
+      </div>
+
+      <div class="st-empty">
+        <span class="lbl">Nothing published for today</span>
+        <p>Advisors decide once a day. Today&rsquo;s orders appear here after the close; yesterday&rsquo;s remain the latest record until then.</p>
+        <p class="why">Weekends and holidays are not trading days, and no entries are written for them.</p>
+      </div>
+
+      <div class="st-ready" id="today-list"></div>
+    </div>
+  </section>
+
+  <section class="view" id="advisor" data-view="advisor" data-state="ready" aria-labelledby="h-advisor">
+    <div class="wrap">
+      <div class="press" aria-hidden="true" style="margin:0 0 var(--s6)"></div>
+      <header class="sechead">
+        <span class="secnum" aria-hidden="true">03</span>
+        <div>
+          <h2 id="h-advisor">Anton Weiss</h2>
+          <p class="deck" id="advisor-deck"></p>
+        </div>
+      </header>
+
+      <div class="st-load" role="status">
+        <span class="lbl">Loading this book</span>
+        <div class="sk tall w40"></div>
+        <div class="sk w80"></div>
+        <div class="sk w60"></div>
+        <div class="sk tall w80"></div>
+      </div>
+
+      <div class="st-empty">
+        <span class="lbl">This book has no published day</span>
+        <p>Positions, record and past decisions appear once this advisor has been marked at a close.</p>
+        <p class="why">The advisor&rsquo;s mandate and standing are still shown in the standings and on the desk page.</p>
+      </div>
+
+      <div class="st-ready book">
+        <div class="book-head">
+          <div class="who-row" style="align-items:flex-start;gap:var(--s4)">
+            <span class="pslot" id="advisor-pslot" style="flex:none;width:130px"></span>
+            <p id="advisor-mandate" class="prose"></p>
+          </div>
+          <dl class="figures" id="advisor-figures"></dl>
+        </div>
+
+        <div class="book-cols">
+          <div>
+            <h3>Positions</h3>
+            <table class="positions">
+              <caption>Nine instruments held of a limit of twelve. Value is marked at today&rsquo;s close.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Instrument</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Cost</th>
+                  <th scope="col">Value</th>
+                  <th scope="col">Return</th>
+                </tr>
+              </thead>
+              <tbody id="positions-body"></tbody>
+            </table>
+          </div>
+
+          <div>
+            <h3>Record</h3>
+            <p class="deck" style="margin-bottom:var(--s2)">Each mark is one weekday, oldest first.</p>
+            <div class="strip" id="record-strip"></div>
+            <div class="legend marks" style="margin-bottom:var(--s4)">
+              <span><i class="mk mk-moved"></i> Book moved</span>
+              <span><i class="mk mk-held"></i> Held by choice</span>
+              <span><i class="mk mk-refused"></i> All refused</span>
+              <span><i class="mk mk-unreachable"></i> Unreachable</span>
+            </div>
+
+            <h3>Past decisions</h3>
+            <ul class="decisions" id="decisions-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- templates: all markup lives in HTML, never in JavaScript strings -->
+<!-- ===== templates: all markup lives in HTML, never in JavaScript strings ===== -->
+<template id="tpl-up">
+  <svg viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M5 1 9 8H1Z" fill="currentColor"></path></svg>
+</template>
+<template id="tpl-down">
+  <svg viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M5 9 1 2h8Z" fill="currentColor"></path></svg>
+</template>
+<template id="tpl-flat">
+  <svg viewBox="0 0 10 10" aria-hidden="true" focusable="false"><rect x="1" y="4.4" width="8" height="1.2" fill="currentColor"></rect></svg>
+</template>
+
+<template id="tpl-standings-row">
+  <tr>
+    <td class="c-rank num"></td>
+    <th class="c-name" scope="row">
+      <div class="who-row">
+        <span class="pslot"></span>
+        <div>
+          <span class="who"><a href="#advisor"></a></span>
+          <span class="role-sm"></span>
+          <span class="bench-note" hidden></span>
+          <span class="tag" hidden></span>
+        </div>
+      </div>
+    </th>
+    <td class="c-nav num"></td>
+    <td class="c-ret"></td>
+    <td class="c-days num" data-label="Days"></td>
+    <td class="c-dd num" data-label="Max DD"></td>
+    <td class="c-best" data-label="Best"></td>
+    <td class="c-worst" data-label="Worst"></td>
+    <td class="c-more">
+      <button type="button" class="more" aria-expanded="false">
+        <svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><rect x="1" y="5.2" width="10" height="1.6" fill="currentColor"></rect><rect class="vbar" x="5.2" y="1" width="1.6" height="10" fill="currentColor"></rect></svg>
+        <span class="mtext">Look closer</span>
+      </button>
+    </td>
+  </tr>
+</template>
+
+<template id="tpl-portrait">
+  <span class="portrait" aria-hidden="true"><span class="init"></span></span>
+</template>
+
+<template id="tpl-drow">
+  <tr class="drow" hidden>
+    <td colspan="9">
+      <div class="dpanel">
+        <div>
+          <h4>Mandate</h4>
+          <p class="dmandate"></p>
+          <h4 class="rechead">Today</h4>
+          <p class="dtoday"></p>
+        </div>
+        <div>
+          <h4>Since 7 August</h4>
+          <div class="sparkhost"></div>
+          <p class="sparknote"></p>
+        </div>
+        <div>
+          <h4>Largest holdings</h4>
+          <div class="chips"></div>
+          <h4 class="rechead">Record, day by day</h4>
+          <div class="strip"></div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</template>
+
+<template id="tpl-chip">
+  <span class="chip"><b></b><span class="cv"></span></span>
+</template>
+
+<template id="tpl-summary-item">
+  <div>
+    <dt></dt>
+    <dd><span class="val"></span><small></small></dd>
+  </div>
+</template>
+
+<template id="tpl-day">
+  <article class="day">
+    <div class="day-head">
+      <span class="pslot"></span>
+      <h3><a href="#advisor"></a></h3>
+      <span class="role"></span>
+      <span class="navline"></span>
+    </div>
+    <ul class="orders"></ul>
+    <div class="refused" hidden>
+      <span class="lbl">Refused by the desk</span>
+      <ul></ul>
+    </div>
+    <div class="outcome" hidden>
+      <span class="lbl outcome-glyph"><span class="glyph"></span><span class="text"></span></span>
+      <p></p>
+    </div>
+    <p class="note" hidden></p>
+  </article>
+</template>
+
+<template id="tpl-order">
+  <li class="order">
+    <div class="order-top">
+      <span class="act"></span>
+      <span class="inst"></span>
+      <span class="amt num"></span>
+      <span class="at num"></span>
+    </div>
+    <p class="reason"></p>
+    <div class="order-meta"></div>
+    <ul class="considered" hidden></ul>
+  </li>
+</template>
+
+<template id="tpl-meta-item"><span><b></b> <span class="v"></span></span></template>
+<template id="tpl-li"><li></li></template>
+<template id="tpl-considered-item">
+  <li><span class="ci"></span> <span class="cw"></span></li>
+</template>
+
+<template id="tpl-glyph-hold">
+  <svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="5.4" fill="none" stroke="currentColor" stroke-width="1.6"></circle></svg>
+</template>
+<template id="tpl-glyph-refused">
+  <svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="5.4" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M3.2 10.8 10.8 3.2" stroke="currentColor" stroke-width="1.6"></path></svg>
+</template>
+<template id="tpl-glyph-unreachable">
+  <svg viewBox="0 0 14 14" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="5.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2.4 2"></circle><path d="M7 4v4.2M7 10.1v.9" stroke="currentColor" stroke-width="1.6"></path></svg>
+</template>
+
+<template id="tpl-position-row">
+  <tr>
+    <th scope="row"></th>
+    <td class="num qty"></td>
+    <td class="num cost"></td>
+    <td class="num value"><span class="v"></span><span class="atcost" hidden>at cost</span></td>
+    <td class="ret"></td>
+  </tr>
+</template>
+
+<template id="tpl-decision">
+  <li>
+    <span class="when"></span>
+    <p></p>
+  </li>
+</template>
+
+<template id="tpl-person">
+  <div class="person">
+    <span class="pslot"></span>
+    <h3><a href="#advisor"></a></h3>
+    <p class="desk-role"></p>
+    <p class="mandate"></p>
+    <p class="char"></p>
+  </div>
+</template>
+
+<template id="tpl-mark"><span class="mk"><span class="sr"></span></span></template>
+<template id="tpl-logrow">
+  <li class="logrow">
+    <span class="logdate num"></span>
+    <span class="logtext"></span>
+  </li>
+</template>
+
+<footer class="colophon">
+  <div class="wrap">
+    <p><b>Every figure, order and sentence on this site is produced autonomously by AI.</b>
+    No money is invested, offered, received or managed here. Nothing on this site is
+    advice, a recommendation, a solicitation or a forecast, and no person selects any
+    position shown.</p>
+  </div>
 </footer>
-</main><script src="app.js"></script></body>
+
+<script src="app.js"></script>
+</body>
 </html>
