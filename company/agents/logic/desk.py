@@ -165,7 +165,8 @@ def _yesterday(root, advisor, date):
             f"{lines}\nDo not send those again in the same shape.\n")
 
 
-def _decide(chat, root, agent, advisor, ctx, quotes, book, positions, nav, leaderboard):
+def _decide(chat, root, agent, advisor, ctx, quotes, book, positions, nav, leaderboard,
+            news_block="  (no outside facts were collected today)"):
     """Ask one advisor what it wants to do. Returns (parsed, error_or_None)."""
     system = _read_text(root, f"company/agents/prompts/{advisor['id']}.md")
     memory = _read_text(root, f"company/agents/memory/{advisor['id']}.md")
@@ -180,6 +181,13 @@ def _decide(chat, root, agent, advisor, ctx, quotes, book, positions, nav, leade
         f"THE DESK TODAY\n{leaderboard}\n\n"
         f"PRICES YOU MAY TRADE AT (USD; anything not listed has no price today "
         f"and cannot be traded)\n{_price_table(quotes)}\n\n"
+        f"WHAT HAD BEEN PUBLISHED WHEN YOU WERE ASKED\n{news_block}\n"
+        f"  Every line above carries the instant it became public, and you are shown "
+        f"nothing published after the moment this question was put to you. These are "
+        f"filings and schedules, not analysis: what they mean is your job. There is "
+        f"no other news. If something is not on this list you have not seen it, and "
+        f"writing as though you had is the one thing that would make this desk "
+        f"worthless.\n\n"
         f"YOUR NOTES TO YOURSELF\n{memory or '  (nothing yet)'}\n"
         f"{_yesterday(root, advisor['id'], ctx['date'])}\n"
         f"HOW THIS DESK WORKS\n"
@@ -283,6 +291,16 @@ def run(agent, ctx, chat, root):
     # prices are this file, and any later opening would be buying with hindsight.
     ledger.open_benchmark(root, quotes, date)
 
+    # Everything published that the desk could read today — recorded whole, the way
+    # the price book is, so that what was available but never shown stays part of
+    # the record. Which of it any advisor actually saw is decided per advisor,
+    # below, against the instant that advisor was asked.
+    news = _logic(root, "news")
+    day_news = news.fetch(root, date)
+    files[f"company/news/{date}.json"] = \
+        json.dumps(day_news, ensure_ascii=False, indent=1) + "\n"
+    universe_ids = {i["id"] for i in market.load_universe(root)}
+
     # ---- 2 and 3. the advisors, and the book ----------------------------
     standings = _leaderboard_text(leaderboard(root, advisors, date))
     day_record, hallway_lines = {}, []
@@ -293,13 +311,21 @@ def run(agent, ctx, chat, root):
         # Everything that shaped this decision, named before it is made: the price
         # book, the brief, the memory, and the size of the book being risked. An
         # order record without these can be read but cannot be attributed.
+        # The instant this advisor is asked. It is the anchor of the whole news
+        # fence: everything shown below has to have been public before it, and the
+        # archive keeps it so that the claim can be checked rather than trusted.
+        decided_utc = news.now_utc()
+        shown = news.for_advisor(news.visible(day_news["items"], decided_utc),
+                                 universe_ids)
         seen = {"snapshot_id": book_of_prices["snapshot_id"],
                 "prompt_sha": _sha(root, f"company/agents/prompts/{advisor['id']}.md"),
                 "memory_sha": _sha(root, f"company/agents/memory/{advisor['id']}.md"),
-                "nav_before": round(nav, 2)}
+                "nav_before": round(nav, 2),
+                "decided_utc": decided_utc,
+                "news_shown": [item["id"] for item in shown]}
         try:
             answer, why = _decide(chat, root, agent, advisor, ctx, quotes, book,
-                                  positions, nav, standings)
+                                  positions, nav, standings, news.render(shown))
         except Exception as e:                      # a provider chain that fell over
             answer, why = None, f"{type(e).__name__}: {e}"[:200]
         if answer is None:

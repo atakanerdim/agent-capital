@@ -1,0 +1,190 @@
+{
+ "_comment": "Where a fact comes from, and exactly when it became public. The same shape as sources.json and for a stricter reason: a price that arrives late is a missing price, but a news item that arrives EARLY is invented skill. Every item carries published_utc from the provider's own record, and an advisor is only ever shown items whose published_utc is strictly before the moment it was asked. Anything without a publication instant is collected and never shown. All three families are public domain and redistributable, which is why they were chosen over a commercial wire.",
+ "families": [
+  {
+   "family": "sec_edgar",
+   "base": "https://data.sec.gov/submissions/CIK{cik}.json",
+   "landing": "https://www.sec.gov/Archives/edgar/data/{cik_plain}/{accession_nodash}/{document}",
+   "stamp": "acceptanceDateTime",
+   "stamp_note": "EDGAR's acceptance instant is when the filing became publicly retrievable. A company's own press release often precedes it, so this stamp is late rather than early relative to what the market knew — the safe direction. Showing an item sooner than this would be inventing knowledge; showing it later only weakens a real effect.",
+   "forms": [
+    "8-K",
+    "10-Q",
+    "10-K",
+    "6-K"
+   ],
+   "licence": "public domain (US government work)",
+   "user_agent_required": true,
+   "companies": [
+    {
+     "instrument": "AAPL",
+     "cik": 320193
+    },
+    {
+     "instrument": "AMZN",
+     "cik": 1018724
+    },
+    {
+     "instrument": "CAT",
+     "cik": 18230
+    },
+    {
+     "instrument": "GOOGL",
+     "cik": 1652044
+    },
+    {
+     "instrument": "JNJ",
+     "cik": 200406
+    },
+    {
+     "instrument": "JPM",
+     "cik": 19617
+    },
+    {
+     "instrument": "KO",
+     "cik": 21344
+    },
+    {
+     "instrument": "META",
+     "cik": 1326801
+    },
+    {
+     "instrument": "MSFT",
+     "cik": 789019
+    },
+    {
+     "instrument": "NVDA",
+     "cik": 1045810
+    },
+    {
+     "instrument": "TSLA",
+     "cik": 1318605
+    },
+    {
+     "instrument": "XOM",
+     "cik": 2115436
+    }
+   ]
+  },
+  {
+   "family": "fred",
+   "base": "https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}",
+   "stamp": null,
+   "stamp_note": "The keyless CSV gives observations, not release instants: the August CPI figure is published in mid-September, and treating the observation date as the publication date would hand every advisor a month of hindsight. So these items are recorded with published_utc null and are NEVER shown. They are still collected daily because FRED revises its history — what a series said on a given day cannot be recovered from FRED later without the vintage API.",
+   "licence": "public domain (US government work), per series",
+   "series": [
+    {
+     "id": "CPIAUCSL",
+     "what": "US consumer price index, all items, seasonally adjusted"
+    },
+    {
+     "id": "UNRATE",
+     "what": "US unemployment rate"
+    },
+    {
+     "id": "DFF",
+     "what": "US federal funds effective rate"
+    },
+    {
+     "id": "DGS10",
+     "what": "US 10-year treasury constant maturity yield"
+    },
+    {
+     "id": "T10YIE",
+     "what": "US 10-year breakeven inflation rate"
+    }
+   ]
+  },
+  {
+   "family": "fomc_calendar",
+   "base": null,
+   "stamp": null,
+   "anticipated": true,
+   "stamp_note": "A schedule is not news. That the committee meets on a given date has been public for a year, so a calendar entry may be shown before the date without any hindsight at all — what happens at the meeting is a separate fact that this family does not carry. Recorded verbatim from the Federal Reserve's own calendar page, fetched 2026-09-04; the page states every date is tentative until confirmed at the meeting immediately preceding it, and it publishes no release times, so none are stored here.",
+   "licence": "public domain (US government work)",
+   "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "meetings": [
+    {
+     "start": "2026-01-27",
+     "end": "2026-01-28",
+     "projections": false
+    },
+    {
+     "start": "2026-03-17",
+     "end": "2026-03-18",
+     "projections": true
+    },
+    {
+     "start": "2026-04-28",
+     "end": "2026-04-29",
+     "projections": false
+    },
+    {
+     "start": "2026-06-16",
+     "end": "2026-06-17",
+     "projections": true
+    },
+    {
+     "start": "2026-07-28",
+     "end": "2026-07-29",
+     "projections": false
+    },
+    {
+     "start": "2026-09-15",
+     "end": "2026-09-16",
+     "projections": true
+    },
+    {
+     "start": "2026-10-27",
+     "end": "2026-10-28",
+     "projections": false
+    },
+    {
+     "start": "2026-12-08",
+     "end": "2026-12-09",
+     "projections": true
+    },
+    {
+     "start": "2027-01-26",
+     "end": "2027-01-27",
+     "projections": false
+    },
+    {
+     "start": "2027-03-16",
+     "end": "2027-03-17",
+     "projections": true
+    },
+    {
+     "start": "2027-04-27",
+     "end": "2027-04-28",
+     "projections": false
+    },
+    {
+     "start": "2027-06-08",
+     "end": "2027-06-09",
+     "projections": true
+    },
+    {
+     "start": "2027-07-27",
+     "end": "2027-07-28",
+     "projections": false
+    },
+    {
+     "start": "2027-09-14",
+     "end": "2027-09-15",
+     "projections": true
+    },
+    {
+     "start": "2027-10-26",
+     "end": "2027-10-27",
+     "projections": false
+    },
+    {
+     "start": "2027-12-07",
+     "end": "2027-12-08",
+     "projections": true
+    }
+   ]
+  }
+ ]
+}
