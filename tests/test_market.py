@@ -26,6 +26,40 @@ def test_every_instrument_has_a_second_provider(company, logic):
     assert not alone, f"these can only be priced one way: {alone}"
 
 
+def test_no_provider_is_listed_that_has_not_been_probed_live(company, logic):
+    """The lesson stooq taught, written down as a test.
+
+    stooq sat first in the chain for all 27 instruments for weeks, having been
+    written from its documentation and confirmed against nothing. The first live
+    probe returned 404 for every symbol — including `aapl.us`, which is as ordinary
+    as a symbol gets, so the failure had never been about symbols at all. Nothing
+    had broken; it had never worked.
+
+    A provider that has not answered a real request is a guess, and this makes the
+    guess visible instead of leaving it in a comment nobody reads.
+    """
+    market = logic(company, "market")
+    for source in market.load_sources(company).values():
+        assert "Verified live" in (source.get("note") or ""), \
+            f"{source['source']} has never been probed against a live response"
+
+
+def test_the_currencies_have_two_different_sources_not_two_hosts(company, logic):
+    """Redundancy that shares a service is redundancy against one machine only.
+
+    The five currencies are quoted by the ECB and by exchangerate-api, which are
+    separate organisations. The twenty-two equities are quoted by two Yahoo hosts,
+    which are not — that is a known single point of failure and it is recorded as
+    one in sources.json rather than left to look like real cover.
+    """
+    market = logic(company, "market")
+    for instrument in market.load_universe(company):
+        if instrument["class"] != "fx":
+            continue
+        sources = {q["source"] for q in instrument["quotes"]}
+        assert sources == {"frankfurter", "erapi"}, instrument["id"]
+
+
 def test_instrument_ids_are_unique(company, logic):
     market = logic(company, "market")
     ids = [i["id"] for i in market.load_universe(company)]
@@ -37,7 +71,7 @@ def test_a_price_is_never_invented(company, logic):
     market = logic(company, "market")
     sources = market.load_sources(company)
     instrument = {"id": "NOPE", "name": "Nothing", "class": "equity",
-                  "quotes": [{"source": "stooq", "symbol": "definitely-not-a-symbol"}]}
+                  "quotes": [{"source": "yahoo", "symbol": "definitely-not-a-symbol"}]}
 
     def explode(url):
         raise OSError("the network is not here")
@@ -45,7 +79,23 @@ def test_a_price_is_never_invented(company, logic):
     market._fetch = explode
     record, tried = market.quote(instrument, sources)
     assert record is None
-    assert tried and tried[0]["source"] == "stooq" and "OSError" in tried[0]["why"]
+    assert tried and tried[0]["source"] == "yahoo" and "OSError" in tried[0]["why"]
+
+
+def test_a_provider_the_chain_has_never_heard_of_is_a_named_failure(company, logic):
+    """A quote pointed at a provider that was removed must say so, not go quiet.
+
+    This is how stooq's removal would surface if a symbol were left behind: the
+    instrument records "no such provider" by name rather than silently having one
+    fewer link than the universe claims.
+    """
+    market = logic(company, "market")
+    record, tried = market.quote(
+        {"id": "X", "name": "X", "class": "equity",
+         "quotes": [{"source": "stooq", "symbol": "x.us"}]},
+        market.load_sources(company))
+    assert record is None
+    assert tried[0] == {"source": "stooq", "why": "no such provider in sources.json"}
 
 
 def test_the_chain_falls_through_to_the_next_provider(company, logic):
@@ -55,24 +105,36 @@ def test_the_chain_falls_through_to_the_next_provider(company, logic):
 
     def flaky(url):
         calls.append(url)
-        if "stooq" in url:
+        if "frankfurter" in url:
             raise OSError("down")
-        return json.dumps({"amount": 1.0, "base": "USD", "date": "2026-09-04",
-                           "rates": {"EUR": 0.8}})
+        return json.dumps({"result": "success", "time_last_update_unix": 1788393751,
+                           "base_code": "USD", "rates": {"EUR": 0.8}})
 
     market._fetch = flaky
     instrument = {"id": "EURUSD", "name": "Euro", "class": "fx",
-                  "quotes": [{"source": "stooq", "symbol": "eurusd"},
-                             {"source": "frankfurter", "symbol": "EUR", "invert": True}]}
+                  "quotes": [{"source": "frankfurter", "symbol": "EUR", "invert": True},
+                             {"source": "erapi", "symbol": "EUR", "invert": True}]}
     record, tried = market.quote(instrument, sources)
-    assert record["source"] == "frankfurter" and round(record["close"], 4) == 1.25
-    assert len(calls) == 2 and tried[0]["source"] == "stooq"
+    assert record["source"] == "erapi" and round(record["close"], 4) == 1.25
+    assert len(calls) == 2 and tried[0]["source"] == "frankfurter"
 
 
 def test_a_pair_quoted_the_other_way_up_is_inverted(company, logic):
     market = logic(company, "market")
     rate, _ = market._read_frankfurter(json.dumps({"rates": {"JPY": 150.0}}), "JPY")
     assert round(1 / rate, 6) == round(1 / 150.0, 6)
+
+
+def test_a_rate_from_the_open_endpoint_carries_its_own_update_stamp(company, logic):
+    market = logic(company, "market")
+    body = json.dumps({"result": "success", "time_last_update_unix": 1788393751,
+                       "base_code": "USD", "rates": {"EUR": 0.86096, "JPY": 149.4}})
+    assert market._read_erapi(body, "EUR") == (0.86096, "2026-09-03")
+    try:
+        market._read_erapi(body, "SEK")
+    except ValueError:
+        return
+    raise AssertionError("a currency the provider did not quote must not be invented")
 
 
 def test_a_stooq_row_is_read_from_its_header(company, logic):

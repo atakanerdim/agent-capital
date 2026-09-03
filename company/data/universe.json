@@ -1,5 +1,5 @@
 {
- "_comment": "Everything the desk is allowed to touch, and nothing else. An advisor cannot trade what is not in this list, because risk.py checks membership before anything reaches a book. Each instrument names the providers that can quote it, in the order they should be asked; 'invert' means the provider publishes the pair the other way up. Prices are in USD. UNVERIFIED: the symbols were written from each provider's documented convention, not confirmed against a live response — a symbol that is wrong shows up as an instrument with no price and a named reason in company/data/prices/<date>.json, which is the point of recording why each link failed.",
+ "_comment": "Everything the desk is allowed to touch, and nothing else. An advisor cannot trade what is not in this list, because risk.py checks membership before anything reaches a book. Each instrument names the providers that can quote it, in the order they should be asked; 'invert' means the provider publishes the pair the other way up. Prices are in USD. 2026-09-04: every remaining provider was probed live for the first time and stooq was removed after answering 404 on every symbol; the surviving symbols have been confirmed against a live response for yahoo, frankfurter and erapi — a symbol that is wrong shows up as an instrument with no price and a named reason in company/data/prices/<date>.json, which is the point of recording why each link failed.",
  "currency": "USD",
  "instruments": [
   {
@@ -8,11 +8,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "aapl.us"
+     "source": "yahoo",
+     "symbol": "AAPL"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "AAPL"
     }
    ]
@@ -23,11 +23,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "msft.us"
+     "source": "yahoo",
+     "symbol": "MSFT"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "MSFT"
     }
    ]
@@ -38,11 +38,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "nvda.us"
+     "source": "yahoo",
+     "symbol": "NVDA"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "NVDA"
     }
    ]
@@ -53,11 +53,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "amzn.us"
+     "source": "yahoo",
+     "symbol": "AMZN"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "AMZN"
     }
    ]
@@ -68,11 +68,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "googl.us"
+     "source": "yahoo",
+     "symbol": "GOOGL"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "GOOGL"
     }
    ]
@@ -83,11 +83,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "meta.us"
+     "source": "yahoo",
+     "symbol": "META"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "META"
     }
    ]
@@ -98,11 +98,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "tsla.us"
+     "source": "yahoo",
+     "symbol": "TSLA"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "TSLA"
     }
    ]
@@ -113,11 +113,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "jpm.us"
+     "source": "yahoo",
+     "symbol": "JPM"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "JPM"
     }
    ]
@@ -128,11 +128,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "xom.us"
+     "source": "yahoo",
+     "symbol": "XOM"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "XOM"
     }
    ]
@@ -143,11 +143,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "jnj.us"
+     "source": "yahoo",
+     "symbol": "JNJ"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "JNJ"
     }
    ]
@@ -158,11 +158,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "ko.us"
+     "source": "yahoo",
+     "symbol": "KO"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "KO"
     }
    ]
@@ -173,11 +173,11 @@
    "class": "equity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "cat.us"
+     "source": "yahoo",
+     "symbol": "CAT"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "CAT"
     }
    ]
@@ -189,11 +189,11 @@
    "about": "The large American market, as one holding.",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "spy.us"
+     "source": "yahoo",
+     "symbol": "SPY"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "SPY"
     }
    ]
@@ -205,11 +205,11 @@
    "about": "The technology-heavy end of the same market.",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "qqq.us"
+     "source": "yahoo",
+     "symbol": "QQQ"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "QQQ"
     }
    ]
@@ -221,11 +221,11 @@
    "about": "Smaller American companies.",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "iwm.us"
+     "source": "yahoo",
+     "symbol": "IWM"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "IWM"
     }
    ]
@@ -237,11 +237,11 @@
    "about": "Europe, Australasia, the Far East.",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "efa.us"
+     "source": "yahoo",
+     "symbol": "EFA"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "EFA"
     }
    ]
@@ -253,11 +253,11 @@
    "about": "Equities outside the developed world.",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "eem.us"
+     "source": "yahoo",
+     "symbol": "EEM"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "EEM"
     }
    ]
@@ -269,11 +269,11 @@
    "about": "Where money goes when equities frighten it.",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "tlt.us"
+     "source": "yahoo",
+     "symbol": "TLT"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "TLT"
     }
    ]
@@ -285,11 +285,11 @@
    "about": "Listed real estate.",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "vnq.us"
+     "source": "yahoo",
+     "symbol": "VNQ"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "VNQ"
     }
    ]
@@ -300,14 +300,15 @@
    "class": "metal",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "xauusd"
-    },
-    {
      "source": "yahoo",
      "symbol": "GC=F"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "GC=F"
     }
-   ]
+   ],
+   "_note": "Priced from the COMEX front-month future (GC=F / SI=F), not from a spot market. The id reads like a spot pair and the number is a future, which differ by carry; the gap is small but it is real and it is recorded here rather than left for a reader of the archive to discover."
   },
   {
    "id": "XAGUSD",
@@ -315,14 +316,15 @@
    "class": "metal",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "xagusd"
-    },
-    {
      "source": "yahoo",
      "symbol": "SI=F"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "SI=F"
     }
-   ]
+   ],
+   "_note": "Priced from the COMEX front-month future (GC=F / SI=F), not from a spot market. The id reads like a spot pair and the number is a future, which differ by carry; the gap is small but it is real and it is recorded here rather than left for a reader of the archive to discover."
   },
   {
    "id": "WTI",
@@ -330,11 +332,11 @@
    "class": "commodity",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "cl.f"
+     "source": "yahoo",
+     "symbol": "CL=F"
     },
     {
-     "source": "yahoo",
+     "source": "yahoo2",
      "symbol": "CL=F"
     }
    ]
@@ -345,11 +347,12 @@
    "class": "fx",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "eurusd"
+     "source": "frankfurter",
+     "symbol": "EUR",
+     "invert": true
     },
     {
-     "source": "frankfurter",
+     "source": "erapi",
      "symbol": "EUR",
      "invert": true
     }
@@ -361,11 +364,12 @@
    "class": "fx",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "gbpusd"
+     "source": "frankfurter",
+     "symbol": "GBP",
+     "invert": true
     },
     {
-     "source": "frankfurter",
+     "source": "erapi",
      "symbol": "GBP",
      "invert": true
     }
@@ -377,12 +381,12 @@
    "class": "fx",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "usdjpy",
+     "source": "frankfurter",
+     "symbol": "JPY",
      "invert": true
     },
     {
-     "source": "frankfurter",
+     "source": "erapi",
      "symbol": "JPY",
      "invert": true
     }
@@ -394,12 +398,12 @@
    "class": "fx",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "usdchf",
+     "source": "frankfurter",
+     "symbol": "CHF",
      "invert": true
     },
     {
-     "source": "frankfurter",
+     "source": "erapi",
      "symbol": "CHF",
      "invert": true
     }
@@ -411,11 +415,12 @@
    "class": "fx",
    "quotes": [
     {
-     "source": "stooq",
-     "symbol": "audusd"
+     "source": "frankfurter",
+     "symbol": "AUD",
+     "invert": true
     },
     {
-     "source": "frankfurter",
+     "source": "erapi",
      "symbol": "AUD",
      "invert": true
     }

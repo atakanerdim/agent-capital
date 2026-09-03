@@ -108,6 +108,19 @@ def _read_yahoo_chart(body):
     return float(price), asof
 
 
+def _read_erapi(body, symbol):
+    """exchangerate-api's open endpoint: rates against USD, with its own stamp."""
+    doc = json.loads(body)
+    rates = doc.get("rates") or {}
+    if symbol not in rates:
+        raise ValueError(f"{symbol} not in the rates object")
+    stamp = doc.get("time_last_update_unix")
+    asof = None
+    if isinstance(stamp, (int, float)):
+        asof = _dt.datetime.fromtimestamp(stamp, _dt.timezone.utc).date().isoformat()
+    return float(rates[symbol]), asof
+
+
 def _read(style, body, symbol):
     """Returns (price, provider_asof). The second may be None; it is never guessed."""
     if style == "stooq_csv":
@@ -116,6 +129,8 @@ def _read(style, body, symbol):
         return _read_frankfurter(body, symbol)
     if style == "yahoo_chart":
         return _read_yahoo_chart(body)
+    if style == "erapi_json":
+        return _read_erapi(body, symbol)
     raise ValueError(f"unknown source style {style!r}")
 
 

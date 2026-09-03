@@ -38,20 +38,7 @@
    "model_prefer": [
     ":free"
    ]
-  },
-  {
-   "saglayici": "cerebras",
-   "model": "gpt-oss-120b",
-   "style": "openai",
-   "url": "https://api.cerebras.ai/v1/chat/completions",
-   "key_env": "CEREBRAS_API_KEY",
-   "models_url": "https://api.cerebras.ai/v1/models",
-   "model_prefer": [
-    "glm",
-    "gpt-oss",
-    "llama",
-    "qwen"
-   ]
   }
- ]
+ ],
+ "_comment": "The provider chain, tried in order until one answers. 2026-09-04: cerebras was removed. Its key authenticated — the health logs show 402 Payment Required, never 401 — so the account was real and its free quota was simply gone, from 2026-08-23 onward. healthcheck deliberately does not treat 402 as a retired model, so self-repair could never fire and the link would have written one failure line a day forever. Three links remain and all three answer."
 }
