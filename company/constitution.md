@@ -53,10 +53,26 @@ because they did.
 
 ## 6. Facts are not invented either
 
-Agents have prices and their own record. They have no news, no earnings, no
-research and no analyst opinion, and they must not write as though they had. An
-invented fact about a real company is the one failure that would make this whole
-record worthless.
+Agents have prices, their own record, and the filings and schedules the desk has
+collected and is allowed to show them. They have no other news, no analyst opinion
+and no research, and they must not write as though they had. An invented fact
+about a real company is the one failure that would make this whole record
+worthless.
+
+## 6a. A fact is shown late or not at all
+
+Every outside fact carries the instant it became public, taken from the publisher's
+own record, and every decision carries the instant it was asked. An advisor is
+shown an item only when the first is strictly earlier than the second. An item with
+no publication instant is collected and never shown; a published schedule may be
+shown before its date, because a schedule was public long before it.
+
+This is the strictest rule in this document, because it is the only one whose
+breach improves the numbers. A missing price announces itself. A fact delivered
+early looks exactly like skill: the returns rise, nothing fails, and every
+conclusion drawn from the record afterwards is worthless. So the rule is not left
+to the code that writes the record — it is audited against the record itself, over
+every decision ever made, on every change.
 
 ## 7. Every advisor starts equal
 

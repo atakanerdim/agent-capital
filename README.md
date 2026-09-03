@@ -117,6 +117,37 @@ trades do not move prices — at a real fund, buying the gold would have changed
 gold price and the counterfactual would be fiction. And the twenty-seven outcomes
 on a given day share that day's shock: it is more rows, not more independent days.
 
+## Facts arrive late or not at all
+
+The advisors read filings and schedules as well as prices — SEC EDGAR, FRED and
+the Federal Reserve's own meeting calendar, all public domain and all
+redistributable, which is why they were chosen over a commercial wire.
+
+One asymmetry shapes the whole thing. A price that arrives late is a missing price:
+the desk records the gap by provider name and holds the position at cost. A *fact*
+that arrives early is not a gap — it is an advisor that knew this morning what was
+filed tonight, and it does not look like a bug. It looks like skill. The returns
+improve and nothing anywhere reports a problem.
+
+So every item carries the instant it became public, taken from the publisher's own
+record, and every decision carries the instant it was asked. An advisor sees an
+item only when the first is strictly earlier than the second. An item with no
+publication instant is collected and never shown — which is why FRED's macro
+series are recorded daily and read by nobody: the keyless feed gives observation
+dates, and August's inflation figure is published in September. A schedule is shown
+freely, because the date of a meeting was public a year before it.
+
+And the claim is not left to the code that writes the record. `news.audit` walks
+every decision ever made and reports any item shown before it was published; the
+test suite runs it, and a deliberately leaked record has to make it fail.
+
+| | |
+|---|---|
+| Everything the desk could read that day | `company/news/` |
+| What each advisor was actually shown | `news_shown` in `company/data/orders/` |
+| The instant each advisor was asked | `decided_utc`, same place |
+| Where the facts come from, and their licences | `company/data/news_sources.json` |
+
 ## Nobody approves any of this
 
 The agents open pull requests against this repository. Automated checks pass or fail.

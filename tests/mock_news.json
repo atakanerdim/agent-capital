@@ -1,0 +1,59 @@
+[
+ {
+  "id": "edgar:0000000000-26-000001",
+  "source": "sec_edgar",
+  "kind": "8-K",
+  "instrument": "AAPL",
+  "published_utc": "2026-09-02T21:13:25+00:00",
+  "anticipated": false,
+  "headline": "AAPL filed a 8-K — Results of Operations and Financial Condition",
+  "value": null,
+  "url": "https://www.sec.gov/Archives/edgar/data/320193/x/y.htm"
+ },
+ {
+  "id": "edgar:0000000000-26-000002",
+  "source": "sec_edgar",
+  "kind": "8-K",
+  "instrument": "NVDA",
+  "published_utc": "2036-08-31T21:13:25+00:00",
+  "anticipated": false,
+  "headline": "NVDA filed a 8-K — a filing from the far future, which must never be shown",
+  "value": null,
+  "url": null
+ },
+ {
+  "id": "edgar:0000000000-26-000003",
+  "source": "sec_edgar",
+  "kind": "10-Q",
+  "instrument": "BRK",
+  "published_utc": "2026-09-02T21:13:25+00:00",
+  "anticipated": false,
+  "headline": "BRK filed a 10-Q — an instrument this desk cannot trade",
+  "value": null,
+  "url": null
+ },
+ {
+  "id": "fred:CPIAUCSL:2026-08-01",
+  "source": "fred",
+  "kind": "CPIAUCSL",
+  "instrument": null,
+  "published_utc": null,
+  "anticipated": false,
+  "headline": "US consumer price index, all items, seasonally adjusted: 322.1 as of 2026-08-01",
+  "value": 322.1,
+  "asof": "2026-08-01",
+  "url": null
+ },
+ {
+  "id": "fomc:2026-09-15",
+  "source": "fomc_calendar",
+  "kind": "fomc_meeting",
+  "instrument": null,
+  "published_utc": null,
+  "anticipated": true,
+  "headline": "FOMC meets 2026-09-15 to 2026-09-16, with a Summary of Economic Projections",
+  "value": null,
+  "asof": "2026-09-15",
+  "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+ }
+]
