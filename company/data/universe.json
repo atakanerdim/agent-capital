@@ -1,0 +1,425 @@
+{
+ "_comment": "Everything the desk is allowed to touch, and nothing else. An advisor cannot trade what is not in this list, because risk.py checks membership before anything reaches a book. Each instrument names the providers that can quote it, in the order they should be asked; 'invert' means the provider publishes the pair the other way up. Prices are in USD. UNVERIFIED: the symbols were written from each provider's documented convention, not confirmed against a live response — a symbol that is wrong shows up as an instrument with no price and a named reason in company/data/prices/<date>.json, which is the point of recording why each link failed.",
+ "currency": "USD",
+ "instruments": [
+  {
+   "id": "AAPL",
+   "name": "Apple",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "aapl.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "AAPL"
+    }
+   ]
+  },
+  {
+   "id": "MSFT",
+   "name": "Microsoft",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "msft.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "MSFT"
+    }
+   ]
+  },
+  {
+   "id": "NVDA",
+   "name": "NVIDIA",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "nvda.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "NVDA"
+    }
+   ]
+  },
+  {
+   "id": "AMZN",
+   "name": "Amazon",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "amzn.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "AMZN"
+    }
+   ]
+  },
+  {
+   "id": "GOOGL",
+   "name": "Alphabet",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "googl.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "GOOGL"
+    }
+   ]
+  },
+  {
+   "id": "META",
+   "name": "Meta Platforms",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "meta.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "META"
+    }
+   ]
+  },
+  {
+   "id": "TSLA",
+   "name": "Tesla",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "tsla.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "TSLA"
+    }
+   ]
+  },
+  {
+   "id": "JPM",
+   "name": "JPMorgan Chase",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "jpm.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "JPM"
+    }
+   ]
+  },
+  {
+   "id": "XOM",
+   "name": "Exxon Mobil",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "xom.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "XOM"
+    }
+   ]
+  },
+  {
+   "id": "JNJ",
+   "name": "Johnson & Johnson",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "jnj.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "JNJ"
+    }
+   ]
+  },
+  {
+   "id": "KO",
+   "name": "Coca-Cola",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "ko.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "KO"
+    }
+   ]
+  },
+  {
+   "id": "CAT",
+   "name": "Caterpillar",
+   "class": "equity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "cat.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "CAT"
+    }
+   ]
+  },
+  {
+   "id": "SPY",
+   "name": "S&P 500",
+   "class": "fund",
+   "about": "The large American market, as one holding.",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "spy.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "SPY"
+    }
+   ]
+  },
+  {
+   "id": "QQQ",
+   "name": "Nasdaq 100",
+   "class": "fund",
+   "about": "The technology-heavy end of the same market.",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "qqq.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "QQQ"
+    }
+   ]
+  },
+  {
+   "id": "IWM",
+   "name": "US small caps",
+   "class": "fund",
+   "about": "Smaller American companies.",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "iwm.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "IWM"
+    }
+   ]
+  },
+  {
+   "id": "EFA",
+   "name": "Developed markets outside the US",
+   "class": "fund",
+   "about": "Europe, Australasia, the Far East.",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "efa.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "EFA"
+    }
+   ]
+  },
+  {
+   "id": "EEM",
+   "name": "Emerging markets",
+   "class": "fund",
+   "about": "Equities outside the developed world.",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "eem.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "EEM"
+    }
+   ]
+  },
+  {
+   "id": "TLT",
+   "name": "Long US government bonds",
+   "class": "fund",
+   "about": "Where money goes when equities frighten it.",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "tlt.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "TLT"
+    }
+   ]
+  },
+  {
+   "id": "VNQ",
+   "name": "US property",
+   "class": "fund",
+   "about": "Listed real estate.",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "vnq.us"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "VNQ"
+    }
+   ]
+  },
+  {
+   "id": "XAUUSD",
+   "name": "Gold, per ounce",
+   "class": "metal",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "xauusd"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "GC=F"
+    }
+   ]
+  },
+  {
+   "id": "XAGUSD",
+   "name": "Silver, per ounce",
+   "class": "metal",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "xagusd"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "SI=F"
+    }
+   ]
+  },
+  {
+   "id": "WTI",
+   "name": "Crude oil, WTI, per barrel",
+   "class": "commodity",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "cl.f"
+    },
+    {
+     "source": "yahoo",
+     "symbol": "CL=F"
+    }
+   ]
+  },
+  {
+   "id": "EURUSD",
+   "name": "Euro",
+   "class": "fx",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "eurusd"
+    },
+    {
+     "source": "frankfurter",
+     "symbol": "EUR",
+     "invert": true
+    }
+   ]
+  },
+  {
+   "id": "GBPUSD",
+   "name": "British pound",
+   "class": "fx",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "gbpusd"
+    },
+    {
+     "source": "frankfurter",
+     "symbol": "GBP",
+     "invert": true
+    }
+   ]
+  },
+  {
+   "id": "JPYUSD",
+   "name": "Japanese yen",
+   "class": "fx",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "usdjpy",
+     "invert": true
+    },
+    {
+     "source": "frankfurter",
+     "symbol": "JPY",
+     "invert": true
+    }
+   ]
+  },
+  {
+   "id": "CHFUSD",
+   "name": "Swiss franc",
+   "class": "fx",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "usdchf",
+     "invert": true
+    },
+    {
+     "source": "frankfurter",
+     "symbol": "CHF",
+     "invert": true
+    }
+   ]
+  },
+  {
+   "id": "AUDUSD",
+   "name": "Australian dollar",
+   "class": "fx",
+   "quotes": [
+    {
+     "source": "stooq",
+     "symbol": "audusd"
+    },
+    {
+     "source": "frankfurter",
+     "symbol": "AUD",
+     "invert": true
+    }
+   ]
+  }
+ ]
+}

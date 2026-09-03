@@ -1,0 +1,136 @@
+:root{
+  --bg:#0f1117; --card:#171a23; --line:#262b38;
+  --text:#e8eaf0; --muted:#9aa3b5; --accent:#5b8cff; --accent2:#3ddc97;
+  --danger:#ff6b6b; --radius:12px;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);line-height:1.65;font-size:16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{border-bottom:1px solid var(--line);padding:18px 24px;display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}
+header h1{font-size:20px;font-weight:600}
+header nav{display:flex;gap:14px;flex-wrap:wrap}
+header nav a{color:var(--muted)}
+header nav a.active{color:var(--text);border-bottom:2px solid var(--accent)}
+main{max-width:960px;margin:0 auto;padding:28px 24px 64px}
+h2{font-size:18px;font-weight:600;margin:28px 0 12px}
+.badge{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;
+  background:#12351f;color:var(--accent2);border:1px solid #1d5b36;vertical-align:middle}
+.badge.fiction{background:#3a2a12;color:#f0b35c;border-color:#6b4b1d}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.card h3{font-size:15px;font-weight:600;margin-bottom:6px}
+.card p{color:var(--muted);font-size:14px}
+.row{border-bottom:1px solid var(--line);padding:10px 4px;display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.muted{color:var(--muted);font-size:14px}
+.notice{margin-top:26px;font-size:13px;color:var(--muted);border:1px dashed var(--line);
+  border-radius:var(--radius);padding:10px 14px}
+pre{background:#0b0d12;border:1px solid var(--line);border-radius:8px;padding:14px;
+  overflow-x:auto;font-size:13px;white-space:pre-wrap}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left}
+canvas{max-height:280px}
+.empty{color:var(--muted);font-style:italic;padding:18px 0}
+
+/* ---- the office floor ------------------------------------------------ */
+/* Structure only. Which colours and spacing win is the Designer's call. */
+
+.explainer{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;margin:4px 0 8px}
+.explainer p{color:var(--muted);font-size:15px;max-width:62ch}
+.steps{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.steps li{border-left:2px solid var(--accent);padding:2px 0 2px 12px;
+  color:var(--muted);font-size:14px}
+.steps b{color:var(--text);display:block;font-weight:600}
+
+.room{margin:30px 0 0}
+.room > h3{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:14px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.desks{display:flex;flex-wrap:wrap;gap:20px}
+.desk{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;display:flex;flex-direction:column;gap:8px;flex:1 1 260px;max-width:100%}
+.desk.on{border-color:var(--accent)}
+.desk-head{display:flex;gap:12px;align-items:center}
+.desk .avatar{width:56px;height:56px;border-radius:10px;display:block;flex:0 0 auto}
+.desk .who{min-width:0}
+.desk .who h3{font-size:15px;font-weight:600;margin:0}
+.desk .role{color:var(--muted);font-size:13px;margin:0}
+.desk .bio{color:var(--muted);font-size:14px;margin:0}
+.desk .days{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin:0}
+.day{font-size:11px;padding:1px 6px;border-radius:6px;border:1px solid var(--line);
+  color:var(--muted)}
+.day.on{border-color:var(--accent);color:var(--text)}
+.status{font-size:12px;color:var(--muted);margin:0}
+.status.in{color:var(--accent2)}
+.quiet{font-size:12px;color:var(--muted);text-decoration:underline;
+  text-underline-offset:4px;align-self:flex-start}
+.quiet:hover{color:var(--accent)}
+
+/* ---- hallway and reviews --------------------------------------------- */
+
+.feed{display:flex;flex-direction:column;gap:16px}
+.bubble{display:flex;gap:10px;align-items:flex-start}
+.bubble .avatar{width:44px;height:44px;border-radius:8px;display:block;flex:0 0 auto}
+.bubble > div{min-width:0;flex:1 1 auto}
+.bubble .said{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  border-top-left-radius:3px;padding:9px 13px}
+.bubble .said p{margin:0;font-size:14px}
+.bubble .meta{color:var(--muted);font-size:12px;margin-bottom:2px}
+.bubble .meta b{color:var(--text);font-weight:600}
+
+.thread{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px;margin-bottom:12px}
+.thread > h3{font-size:14px;font-weight:600;margin-bottom:10px}
+.thread .feed{margin-top:8px}
+
+/* ---- the desk --------------------------------------------------------- */
+/* Structure only. Which colours and spacing win is a designer's call, and this
+   desk does not have one yet. */
+
+.scroller{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.grid{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+table.grid th{text-align:left;font-weight:600;color:var(--muted);font-size:12px;
+  text-transform:uppercase;letter-spacing:.06em;padding:6px 10px;
+  border-bottom:1px solid var(--line);white-space:nowrap}
+table.grid td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.grid tr:last-child td{border-bottom:0}
+/* Buy-and-hold is ranked with the advisors but is not one of them. */
+table.grid tr.benchmark td{background:#161616}
+table.grid tr.benchmark .badge{background:#2a2a2a;color:var(--muted);border-color:var(--line)}
+/* Numbers align on their digits or they are decoration, not data. */
+.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rank{color:var(--muted);width:2em}
+.up{color:var(--accent2)}
+.down{color:var(--danger)}
+.flat{color:var(--muted)}
+
+.chart{width:100%;min-width:560px;height:auto;display:block}
+.chart .ax{fill:var(--muted);font-size:11px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.legend .key{display:inline-flex;align-items:center;gap:6px;font-size:12px;
+  color:var(--muted)}
+.legend .key i{width:10px;height:10px;border-radius:2px;display:inline-block}
+
+ul.orders{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px}
+ul.orders li{font-size:13px;line-height:1.5}
+ul.orders li.refused{color:var(--muted);border-left:2px solid var(--danger);
+  padding-left:8px}
+ul.reasons{margin:8px 0 0 18px;font-size:13px;color:var(--muted)}
+
+.mandate{color:var(--muted);font-size:13px;font-style:italic;
+  border-left:2px solid var(--line);padding-left:8px}
+
+pre.record{white-space:pre-wrap;word-wrap:break-word;font-size:13px;line-height:1.55;
+  color:var(--muted);margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+details.thread > summary{cursor:pointer;font-size:14px;font-weight:600;
+  list-style:none}
+details.thread > summary::-webkit-details-marker{display:none}
+details.thread > summary::before{content:"▸ ";color:var(--muted)}
+details.thread[open] > summary::before{content:"▾ "}
+details.thread[open] > summary{margin-bottom:10px}
+
+@media (max-width: 480px){
+  header, main{padding-left:16px;padding-right:16px}
+}

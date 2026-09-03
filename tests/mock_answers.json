@@ -1,0 +1,179 @@
+{
+ "[REWRITE]": {
+  "brief": "# Grace Okonkwo — Index\nYou are Grace Okonkwo. You own the market and you refuse to be interesting about\nit. Broad funds, very few decisions, almost no turnover. Your entire strategy is an\nargument that the other seven people on this floor are, on average, paying for the\nprivilege of being wrong, and you are aware that this is rude.\n\nYou buy the broad funds, you keep them, and you rebalance rarely and for a stated\nreason. Most days your correct answer is no orders at all, and you should give it\nwithout dressing it up. When you do act, it is because a weight has drifted or\nbecause a whole region has moved enough to matter — never because a week was\nexciting.\n\nOver the last month that weakness was not the problem. What the record shows is\nthat Grace put roughly a third of the book to work and left the rest in cash for\nthe whole window, which is not passive investing — it is an unstated cash position\ncarrying all of indexing's patience and none of its exposure.\n\nSo one change, and only one: be fully invested. Put the book to work across the\nbroad funds and keep it there. If you are going to refuse to be interesting, refuse\ncompletely.\n\nYour remaining weakness, unchanged: if a real regime change arrives you will sit\nthrough all of it, on purpose, and have nothing clever to say afterwards.\n## How this desk judges you\n\nYour record is a single number computed from your own net asset value, published\ndaily, next to seven colleagues who started with exactly what you started with.\nNobody grades your reasoning. A good argument that loses money is a loss, and a\nlucky week is still a good week — over a year that stops being true, which is the\nonly reason this is worth doing.\n\nOnce a month whoever is last has their brief rewritten by the Chief Investment\nOfficer, using their trades and their losses as the argument. That could be you.\n\n## What you must not do\n\n- Do not claim to know what a price will do. Argue for a position; never promise.\n- Do not invent facts. You have prices and your own record, and nothing else. If\n  you have not been given a piece of news, you have not seen it, and writing as\n  though you had is the one thing that would make this desk worthless.\n- Do not address a reader as somebody whose money you manage. There is no money.\n- Do not trade to look busy. An empty order list is a real answer.\n- Do not repeat an order the desk has already refused, in the same shape.\n\n## What a good day looks like\n\nOne to three orders, or none. A note that says what you are reading and what would\nchange your mind. A hallway line your colleagues would actually react to. Sizes\nthat mean something: an advisor who puts $150 into a $100,000 book has not taken a\nposition, they have taken a note.\n\n## Your answer\n\nAnswer with the JSON object the desk asks for, and nothing else. `orders` may be empty.\nKeep `note` to two or three sentences, `hallway` to one line, `memory_add` to one line.\n",
+  "what_changed": "I left the strategy alone — indexing is not what failed. What the record shows is that Grace put 36% of the book to work on day one and left 64% in cash for eleven valuations, which is not passive investing, it is an unstated cash position. So I changed the sizing instruction only: be fully invested across the broad funds. Everything else in the brief stands, so next month it will be possible to tell whether that single change was the one that mattered."
+ },
+ "[ADVISOR:momentum]": {
+  "orders": [
+   {
+    "action": "buy",
+    "instrument": "NVDA",
+    "amount_usd": 18000,
+    "reason": "It has been the strongest thing on the list for weeks and nothing has broken.",
+    "conviction": 0.8,
+    "horizon_days": 30,
+    "considered": [
+     {
+      "instrument": "AMD",
+      "why_not": "Not in the universe at all — an invention."
+     },
+     {
+      "instrument": "QQQ",
+      "why_not": "Same trend with less single-name risk, but slower."
+     },
+     {
+      "instrument": "NVDA",
+      "why_not": "This is the one being bought."
+     }
+    ]
+   },
+   {
+    "action": "buy",
+    "instrument": "QQQ",
+    "amount_usd": 12000,
+    "reason": "Same trend, expressed with less single-name risk.",
+    "conviction": 0.6,
+    "horizon_days": 45
+   }
+  ],
+  "note": "Trend is intact at the top of the list. Adding to strength rather than opening anything new.",
+  "hallway": "Buying what is already working, as usual, and expecting to be told I am late.",
+  "memory_add": "Opened NVDA and QQQ on trend."
+ },
+ "[ADVISOR:value]": {
+  "orders": [
+   {
+    "action": "buy",
+    "instrument": "XOM",
+    "amount_usd": 15000,
+    "reason": "Cheap against its own history and the reason it exists has not changed.",
+    "conviction": 0.55,
+    "horizon_days": 400
+   }
+  ],
+  "note": "One position, sized to be wrong for a while. Nothing else on the list is cheap enough to bother with.",
+  "hallway": "Bought something dull. Ask me again in four months.",
+  "memory_add": "XOM opened on value."
+ },
+ "[ADVISOR:macro]": {
+  "orders": [
+   {
+    "action": "buy",
+    "instrument": "TLT",
+    "amount_usd": 20000,
+    "reason": "If growth is slowing, long bonds are the cleanest expression of it."
+   },
+   {
+    "action": "buy",
+    "instrument": "XAUUSD",
+    "amount_usd": 10000,
+    "reason": "The same sentence, hedged differently."
+   }
+  ],
+  "note": "One view: growth cools from here. Two holdings that both follow from it.",
+  "hallway": "Two positions, one sentence. If the sentence is wrong they both go.",
+  "memory_add": "Slowing-growth view: TLT and gold."
+ },
+ "[ADVISOR:careful]": {
+  "orders": [
+   {
+    "action": "buy",
+    "instrument": "SPY",
+    "amount_usd": 8000,
+    "reason": "A small starting position; the rest of the book stays in cash."
+   }
+  ],
+  "note": "Eight percent invested. That is a busy day for me.",
+  "hallway": "Most of my book is cash and I would like that on the record.",
+  "memory_add": "Small SPY starter, rest cash."
+ },
+ "[ADVISOR:contrarian]": {
+  "orders": [
+   {
+    "action": "buy",
+    "instrument": "EEM",
+    "amount_usd": 16000,
+    "reason": "Nobody on this floor has mentioned emerging markets once."
+   },
+   {
+    "action": "buy",
+    "instrument": "DOGE",
+    "amount_usd": 5000,
+    "reason": "Why not."
+   }
+  ],
+  "note": "The desk has crowded into American technology. I am going somewhere else.",
+  "hallway": "Everyone is in the same two trades again. Someone has to be somewhere else.",
+  "memory_add": "EEM opened against the desk consensus."
+ },
+ "[ADVISOR:fx]": {
+  "orders": [
+   {
+    "action": "buy",
+    "instrument": "EURUSD",
+    "amount_usd": 14000,
+    "reason": "A patient position against the dollar."
+   },
+   {
+    "action": "buy",
+    "instrument": "JPYUSD",
+    "amount_usd": 9000,
+    "reason": "The same view, less crowded."
+   }
+  ],
+  "note": "Short dollar in two places, sized small because currencies move small.",
+  "hallway": "You are all currency traders. Some of you have not noticed.",
+  "memory_add": "Short USD via EUR and JPY."
+ },
+ "[ADVISOR:metals]": {
+  "orders": [
+   {
+    "action": "buy",
+    "instrument": "XAUUSD",
+    "amount_usd": 22000,
+    "reason": "The reasons to own metal are accumulating and it is not yet obvious.",
+    "considered": [
+     {
+      "instrument": "XAGUSD",
+      "why_not": "Silver moves more but the industrial demand story is noisier."
+     }
+    ],
+    "conviction": 0.7,
+    "horizon_days": 2
+   }
+  ],
+  "note": "One position, large by my standards, and I expect to hold it through months of nothing.",
+  "hallway": "Bought gold. I will not be mentioning it again for some time.",
+  "memory_add": "Core gold position opened."
+ },
+ "[ADVISOR:index]": {
+  "orders": [
+   {
+    "action": "buy",
+    "instrument": "SPY",
+    "amount_usd": 24000,
+    "reason": "The market."
+   },
+   {
+    "action": "buy",
+    "instrument": "EFA",
+    "amount_usd": 12000,
+    "reason": "The rest of the market."
+   }
+  ],
+  "note": "Two funds. I intend to do nothing further for a long time.",
+  "hallway": "Done for the quarter, probably.",
+  "memory_add": "SPY and EFA opened; no further action planned."
+ },
+ "[DAY:": {
+  "output_markdown": "Eight books, one week, and the spread between best and worst is under three percent. After a handful of valuations that is not a result, it is rounding.\n\nThe finding is drift, not rank. Grace Okonkwo's brief says own the market; her book is a third invested and two thirds cash, which is an unstated bet on cash rather than an index strategy. Ines Kovac is last and is last on a single position taken for a single reason, which is the cleanest test this desk has produced so far of whether a brief can be held responsible for a result.\n\nEverybody else is doing roughly what their brief says they would.",
+  "hallway": "A week is not a result. Ask me in a quarter and I will still say it is early.",
+  "memory_add": "Flagged the index book as cash-heavy against its own brief."
+ },
+ "[DATE:": {
+  "letter": "The desk finished its second week with six of eight advisors above where they started. The spread between the best and the worst is under three percent, which after eleven valuations means almost nothing and will keep meaning almost nothing for some months yet.\n\nWhat is already visible is not performance but behaviour. The macro and metals books are concentrated and quiet; the index book has not been touched since the day it opened, which is exactly what it promised; the contrarian book is the only one down, and it is down on a single position taken for a single reason.\n\nThat last one is the interesting case, because it is the first time the record has shown a brief producing a result rather than an argument.",
+  "company_name": "Kestrel Line Research",
+  "hallway": "Eleven valuations in. Nothing is proven and that is the honest headline.",
+  "memory_add": "Named the company. Contrarian is last and is the first real test of the rewrite."
+ }
+}

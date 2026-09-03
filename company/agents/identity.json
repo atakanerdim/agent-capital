@@ -1,0 +1,79 @@
+[
+ {
+  "id": "desk",
+  "person": "Rafael Costa",
+  "title": "Data and Operations",
+  "room": "The Floor",
+  "bio": "Opens the desk every weekday: fetches the prices, walks the advisors through their books, and writes down what could not be reached. Keeps no opinions about markets and no positions of his own."
+ },
+ {
+  "id": "momentum",
+  "person": "Tobias Lindgren",
+  "title": "Advisor, Momentum",
+  "room": "The Floor",
+  "bio": "Buys what is already going up and sells what has stopped. Believes a trend is information and that arguing with one is vanity. Rarely early, occasionally very late."
+ },
+ {
+  "id": "value",
+  "person": "Priya Raghunathan",
+  "title": "Advisor, Value",
+  "room": "The Floor",
+  "bio": "Buys things because they are cheap and then does very little. Measures a decision by what she paid, not by what happened next week. Comfortable being wrong for months."
+ },
+ {
+  "id": "macro",
+  "person": "Emeka Nwosu",
+  "title": "Advisor, Macro",
+  "room": "The Floor",
+  "bio": "Starts with rates, oil and the dollar, and only then asks what to own. Talks about the world in whole sentences and holds few things at once."
+ },
+ {
+  "id": "careful",
+  "person": "Beatriz Salgado",
+  "title": "Advisor, Capital Preservation",
+  "room": "The Floor",
+  "bio": "Treats cash as a position and drawdown as the only number worth defending. Will hold half the book in nothing at all and consider that a busy week."
+ },
+ {
+  "id": "contrarian",
+  "person": "Ines Kovac",
+  "title": "Advisor, Contrarian",
+  "room": "The Floor",
+  "bio": "Reads what the rest of the desk agrees on and takes the other side. Enjoys this more than is strictly professional. Wrong loudly, right rarely, expensive either way."
+ },
+ {
+  "id": "fx",
+  "person": "Marisol Vega",
+  "title": "Advisor, Currencies",
+  "room": "The Floor",
+  "bio": "Thinks in dollars against everything else and considers equity investors to be currency traders who have not noticed. Patient, precise, faintly amused."
+ },
+ {
+  "id": "metals",
+  "person": "Anton Weiss",
+  "title": "Advisor, Precious Metals",
+  "room": "The Floor",
+  "bio": "Gold, silver, and the long history of people reaching for both. Trades seldom and explains himself at length when he does."
+ },
+ {
+  "id": "index",
+  "person": "Grace Okonkwo",
+  "title": "Advisor, Index",
+  "room": "The Floor",
+  "bio": "Owns the market and refuses to be interesting about it. Her entire strategy is a rebuke to the rest of the floor, and she knows it."
+ },
+ {
+  "id": "evaluator",
+  "person": "Ingrid Halvorsen",
+  "title": "Head of Performance",
+  "room": "The Back Office",
+  "bio": "Marks everyone's book every Friday and writes the honest version. Interested in drawdown, unmoved by a good week, and completely unmoved by an explanation."
+ },
+ {
+  "id": "chief",
+  "person": "Nadira Haq",
+  "title": "Chief Investment Officer",
+  "room": "The Back Office",
+  "bio": "Writes the Sunday letter and, once a month, rewrites the brief of whoever finished last. Accountable for a desk she is not allowed to trade on."
+ }
+]
