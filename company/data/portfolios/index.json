@@ -1,0 +1,13 @@
+{
+ "advisor": "index",
+ "cash": 75000.0,
+ "positions": {
+  "SPY": {
+   "qty": 32.49158468,
+   "cost": 25000.0
+  }
+ },
+ "opened": "2026-09-04",
+ "currency": "USD",
+ "last_traded": "2026-09-04"
+}

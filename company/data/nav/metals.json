@@ -1,0 +1,12 @@
+{
+ "advisor": "metals",
+ "series": [
+  {
+   "date": "2026-09-04",
+   "nav": 100000.0,
+   "cash": 70000.0,
+   "invested": 30000.0,
+   "unpriced": []
+  }
+ ]
+}

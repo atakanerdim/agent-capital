@@ -1,0 +1,17 @@
+{
+ "advisor": "contrarian",
+ "cash": 75000.0,
+ "positions": {
+  "TLT": {
+   "qty": 182.2821728,
+   "cost": 15000.0
+  },
+  "VNQ": {
+   "qty": 103.93389804,
+   "cost": 10000.0
+  }
+ },
+ "opened": "2026-09-04",
+ "currency": "USD",
+ "last_traded": "2026-09-04"
+}
