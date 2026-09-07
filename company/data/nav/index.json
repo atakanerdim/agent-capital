@@ -1,0 +1,12 @@
+{
+ "advisor": "index",
+ "series": [
+  {
+   "date": "2026-09-07",
+   "nav": 100000.0,
+   "cash": 0.0,
+   "invested": 100000.0,
+   "unpriced": []
+  }
+ ]
+}

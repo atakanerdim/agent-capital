@@ -1,0 +1,147 @@
+{
+ "advisor": "benchmark",
+ "cash": 0.1,
+ "positions": {
+  "AAPL": {
+   "qty": 11.57514767,
+   "cost": 3703.7
+  },
+  "AMZN": {
+   "qty": 14.32710533,
+   "cost": 3703.7
+  },
+  "AUDUSD": {
+   "qty": 5133.69621415,
+   "cost": 3703.7
+  },
+  "CAT": {
+   "qty": 4.55033541,
+   "cost": 3703.7
+  },
+  "CHFUSD": {
+   "qty": 2997.18303476,
+   "cost": 3703.7
+  },
+  "EEM": {
+   "qty": 53.91120815,
+   "cost": 3703.7
+  },
+  "EFA": {
+   "qty": 34.18274112,
+   "cost": 3703.7
+  },
+  "EURUSD": {
+   "qty": 3186.81186306,
+   "cost": 3703.7
+  },
+  "GBPUSD": {
+   "qty": 2737.25675686,
+   "cost": 3703.7
+  },
+  "GOOGL": {
+   "qty": 10.94279974,
+   "cost": 3703.7
+  },
+  "IWM": {
+   "qty": 12.51207729,
+   "cost": 3703.7
+  },
+  "JNJ": {
+   "qty": 13.45674527,
+   "cost": 3703.7
+  },
+  "JPM": {
+   "qty": 10.32706893,
+   "cost": 3703.7
+  },
+  "JPYUSD": {
+   "qty": 573150.727329,
+   "cost": 3703.7
+  },
+  "KO": {
+   "qty": 42.05404792,
+   "cost": 3703.7
+  },
+  "META": {
+   "qty": 6.00499376,
+   "cost": 3703.7
+  },
+  "MSFT": {
+   "qty": 7.41184711,
+   "cost": 3703.7
+  },
+  "NVDA": {
+   "qty": 16.0778781,
+   "cost": 3703.7
+  },
+  "QQQ": {
+   "qty": 5.15146879,
+   "cost": 3703.7
+  },
+  "SPY": {
+   "qty": 4.80881341,
+   "cost": 3703.7
+  },
+  "TLT": {
+   "qty": 45.05169687,
+   "cost": 3703.7
+  },
+  "TSLA": {
+   "qty": 10.46006552,
+   "cost": 3703.7
+  },
+  "VNQ": {
+   "qty": 38.57217246,
+   "cost": 3703.7
+  },
+  "WTI": {
+   "qty": 40.48644512,
+   "cost": 3703.7
+  },
+  "XAGUSD": {
+   "qty": 55.48780488,
+   "cost": 3703.7
+  },
+  "XAUUSD": {
+   "qty": 0.82734665,
+   "cost": 3703.7
+  },
+  "XOM": {
+   "qty": 23.225058,
+   "cost": 3703.7
+  }
+ },
+ "opened": "2026-09-07",
+ "currency": "USD",
+ "frozen": true,
+ "last_traded": "2026-09-07",
+ "opened_with": [
+  "AAPL",
+  "AMZN",
+  "AUDUSD",
+  "CAT",
+  "CHFUSD",
+  "EEM",
+  "EFA",
+  "EURUSD",
+  "GBPUSD",
+  "GOOGL",
+  "IWM",
+  "JNJ",
+  "JPM",
+  "JPYUSD",
+  "KO",
+  "META",
+  "MSFT",
+  "NVDA",
+  "QQQ",
+  "SPY",
+  "TLT",
+  "TSLA",
+  "VNQ",
+  "WTI",
+  "XAGUSD",
+  "XAUUSD",
+  "XOM"
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "advisor": "contrarian",
+ "cash": 80000.0,
+ "positions": {
+  "TLT": {
+   "qty": 243.2794064,
+   "cost": 20000.0
+  }
+ },
+ "opened": "2026-09-07",
+ "currency": "USD",
+ "last_traded": "2026-09-07"
+}

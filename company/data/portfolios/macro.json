@@ -1,0 +1,17 @@
+{
+ "advisor": "macro",
+ "cash": 50000.0,
+ "positions": {
+  "WTI": {
+   "qty": 273.28377787,
+   "cost": 25000.0
+  },
+  "XAUUSD": {
+   "qty": 5.58459545,
+   "cost": 25000.0
+  }
+ },
+ "opened": "2026-09-07",
+ "currency": "USD",
+ "last_traded": "2026-09-07"
+}
