@@ -1,0 +1,12 @@
+{
+ "advisor": "benchmark",
+ "series": [
+  {
+   "date": "2026-09-07",
+   "nav": 100000.0,
+   "cash": 0.1,
+   "invested": 99999.9,
+   "unpriced": []
+  }
+ ]
+}
