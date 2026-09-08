@@ -1,0 +1,17 @@
+{
+ "advisor": "fx",
+ "cash": 75000.0,
+ "positions": {
+  "EURUSD": {
+   "qty": 12915.44687446,
+   "cost": 15000.0
+  },
+  "AUDUSD": {
+   "qty": 13860.99363919,
+   "cost": 10000.0
+  }
+ },
+ "opened": "2026-09-08",
+ "currency": "USD",
+ "last_traded": "2026-09-08"
+}

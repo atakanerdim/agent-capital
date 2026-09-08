@@ -1,0 +1,276 @@
+{
+ "date": "2026-09-08",
+ "fetched_utc": "2026-09-08T18:05:23+00:00",
+ "items": [
+  {
+   "id": "fomc:2026-09-15",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2026-09-15 to 2026-09-16, with a Summary of Economic Projections (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2026-09-15",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2026-10-27",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2026-10-27 to 2026-10-28 (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2026-10-27",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2026-12-08",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2026-12-08 to 2026-12-09, with a Summary of Economic Projections (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2026-12-08",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2027-01-26",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2027-01-26 to 2027-01-27 (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2027-01-26",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2027-03-16",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2027-03-16 to 2027-03-17, with a Summary of Economic Projections (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2027-03-16",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2027-04-27",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2027-04-27 to 2027-04-28 (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2027-04-27",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2027-06-08",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2027-06-08 to 2027-06-09, with a Summary of Economic Projections (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2027-06-08",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2027-07-27",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2027-07-27 to 2027-07-28 (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2027-07-27",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2027-09-14",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2027-09-14 to 2027-09-15, with a Summary of Economic Projections (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2027-09-14",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2027-10-26",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2027-10-26 to 2027-10-27 (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2027-10-26",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fomc:2027-12-07",
+   "source": "fomc_calendar",
+   "kind": "fomc_meeting",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": true,
+   "headline": "FOMC meets 2027-12-07 to 2027-12-08, with a Summary of Economic Projections (the Federal Reserve calls every date tentative until the preceding meeting confirms it)",
+   "value": null,
+   "asof": "2027-12-07",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "id": "fred:CPIAUCSL:2026-07-01",
+   "source": "fred",
+   "kind": "CPIAUCSL",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": false,
+   "headline": "US consumer price index, all items, seasonally adjusted: 332.813 as of 2026-07-01",
+   "value": 332.813,
+   "asof": "2026-07-01",
+   "url": null
+  },
+  {
+   "id": "fred:DFF:2026-09-03",
+   "source": "fred",
+   "kind": "DFF",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": false,
+   "headline": "US federal funds effective rate: 3.63 as of 2026-09-03",
+   "value": 3.63,
+   "asof": "2026-09-03",
+   "url": null
+  },
+  {
+   "id": "fred:DGS10:2026-09-03",
+   "source": "fred",
+   "kind": "DGS10",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": false,
+   "headline": "US 10-year treasury constant maturity yield: 4.77 as of 2026-09-03",
+   "value": 4.77,
+   "asof": "2026-09-03",
+   "url": null
+  },
+  {
+   "id": "fred:T10YIE:2026-09-04",
+   "source": "fred",
+   "kind": "T10YIE",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": false,
+   "headline": "US 10-year breakeven inflation rate: 2.35 as of 2026-09-04",
+   "value": 2.35,
+   "asof": "2026-09-04",
+   "url": null
+  },
+  {
+   "id": "fred:UNRATE:2026-08-01",
+   "source": "fred",
+   "kind": "UNRATE",
+   "instrument": null,
+   "published_utc": null,
+   "fetched_utc": "2026-09-08T18:05:23+00:00",
+   "anticipated": false,
+   "headline": "US unemployment rate: 4.1 as of 2026-08-01",
+   "value": 4.1,
+   "asof": "2026-08-01",
+   "url": null
+  }
+ ],
+ "short": [
+  {
+   "family": "sec_edgar",
+   "instrument": "AAPL",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "AMZN",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "CAT",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "GOOGL",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "JNJ",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "JPM",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "KO",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "META",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "MSFT",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "NVDA",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "TSLA",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "family": "sec_edgar",
+   "instrument": "XOM",
+   "why": "HTTPError: HTTP Error 403: Forbidden"
+  }
+ ]
+}
