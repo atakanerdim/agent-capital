@@ -1,0 +1,12 @@
+{
+ "advisor": "fx",
+ "series": [
+  {
+   "date": "2026-09-08",
+   "nav": 100000.0,
+   "cash": 75000.0,
+   "invested": 25000.0,
+   "unpriced": []
+  }
+ ]
+}
