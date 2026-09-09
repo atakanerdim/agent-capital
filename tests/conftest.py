@@ -16,6 +16,15 @@ ACCUMULATED = ("company/minutes", "company/hallway", "company/log",
 # Files the desk writes as it runs, as opposed to directories it fills.
 ACCUMULATED_FILES = ("company/data/leaderboard.json", "company/data/evolution.json")
 
+# The chief writes the company's name into the constitution's first line, once
+# ever, and never touches it again. That line is accumulated state exactly like a
+# NAV series is, and it was the one piece the wipe above missed: left in place, the
+# copy carries whichever Sunday the company has already had, and a test that asks
+# what the chief does on an unnamed company is instead asking what he does on a
+# named one. The line is restored to what it says on opening day.
+UNNAMED = ("Company name: not chosen yet — the Chief Investment Officer names "
+           "this company on a Sunday.")
+
 
 def _rmtree(path):
     """Remove a tree, clearing the read-only flag Windows refuses to delete through.
@@ -69,6 +78,12 @@ def company(tmp_path, monkeypatch):
         _wipe(directory)
     for rel in ACCUMULATED_FILES:
         (tmp_path / rel).unlink(missing_ok=True)
+
+    constitution = tmp_path / "company/constitution.md"
+    lines = constitution.read_text(encoding="utf-8").splitlines()
+    if lines and lines[0].startswith("Company name:"):
+        lines[0] = UNNAMED
+        constitution.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     # Every advisor starts from the opening allocation with an empty book. A test
     # that inherited yesterday's positions would be measuring the day the test was
