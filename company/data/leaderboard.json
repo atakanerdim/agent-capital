@@ -1,0 +1,114 @@
+{
+ "date": "2026-09-09",
+ "opening_cash": 100000.0,
+ "rows": [
+  {
+   "advisor": "momentum",
+   "name": "Tobias Lindgren",
+   "mandate": "Own what is already working. Add to strength, cut what has stopped moving.",
+   "is_benchmark": false,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "value",
+   "name": "Priya Raghunathan",
+   "mandate": "Buy what is cheap against its own history and wait. Price paid is the only edge you control.",
+   "is_benchmark": false,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "macro",
+   "name": "Emeka Nwosu",
+   "mandate": "Start from the world — rates, oil, the dollar — and let the holdings follow from it.",
+   "is_benchmark": false,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "careful",
+   "name": "Beatriz Salgado",
+   "mandate": "Lose as little as possible. Cash is a position and drawdown is the number that matters.",
+   "is_benchmark": false,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "contrarian",
+   "name": "Ines Kovac",
+   "mandate": "Take the other side of whatever this desk agrees on. Consensus is the signal.",
+   "is_benchmark": false,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "fx",
+   "name": "Marisol Vega",
+   "mandate": "Trade the dollar against the world. Currencies first; everything else is a relative price.",
+   "is_benchmark": false,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "metals",
+   "name": "Anton Weiss",
+   "mandate": "Gold and silver first, and the reasons people reach for them. Patience over activity.",
+   "is_benchmark": false,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "index",
+   "name": "Grace Okonkwo",
+   "mandate": "Broad funds, few decisions, low turnover. Beat the others by not trading.",
+   "is_benchmark": false,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "benchmark",
+   "name": "Buy and hold",
+   "mandate": "Every instrument the desk may touch, equal weight, bought on the first day and never traded again.",
+   "is_benchmark": true,
+   "nav": 100000.0,
+   "return_pct": 0.0,
+   "max_drawdown_pct": 0.0,
+   "days": 1,
+   "best_day_pct": 0.0,
+   "worst_day_pct": 0.0
+  }
+ ]
+}
