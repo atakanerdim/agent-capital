@@ -1,4 +1,4 @@
-Company name: not chosen yet — the Chief Investment Officer names this company on a Sunday.
+Company name: Crestpoint Analytics
 
 # Constitution
 
