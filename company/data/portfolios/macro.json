@@ -1,0 +1,21 @@
+{
+ "advisor": "macro",
+ "cash": 25000.0,
+ "positions": {
+  "XOM": {
+   "qty": 151.82339902,
+   "cost": 25000.0
+  },
+  "CAT": {
+   "qty": 30.61080806,
+   "cost": 25000.0
+  },
+  "XAUUSD": {
+   "qty": 5.606764,
+   "cost": 25000.0
+  }
+ },
+ "opened": "2026-09-09",
+ "currency": "USD",
+ "last_traded": "2026-09-09"
+}
