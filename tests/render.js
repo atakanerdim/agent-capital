@@ -36,7 +36,7 @@ const allHtml = PAGES.map(function (p) { return html[p]; }).join("\n");
 /* ---- 1. every file the script loads was actually published ---------------- */
 
 const REQUIRED = {
-  "view-standings.json": ["rows", "dates", "series", "holds", "record"],
+  "view-standings.json": ["rows", "dates", "series", "holds", "record", "alloc", "instruments"],
   "view-today.json": ["entries"],
   "view-advisor.json": ["books"],
   "view-desk.json": ["advisors", "staff", "portraits"],

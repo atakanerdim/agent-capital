@@ -108,16 +108,14 @@
             <blockquote id="letter-text"></blockquote>
           </div>
 
-          <div class="rewrite">
+          <div class="rewrite" id="rewrite" hidden>
             <h3>Brief rewritten</h3>
-            <span class="when">Sunday 30 August 2026 &middot; Marisol Vega, currencies</span>
+            <span class="when" id="rewrite-when"></span>
             <dl>
-              <dt>Was</dt>
-              <dd class="was">Trade the majors actively. Take small positions often and let the spread of them carry the book.</dd>
-              <dt>Now</dt>
-              <dd>Trade a currency only when two of your reasons point the same way. Fewer positions, held longer, and never more than three at once.</dd>
-              <dt>Why</dt>
-              <dd>Twenty-one days, thirty-one orders, a book below where it started.</dd>
+              <dt>What the chief changed</dt>
+              <dd id="rewrite-changed"></dd>
+              <dt>Why this advisor</dt>
+              <dd id="rewrite-why"></dd>
             </dl>
           </div>
         </div>
@@ -167,6 +165,12 @@
   </tr>
 </template>
 
+<template id="tpl-prow">
+  <tr class="prow">
+    <td colspan="9"></td>
+  </tr>
+</template>
+
 <template id="tpl-portrait">
   <span class="portrait" aria-hidden="true"><span class="init"></span></span>
 </template>
@@ -182,7 +186,7 @@
           <p class="dtoday"></p>
         </div>
         <div>
-          <h4>Since 7 August</h4>
+          <h4 class="sincehead">Since the open</h4>
           <div class="sparkhost"></div>
           <p class="sparknote"></p>
         </div>

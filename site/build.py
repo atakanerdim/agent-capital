@@ -13,6 +13,7 @@ company/hallway is left exactly as written, because that file is the record and 
 record does not get tidied.
 """
 import datetime as dt
+import importlib.util
 import json
 import re
 import shutil
@@ -94,6 +95,7 @@ def _outcome(record):
 def _decision_line(date, record):
     """One sentence a reader can follow, built from what the day actually recorded."""
     held = record.get("held")
+    note = (record.get("note") or "").strip()
     if held:
         kind = held.get("kind") if isinstance(held, dict) else "unreachable"
         why = (held.get("why") if isinstance(held, dict) else str(held)) or ""
@@ -101,13 +103,103 @@ def _decision_line(date, record):
                                   "was marked unchanged.",
                    "all_rejected": "Every order was refused.",
                    "chose_to_hold": "Held."}.get(kind, "Held.")
+        if kind == "chose_to_hold" and why == "the advisor sent no orders":
+            why = note  # the advisor's own reason says more than the desk's default
         return f"{opening} {why}".strip()
     parts = []
     for order in record.get("orders") or []:
-        verb = "Bought" if order.get("action") == "buy" else "Sold"
+        verb = "bought" if order.get("action") == "buy" else "sold"
         parts.append(f"{verb} ${order.get('amount_usd', 0):,.0f} of {order.get('instrument', '')}")
-    tail = record.get("note") or ""
-    return (" and ".join(parts) + ". " + tail).strip()
+    said = (", ".join(parts[:-1]) + " and " + parts[-1]) if len(parts) > 1 else "".join(parts)
+    said = said[:1].upper() + said[1:]
+    return (said + ". " + note).strip()
+
+def _logic(root, name):
+    spec = importlib.util.spec_from_file_location(
+        f"site_logic_{name}", Path(root) / "company/agents/logic" / f"{name}.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+# Colour slots a pie can give out before the rest of a book folds into "Other".
+PIE_SLOTS = 7
+
+
+def allocations(root, rows, dates):
+    """What every book held at every close, rebuilt from the record.
+
+    A portfolio file only knows today. The mix a book carried last Tuesday is not
+    stored anywhere, but it does not need to be: the orders the desk accepted and
+    the prices it recorded are both on disk, and pushing the one through the
+    desk's own `risk.apply_order` gives it back exactly (article 12 is the promise
+    that this works). Each close is valued at that day's recorded price, or at cost
+    when there was none, the same rule the ledger uses.
+
+    If the rebuilt book does not land on the portfolio file as it stands today,
+    the history is not published — only today's mix, read straight from the file.
+    A pie of a past that does not add up to the present is an invented fact.
+    """
+    data = root / "company/data"
+    try:
+        risk = _logic(root, "risk")
+        opening = _logic(root, "ledger").OPENING_CASH
+    except Exception:  # noqa: BLE001 — the site must build even if logic moved
+        return {}
+    quotes = {d: _read_json(data / "prices" / f"{d}.json", {}).get("quotes") or {}
+              for d in dates}
+    orders = {d: _read_json(data / "orders" / f"{d}.json", {}).get("advisors") or {}
+              for d in dates}
+
+    def worth(positions, prices):
+        parts = {}
+        for symbol, held in positions.items():
+            close = (prices.get(symbol) or {}).get("close")
+            value = held["qty"] * float(close) if close and float(close) > 0 \
+                else held.get("cost", 0.0)
+            parts[symbol] = round(value, 2)
+        return parts
+
+    out = {}
+    for row in rows:
+        key = row["advisor"]
+        actual = _read_json(data / "portfolios" / f"{key}.json", None)
+        if not actual:
+            continue
+        days, replayed = [], True
+        if key == "benchmark" or actual.get("frozen"):
+            # Bought once on day one and never touched: the holdings are the file's.
+            for d in dates:
+                days.append({"date": d, "cash": round(actual.get("cash", 0.0), 2),
+                             "parts": worth(actual.get("positions") or {}, quotes[d])})
+        else:
+            book = {"cash": float(opening), "positions": {}}
+            for d in dates:
+                for order in (orders[d].get(key) or {}).get("orders") or []:
+                    risk.apply_order(book, order)
+                book["cash"] = round(book["cash"], 2)
+                for held in book["positions"].values():
+                    held["qty"] = round(held["qty"], 8)
+                    held["cost"] = round(held["cost"], 2)
+                days.append({"date": d, "cash": book["cash"],
+                             "parts": worth(book["positions"], quotes[d])})
+            want = actual.get("positions") or {}
+            replayed = (abs(book["cash"] - float(actual.get("cash", 0.0))) < 0.05
+                        and set(want) == set(book["positions"])
+                        and all(abs(want[s]["qty"] - book["positions"][s]["qty"]) < 1e-6
+                                for s in want))
+            if not replayed:
+                last = dates[-1] if dates else ""
+                days = [{"date": last, "cash": round(actual.get("cash", 0.0), 2),
+                         "parts": worth(want, quotes.get(last, {}))}]
+        peak = {}
+        for day in days:
+            total = day["cash"] + sum(day["parts"].values()) or 1.0
+            for symbol, value in day["parts"].items():
+                peak[symbol] = max(peak.get(symbol, 0.0), value / total)
+        slots = sorted(peak, key=lambda s: (-peak[s], s))[:PIE_SLOTS]
+        out[key] = {"slots": slots, "days": days, "history": replayed}
+    return out
 
 
 def views(root, out, roster):
@@ -170,9 +262,17 @@ def views(root, out, roster):
             "universe": len(priced.get("quotes") or {}) + len(priced.get("short") or []),
             "short": [s.get("instrument") for s in (priced.get("short") or [])][:12]}
 
+    alloc = allocations(root, rows, dates)
+    universe = {i["id"]: i for i in (_read_json(data / "universe.json", {})
+                                     .get("instruments") or [])}
+    held_ever = sorted({s for a in alloc.values() for d in a["days"] for s in d["parts"]})
+    instruments = {s: {"name": (universe.get(s) or {}).get("name", s),
+                       "class": (universe.get(s) or {}).get("class", "")} for s in held_ever}
+
     (out / "view-standings.json").write_text(json.dumps(
         {"as_of": as_of, "day": len(dates), "rows": rows, "dates": dates,
-         "series": series, "holds": holds, "record": record, "feed": feed},
+         "series": series, "holds": holds, "record": record, "feed": feed,
+         "alloc": alloc, "instruments": instruments},
         ensure_ascii=False, indent=1), encoding="utf-8")
 
     today = history.get(as_of, {})
@@ -247,16 +347,43 @@ def views(root, out, roster):
         if not found:
             return None
         body = found[-1].read_text(encoding="utf-8")
-        paragraphs = [p.strip() for p in body.split("\n\n")
-                      if p.strip() and not p.strip().startswith(("#", "---", "|"))]
+        body = body.split("\n## Desk business")[0].split("\n---")[0]
+        paragraphs = []
+        for block in body.split("\n\n"):
+            text = " ".join(block.split())
+            # Headings, lists, tables and a lone bold line are the letter's
+            # scaffolding. Printed on their own they read as "**What we did**".
+            if not text or text.startswith(("#", "---", "|", "- ", "* ")):
+                continue
+            if re.fullmatch(r"\*\*[^*]+\*\*:?", text):
+                continue
+            paragraphs.append(re.sub(r"\*\*([^*]+)\*\*|\*([^*]+)\*",
+                                     lambda m: m.group(1) or m.group(2), text))
         if not paragraphs:
             return None
-        return {"date": found[-1].stem[:10],
-                "text": " ".join(paragraphs[0].split())[:700]}
+        return {"date": found[-1].stem[:10], "text": paragraphs[0][:900]}
+
+    def latest_rewrite():
+        """The month's rewritten brief, as the chief recorded it — or nothing."""
+        folder = root / "company/evolution"
+        found = sorted(folder.glob("*.md")) if folder.exists() else []
+        if not found:
+            return None
+        body = found[-1].read_text(encoding="utf-8")
+        stem = found[-1].stem
+        advisor = stem[11:]
+        why = re.search(r"\*\*Why this advisor:\*\*\s*(.+)", body)
+        changed = re.search(r"\*\*What the chief changed\*\*\s*\n\n(.+?)\n\n\*\*", body, re.S)
+        person = by_id.get(advisor, {})
+        return {"date": stem[:10], "advisor": advisor,
+                "name": person.get("name", advisor), "title": person.get("title", ""),
+                "why": " ".join(why.group(1).split()) if why else "",
+                "changed": " ".join(changed.group(1).split())[:900] if changed else ""}
 
     (out / "view-desk.json").write_text(json.dumps(
         {"as_of": as_of, "advisors": advisors, "staff": staff, "portraits": portraits,
-         "review": latest_note("evaluator"), "letter": latest_note("chief")},
+         "review": latest_note("evaluator"), "letter": latest_note("chief"),
+         "rewrite": latest_rewrite()},
         ensure_ascii=False, indent=1), encoding="utf-8")
 
 

@@ -471,7 +471,6 @@ tr.drow>td{display:block;padding:0 0 var(--s4)!important;border:0!important}
   .day{display:grid;grid-template-columns:190px 1fr;gap:var(--s4)}
   .day-head{flex-direction:column;align-items:flex-start;margin:0;gap:var(--s1)}
   .day-head .navline{margin-left:0}
-  .roster .person:first-child{grid-column:span 2}
 }
 .inst{font-size:22px}
 
@@ -507,3 +506,82 @@ tr.drow>td{display:block;padding:0 0 var(--s4)!important;border:0!important}
   padding:var(--s3);margin:0 0 var(--s4);border-radius:var(--r)}
 .health p{margin:0 0 var(--s1);font-size:14.5px;line-height:1.45;color:var(--ink)}
 .health p:last-child{margin-bottom:0}
+
+/* ---------- what a book holds: pie, legend, every close ----------
+   Colours identify instruments inside one book and are always printed beside
+   a label and a share; the figure never depends on telling two colours apart. */
+.alloc{display:grid;gap:var(--s2) var(--s4);align-items:start;grid-template-columns:auto 1fr}
+.alloc .ahistbox{grid-column:1/-1;min-width:0}
+.alloc .ahead{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);
+  font-weight:600;margin:0 0 6px}
+.donut{display:block;overflow:visible}
+.donut .slice{stroke:var(--paper);stroke-width:2;stroke-linejoin:round;cursor:default}
+.donut .slice:hover{opacity:.82}
+.donut .d-big{font-family:var(--serif);font-size:17px;font-weight:600;fill:var(--ink);
+  font-variant-numeric:tabular-nums lining-nums}
+.donut .d-small{font-family:var(--serif);font-size:9.5px;letter-spacing:.06em;fill:var(--ink-3);
+  text-transform:uppercase}
+.alegend{list-style:none;margin:0;padding:0;display:grid;gap:3px;font-size:13.5px;max-width:34em}
+.alegend li{display:grid;grid-template-columns:12px auto 1fr auto;gap:7px;align-items:baseline}
+.alegend i{width:11px;height:11px;border-radius:2px;display:inline-block;align-self:center}
+.alegend i.cash{box-shadow:inset 0 0 0 1px var(--rule-strong)}
+.alegend b{font-weight:600}
+.alegend .an{color:var(--ink-2);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.alegend .av{text-align:right;color:var(--ink);font-variant-numeric:tabular-nums lining-nums}
+.ahist svg{display:block;max-width:100%}
+.ahist rect.cash{fill:#d6d3d2}
+.ahist rect.hit{fill:transparent;cursor:default}
+.ahist .col:hover rect:not(.hit){opacity:.8}
+.ahist-axis span{white-space:nowrap}
+.ahist-axis{display:flex;justify-content:space-between;gap:var(--s2);max-width:100%;
+  font-size:11px;color:var(--ink-3);margin-top:3px;font-variant-numeric:tabular-nums lining-nums}
+.anote{margin:6px 0 0!important;font-size:13px!important;color:var(--ink-2);max-width:52ch}
+
+/* standings: a portfolio line under every advisor, always open */
+table.standings tbody tr.prow{display:block}
+table.standings tbody tr.prow>td{display:block;padding:0 0 var(--s3);border:0}
+tr.prow .alloc{background:var(--paper-2);border-radius:var(--r);padding:var(--s3);
+  border-left:3px solid var(--cyan)}
+tr.prow.is-benchmark-p .alloc{border-left-color:var(--mag-deep)}
+@media (min-width:760px){
+  .alloc-row{grid-template-columns:auto minmax(15em,1fr) minmax(14em,1fr)}
+  .alloc-row .ahistbox{grid-column:auto}
+}
+@media (min-width:1120px){
+  table.standings tbody tr.has-prow>td,table.standings tbody tr.has-prow>th{border-bottom:0}
+  table.standings tbody tr.prow{display:table-row}
+  table.standings tbody tr.prow>td{display:table-cell;padding:0 0 var(--s3) 140px;
+    border-bottom:1px solid var(--rule)}
+}
+
+/* the desk page: under every advisor card */
+.alloc-card{grid-template-columns:auto 1fr;margin-top:var(--s2);padding-top:var(--s2);
+  border-top:1px solid var(--rule);max-width:320px}
+.alloc-card .alegend{font-size:12.5px}
+.alloc-card .alegend .an{display:none}
+.alloc-card .alegend li{grid-template-columns:12px 1fr auto}
+.alloc-card .ahead{font-size:10px}
+
+/* today: the book after the day's orders, beside the name */
+.alloc-day{grid-template-columns:auto 1fr;margin-top:var(--s2);gap:var(--s2)}
+.alloc-day .alegend{font-size:12.5px}
+.alloc-day .alegend .an{display:none}
+.alloc-day .alegend li{grid-template-columns:12px 1fr auto}
+.alloc-day .ahead{display:none}
+.alloc-day .donut .d-big{font-size:14px}
+.alloc-day .donut .d-small{font-size:8px}
+
+/* the book page */
+.book-picker{margin:0 0 var(--s4)}
+.book-alloc{margin:var(--s4) 0 var(--s6);padding:var(--s4) 0;border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule)}
+.alloc-book .donut .d-big{font-size:26px}
+.alloc-book .donut .d-small{font-size:11px}
+@media (min-width:860px){
+  .alloc-book{grid-template-columns:auto minmax(16em,1fr) minmax(16em,1.2fr);gap:var(--s6)}
+  .alloc-book .ahistbox{grid-column:auto}
+}
+
+.tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--paper);
+  font-size:12.5px;line-height:1.35;padding:6px 9px;border-radius:var(--r);max-width:320px;
+  box-shadow:0 2px 8px rgba(0,0,0,.18)}
