@@ -68,6 +68,12 @@ def company(tmp_path, monkeypatch):
     for d in ("kernel", "company", "site"):
         shutil.copytree(ROOT / d, tmp_path / d)
     (tmp_path / "out").mkdir()
+    # site/data is build output, not source. A working copy that has ever been
+    # built carries it, and on Windows it arrives READONLY|DIRECTORY; build.py's
+    # own clean-out then dies on "Access is denied" before a single test runs.
+    # A pristine copy has never been built.
+    if (tmp_path / "site/data").exists():
+        _rmtree(tmp_path / "site/data")
 
     shutil.copytree(ROOT / "assets", tmp_path / "assets")
     shutil.copytree(ROOT / "tests", tmp_path / "tests")

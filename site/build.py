@@ -15,8 +15,10 @@ record does not get tidied.
 import datetime as dt
 import importlib.util
 import json
+import os
 import re
 import shutil
+import stat
 import subprocess
 import sys
 from pathlib import Path
@@ -387,6 +389,19 @@ def views(root, out, roster):
         ensure_ascii=False, indent=1), encoding="utf-8")
 
 
+def _clear(path):
+    """Remove the previous build. On Windows a directory carrying the read-only
+    attribute refuses rmdir with "Access is denied" even when empty; clear the
+    flag first. POSIX is left alone: S_IWRITE there would strip read and execute."""
+    if os.name == "nt":
+        for item in (path, *path.rglob("*")):
+            try:
+                os.chmod(item, stat.S_IWRITE)
+            except OSError:
+                pass
+    shutil.rmtree(path)
+
+
 def _copy_json_tree(source, target):
     if source.exists():
         shutil.copytree(source, target)
@@ -399,7 +414,7 @@ def _latest(folder, suffix=".json"):
 
 def main():
     if OUT.exists():
-        shutil.rmtree(OUT)
+        _clear(OUT)
     OUT.mkdir(parents=True)
 
     data = ROOT / "company/data"
