@@ -44,7 +44,8 @@ def main():
         answers = []
         for entry in instrument.get("quotes", []):
             single = dict(instrument, quotes=[entry])
-            price, source, tried = market.quote(single, sources)
+            record, tried = market.quote(single, sources)
+            price = record["close"] if record else None
             name = entry.get("source", "?")
             if price is not None:
                 per_source.setdefault(name, {"ok": 0, "failed": 0})["ok"] += 1
