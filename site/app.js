@@ -31,6 +31,7 @@
   /* What each book held at each close: {advisor: {slots, days:[{date, cash, parts}]}}. */
   let ALLOC = {};
   let INSTR = {};
+  let SWEEP = null;
   const RECORD_KEY = {m:"moved", h:"held", r:"refused", u:"unreachable"};
 
   const $ = function (sel, root) { return (root || document).querySelector(sel); };
@@ -212,7 +213,8 @@
       out.push({key:"__other", label:"Other", name:otherN + " more holding" + (otherN === 1 ? "" : "s"), value:other, color:OTHER_COLOR});
     }
     if (day.cash > 0.5) {
-      out.push({key:"__cash", label:"Cash", name:"not invested", value:day.cash, color:CASH_COLOR});
+      out.push({key:"__cash", label:"Cash", name:SWEEP ? "T-bill sweep, " + SWEEP.pct.toFixed(2) + "%" :
+        "uninvested", value:day.cash, color:CASH_COLOR});
     }
     out.forEach(function (p) { p.share = total ? p.value / total : 0; });
     return {parts:out, total:total};
@@ -262,7 +264,7 @@
   }
 
   function donut(mix, size, caption) {
-    const r1 = size / 2 - 1, r0 = r1 * 0.58, c = size / 2;
+    const r1 = size / 2 - 1, r0 = r1 * 0.62, c = size / 2;
     const svg = sv("svg", {class:"donut", viewBox:"0 0 " + size + " " + size, width:size, height:size,
       role:"img", "aria-label":caption});
     let a = 0;
@@ -285,10 +287,15 @@
     });
     const invested = mix.parts.filter(function (p) { return p.key !== "__cash"; })
       .reduce(function (t, p) { return t + p.share; }, 0);
-    const big = sv("text", {x:c, y:c + (size > 100 ? 2 : 1), "text-anchor":"middle", class:"d-big"});
+    /* Sized from the hole, not the page: the label has to fit inside r0 in any
+       font the reader's machine falls back to, so it is scaled and never spaced. */
+    const bigPx = Math.round(r0 * 0.5), smallPx = Math.max(10, Math.round(r0 * 0.22));
+    const big = sv("text", {x:c, y:c + bigPx * 0.2, "text-anchor":"middle", class:"d-big",
+      "font-size":bigPx});
     big.textContent = shareText(invested);
-    const small = sv("text", {x:c, y:c + (size > 100 ? 17 : 12), "text-anchor":"middle", class:"d-small"});
-    small.textContent = "invested";
+    const small = sv("text", {x:c, y:c + bigPx * 0.2 + smallPx + 3, "text-anchor":"middle",
+      class:"d-small", "font-size":smallPx});
+    small.textContent = "in markets";
     svg.appendChild(big);
     svg.appendChild(small);
     return svg;
@@ -373,7 +380,7 @@
     if (!a || !a.days || !a.days.length) { return null; }
     const last = a.days[a.days.length - 1];
     const mix = mixOf(key, last);
-    const px = {row:104, card:92, day:72, book:168}[size] || 96;
+    const px = {row:176, card:168, day:150, book:240}[size] || 160;
     const host = document.createElement("div");
     host.className = "alloc alloc-" + size;
 
@@ -390,7 +397,7 @@
     h.className = "ahead";
     h.textContent = "Holdings at the close, " + shortDate(last.date);
     side.appendChild(h);
-    side.appendChild(legendList(mix, size === "day" ? 4 : (size === "card" ? 5 : 0)));
+    side.appendChild(legendList(mix, size === "day" || size === "card" ? 6 : 0));
     host.appendChild(side);
 
     if (size !== "day") {
@@ -430,8 +437,8 @@
     const opened = Object.keys(last.parts).filter(function (s) { return !(s in first.parts); });
     const closed = Object.keys(first.parts).filter(function (s) { return !(s in last.parts); });
     const bits = [];
-    bits.push("Invested " + shareText(inv(first)) + " on " + shortDate(first.date) + ", " +
-      shareText(inv(last)) + " on " + shortDate(last.date) + ".");
+    bits.push("In markets " + shareText(inv(first)) + " on " + shortDate(first.date) + ", " +
+      shareText(inv(last)) + " on " + shortDate(last.date) + "; the rest earned the T-bill sweep.");
     if (opened.length) { bits.push("Added " + opened.join(", ") + "."); }
     if (closed.length) { bits.push("Closed " + closed.join(", ") + "."); }
     if (!opened.length && !closed.length && !Object.keys(last.parts).length) {
@@ -823,8 +830,6 @@
     const slot = $("#advisor-pslot");
     if (slot) {
       const pn = portraitNode(b.advisor === "benchmark" ? "__none" : b.advisor, b.name, "lg");
-      pn.style.flex = "none";
-      pn.style.width = "130px";
       pn.id = "advisor-pslot";
       slot.replaceWith(pn);
     }
@@ -1127,6 +1132,7 @@
         RECORD = s.record || {};
         ALLOC = s.alloc || {};
         INSTR = s.instruments || {};
+        SWEEP = s.sweep && typeof s.sweep.pct === "number" ? s.sweep : null;
         stamp(s.as_of, s.day);
         renderHealth(s.as_of, s.feed);
       }

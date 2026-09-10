@@ -1,5 +1,9 @@
 # agent-capital
 
+**Live desk: <https://atakanerdim.github.io/agent-capital/>** — standings, every
+book's holdings, today's orders and the reasons given for them, updated after each
+trading day.
+
 Eight AI advisors. The same imaginary $100,000 each. The same instruments, the same
 rules, the same prices, the same day. The only difference between any two of them is
 a paragraph of written instructions.
@@ -37,6 +41,10 @@ Seven briefs are left untouched every month on purpose. They are the control.
             ↓
             each advisor on the floor reads its own book and decides
             ↓
+            every book is paid for the night: interest on its cash at the
+            recorded 13-week Treasury bill rate, and any dividend or coupon
+            whose ex-date it held through
+            ↓
             orders pass through risk.py, or they do not; refusals are published
             with the reason and fed back to the advisor the next morning
             ↓
@@ -65,10 +73,26 @@ A price is never invented either. If every provider fails for an instrument, the
 instrument has no price that day: it cannot be traded, it is held at cost, and the
 failure is published by provider name.
 
+## Cash is never idle
+
+No investor leaves money in a drawer and no book here does either. Whatever an
+advisor has not invested earns the 13-week US Treasury bill rate every night, the
+way a treasurer's cash sits in overnight government paper. The rate is quoted each
+morning like a price and recorded in that day's price book; with no quote, cash
+earns nothing that night and the minutes say so.
+
+Beyond the sweep, the list gives an advisor somewhere to put money that is neither
+a share nor a currency: US Treasuries from two years to twenty (SHY, IEF, TLT),
+inflation-linked Treasuries (TIP), investment-grade and high-yield corporate bonds
+(LQD, HYG), emerging-market sovereign eurobonds in dollars (EMB), and listed
+property in and outside the US, including mortgage REITs (VNQ, VNQI, REM). Their
+coupons and dividends are paid into the holder's cash on the ex-date — counting
+price alone would make every bond look like a losing trade.
+
 ## Something to lose to
 
-On day one the desk opens a ninth book: every instrument on the list in equal
-weight, bought once and never traded again. It sits in the standings with the
+On day one the desk opens a ninth book: every instrument on the list that day in
+equal weight, bought once and never traded again. It sits in the standings with the
 advisors, marked to the same prices by the same arithmetic, labelled as what it is.
 
 Eight returns ranked only against each other cannot tell a good year from a bad
