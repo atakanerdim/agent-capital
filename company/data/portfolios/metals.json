@@ -1,8 +1,13 @@
 {
  "advisor": "metals",
- "cash": 100000.0,
- "positions": {},
+ "cash": 80000.0,
+ "positions": {
+  "XAUUSD": {
+   "qty": 4.5199783,
+   "cost": 20000.0
+  }
+ },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": ""
+ "last_traded": "2026-09-10"
 }

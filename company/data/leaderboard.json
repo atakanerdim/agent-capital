@@ -1,5 +1,5 @@
 {
- "date": "2026-09-09",
+ "date": "2026-09-10",
  "opening_cash": 100000.0,
  "rows": [
   {
@@ -10,7 +10,7 @@
    "nav": 100000.0,
    "return_pct": 0.0,
    "max_drawdown_pct": 0.0,
-   "days": 1,
+   "days": 2,
    "best_day_pct": 0.0,
    "worst_day_pct": 0.0
   },
@@ -22,19 +22,7 @@
    "nav": 100000.0,
    "return_pct": 0.0,
    "max_drawdown_pct": 0.0,
-   "days": 1,
-   "best_day_pct": 0.0,
-   "worst_day_pct": 0.0
-  },
-  {
-   "advisor": "macro",
-   "name": "Emeka Nwosu",
-   "mandate": "Start from the world — rates, oil, the dollar — and let the holdings follow from it.",
-   "is_benchmark": false,
-   "nav": 100000.0,
-   "return_pct": 0.0,
-   "max_drawdown_pct": 0.0,
-   "days": 1,
+   "days": 2,
    "best_day_pct": 0.0,
    "worst_day_pct": 0.0
   },
@@ -46,19 +34,7 @@
    "nav": 100000.0,
    "return_pct": 0.0,
    "max_drawdown_pct": 0.0,
-   "days": 1,
-   "best_day_pct": 0.0,
-   "worst_day_pct": 0.0
-  },
-  {
-   "advisor": "contrarian",
-   "name": "Ines Kovac",
-   "mandate": "Take the other side of whatever this desk agrees on. Consensus is the signal.",
-   "is_benchmark": false,
-   "nav": 100000.0,
-   "return_pct": 0.0,
-   "max_drawdown_pct": 0.0,
-   "days": 1,
+   "days": 2,
    "best_day_pct": 0.0,
    "worst_day_pct": 0.0
   },
@@ -70,7 +46,7 @@
    "nav": 100000.0,
    "return_pct": 0.0,
    "max_drawdown_pct": 0.0,
-   "days": 1,
+   "days": 2,
    "best_day_pct": 0.0,
    "worst_day_pct": 0.0
   },
@@ -82,7 +58,7 @@
    "nav": 100000.0,
    "return_pct": 0.0,
    "max_drawdown_pct": 0.0,
-   "days": 1,
+   "days": 2,
    "best_day_pct": 0.0,
    "worst_day_pct": 0.0
   },
@@ -94,21 +70,45 @@
    "nav": 100000.0,
    "return_pct": 0.0,
    "max_drawdown_pct": 0.0,
-   "days": 1,
+   "days": 2,
    "best_day_pct": 0.0,
    "worst_day_pct": 0.0
+  },
+  {
+   "advisor": "contrarian",
+   "name": "Ines Kovac",
+   "mandate": "Take the other side of whatever this desk agrees on. Consensus is the signal.",
+   "is_benchmark": false,
+   "nav": 99972.5,
+   "return_pct": -0.03,
+   "max_drawdown_pct": 0.03,
+   "days": 2,
+   "best_day_pct": -0.03,
+   "worst_day_pct": -0.03
   },
   {
    "advisor": "benchmark",
    "name": "Buy and hold",
    "mandate": "Every instrument the desk may touch, equal weight, bought on the first day and never traded again.",
    "is_benchmark": true,
-   "nav": 100000.0,
-   "return_pct": 0.0,
-   "max_drawdown_pct": 0.0,
-   "days": 1,
-   "best_day_pct": 0.0,
-   "worst_day_pct": 0.0
+   "nav": 99833.57,
+   "return_pct": -0.17,
+   "max_drawdown_pct": 0.17,
+   "days": 2,
+   "best_day_pct": -0.17,
+   "worst_day_pct": -0.17
+  },
+  {
+   "advisor": "macro",
+   "name": "Emeka Nwosu",
+   "mandate": "Start from the world — rates, oil, the dollar — and let the holdings follow from it.",
+   "is_benchmark": false,
+   "nav": 99707.72,
+   "return_pct": -0.29,
+   "max_drawdown_pct": 0.29,
+   "days": 2,
+   "best_day_pct": -0.29,
+   "worst_day_pct": -0.29
   }
  ]
 }
