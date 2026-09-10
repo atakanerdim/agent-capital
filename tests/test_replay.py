@@ -115,8 +115,13 @@ def test_a_policy_cannot_move_money_by_editing_the_book_it_is_shown(company, log
         return []
 
     book, navs = replay.run(company, greedy)
-    assert book["cash"] == 100_000.0 and not book["positions"]
-    assert all(row["nav"] == 100_000.0 for row in navs)
+    # Idle cash earns the recorded sweep rate, so the untouched book is worth what
+    # a book that did nothing is worth — not a cent of what the policy wrote in.
+    idle, _ = replay.run(company, lambda date, quotes, book: [])
+    assert book["cash"] == idle["cash"] and not book["positions"]
+    assert idle["cash"] < 100_100.0
+    _, idle_navs = replay.run(company, lambda date, quotes, book: [])
+    assert [row["nav"] for row in navs] == [row["nav"] for row in idle_navs]
 
 
 def test_a_replayed_policy_lives_under_the_same_limits_as_the_advisors(company, logic):
@@ -144,7 +149,7 @@ def test_the_grid_prices_every_choice_the_desk_did_not_make(company, logic):
     grid = replay.counterfactual_grid(company, horizons=(1,))
     # 4 Sep -> 7 Sep is the next recorded day, and every price rose 2% that step.
     step = grid["2026-09-04"][1]
-    assert len(step) == 27, "every instrument, not only the ones traded"
+    assert len(step) == len(json.loads((company / "company/data/universe.json").read_text(encoding="utf-8"))["instruments"]), "every instrument, not only the ones traded"
     for symbol, moved in step.items():
         # The fixture rounds each price to six decimals, which is visible in the
         # returns of the instruments quoted in thousandths — JPYUSD trades near

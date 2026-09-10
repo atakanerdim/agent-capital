@@ -165,8 +165,25 @@ def _yesterday(root, advisor, date):
             f"{lines}\nDo not send those again in the same shape.\n")
 
 
+def _carry_lines(rates, record):
+    """What the book's idle cash earns, and what the book was paid since last time."""
+    sweep = (rates or {}).get("TBILL3M") or {}
+    if isinstance(sweep.get("pct"), (int, float)):
+        rate = (f"  uninvested cash is swept overnight at {sweep['pct']:.2f}% a year "
+                f"(US 13-week Treasury bill"
+                + (f", as of {sweep['asof']}" if sweep.get("asof") else "") + ")\n")
+    else:
+        rate = "  no sweep rate could be quoted today; cash earns nothing until one is\n"
+    if not record:
+        return rate
+    paid = [f"interest ${record['interest']:,.2f} over {record['days']} day(s)"]
+    for d in record.get("distributions") or []:
+        paid.append(f"{d['instrument']} paid ${d['amount']:,.2f} (ex-date {d['ex_date']})")
+    return rate + "  paid into your cash since your last valuation: " + "; ".join(paid) + "\n"
+
+
 def _decide(chat, root, agent, advisor, ctx, quotes, book, positions, nav, leaderboard,
-            news_block="  (no outside facts were collected today)"):
+            news_block="  (no outside facts were collected today)", carry=None):
     """Ask one advisor what it wants to do. Returns (parsed, error_or_None)."""
     system = _read_text(root, f"company/agents/prompts/{advisor['id']}.md")
     memory = _read_text(root, f"company/agents/memory/{advisor['id']}.md")
@@ -177,6 +194,7 @@ def _decide(chat, root, agent, advisor, ctx, quotes, book, positions, nav, leade
         f"{standing}\n"
         f"YOUR BOOK\n  cash ${book['cash']:,.2f}\n  net asset value ${nav:,.2f}\n"
         f"  started at $100,000.00 on {book.get('opened', '?')}\n"
+        f"{_carry_lines(*(carry or ({}, None)))}"
         f"{_book_table(book, positions)}\n\n"
         f"THE DESK TODAY\n{leaderboard}\n\n"
         f"PRICES YOU MAY TRADE AT (USD; anything not listed has no price today "
@@ -195,7 +213,13 @@ def _decide(chat, root, agent, advisor, ctx, quotes, book, positions, nav, leade
         f"  One instrument may never exceed 25% of your book.\n"
         f"  At most 12 holdings and at most 5 orders in a day.\n"
         f"  Orders are in dollars, not shares. The smallest is $100.\n"
-        f"  Selling more than you hold sells all of it; that is allowed and normal.\n\n"
+        f"  Selling more than you hold sells all of it; that is allowed and normal.\n"
+        f"  Cash is never idle: whatever you leave uninvested earns the Treasury bill\n"
+        f"  rate above, overnight, automatically. Holding cash is a choice to earn that\n"
+        f"  rate; every other instrument has to beat it to be worth owning.\n"
+        f"  Bond and property funds pay distributions; they are credited to your cash on\n"
+        f"  the ex-date, the day the price drops by the same amount. Prices alone\n"
+        f"  understate what they return.\n\n"
         f"{CONTRACT}")
     raw = chat(ctx["house"] + "\n" + system, user, want_json=True, root=root)
     return _parse(raw)
@@ -291,6 +315,21 @@ def run(agent, ctx, chat, root):
     # prices are this file, and any later opening would be buying with hindsight.
     ledger.open_benchmark(root, quotes, date)
 
+    # ---- 1b. what every book earned overnight ---------------------------
+    # Before anybody decides, every book is paid for the time since it was last
+    # valued: interest on its cash at the recorded sweep rate, and the
+    # distributions on what it held. Nobody chooses this and no model is asked;
+    # it is arithmetic on the price book, applied to advisors and benchmark alike.
+    income = {}
+    for key in [a["id"] for a in advisors] + [ledger.BENCHMARK_ID]:
+        record = ledger.accrue(root, key, date, book_of_prices)
+        if record is not None:
+            income[key] = record
+    if income or book_of_prices.get("rates") is not None:
+        files[f"company/data/income/{date}.json"] = json.dumps(
+            {"date": date, "rates": book_of_prices.get("rates") or {},
+             "books": income}, ensure_ascii=False, indent=1) + "\n"
+
     # Everything published that the desk could read today — recorded whole, the way
     # the price book is, so that what was available but never shown stays part of
     # the record. Which of it any advisor actually saw is decided per advisor,
@@ -338,7 +377,9 @@ def run(agent, ctx, chat, root):
                 "news_shown": [item["id"] for item in shown]}
         try:
             answer, why = _decide(chat, root, agent, advisor, ctx, quotes, book,
-                                  positions, nav, standings, news.render(shown))
+                                  positions, nav, standings, news.render(shown),
+                                  carry=(book_of_prices.get("rates") or {},
+                                         income.get(advisor["id"])))
         except Exception as e:                      # a provider chain that fell over
             answer, why = None, f"{type(e).__name__}: {e}"[:200]
         if answer is None:
@@ -392,7 +433,7 @@ def run(agent, ctx, chat, root):
     # The ledger writes portfolios and NAV files to disk as it goes, so they are
     # already in the working tree; the shift commits everything it finds.
     files[f"company/minutes/{date}-desk.md"] = _minutes(
-        agent, date, book_of_prices, day_record, board, hallway_lines)
+        agent, date, book_of_prices, day_record, board, hallway_lines, income)
 
     traded = sum(len(r["orders"]) for r in day_record.values())
     held = sum(1 for r in day_record.values() if _kind(r) == "unreachable")
@@ -413,10 +454,28 @@ def run(agent, ctx, chat, root):
     }
 
 
-def _minutes(agent, date, priced, day_record, board, hallway_lines):
+def _minutes(agent, date, priced, day_record, board, hallway_lines, income=None):
     """The day, written for somebody reading the record a year from now."""
     out = [f"# {agent['ad']} — trading day {date}", ""]
     out += [f"Priced {priced['covered']} instruments."]
+    sweep = ((priced.get("rates") or {}).get("TBILL3M") or {})
+    if isinstance(sweep.get("pct"), (int, float)):
+        out += [f"Cash sweep rate: {sweep['pct']:.2f}% (13-week Treasury bill, "
+                f"{sweep.get('source', '?')}, as of {sweep.get('asof') or 'unstated'})."]
+    elif priced.get("rates_short"):
+        out += ["No sweep rate could be quoted today: " + "; ".join(
+            f"{t['source']}: {t['why']}" for gap in priced["rates_short"]
+            for t in gap["tried"])[:400]]
+    paid = [(who, r) for who, r in sorted((income or {}).items())
+            if r.get("interest") or r.get("distributions")]
+    if paid:
+        out += ["", "## Paid overnight", ""]
+        for who, r in paid:
+            bits = [f"interest ${r['interest']:,.2f} at {r['rate_pct']:.2f}% over "
+                    f"{r['days']} day(s)"] if r.get("interest") else []
+            bits += [f"{d['instrument']} ${d['amount']:,.2f} (ex {d['ex_date']})"
+                     for d in r.get("distributions") or []]
+            out.append(f"- **{who}**: " + "; ".join(bits))
     if priced["short"]:
         out += ["", "Instruments the feed could not reach today:"]
         for gap in priced["short"]:

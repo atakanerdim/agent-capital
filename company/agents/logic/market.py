@@ -108,6 +108,37 @@ def _read_yahoo_chart(body):
     return float(price), asof
 
 
+def _yahoo_distributions(body):
+    """The dividends Yahoo reports alongside the chart, as [{ex_date, amount}].
+
+    Yahoo stamps each event at the market open of its ex-date (13:30 UTC), so the
+    UTC calendar date is the ex-date. Only returned when the request asked for
+    `events=div`; an empty list means the provider reported none in the window.
+    """
+    result = json.loads(body)["chart"]["result"][0]
+    events = ((result.get("events") or {}).get("dividends") or {}).values()
+    out = []
+    for event in events:
+        stamp, amount = event.get("date"), event.get("amount")
+        if not isinstance(stamp, (int, float)) or not isinstance(amount, (int, float)):
+            continue
+        if amount <= 0:
+            continue
+        out.append({"ex_date": _dt.datetime.fromtimestamp(
+            stamp, _dt.timezone.utc).date().isoformat(), "amount": float(amount)})
+    return sorted(out, key=lambda e: e["ex_date"])
+
+
+def _read_fred_csv(body):
+    """FRED's keyless CSV: the last row that carries a value, and its date."""
+    rows = [r for r in csv.reader(io.StringIO(body.strip())) if r]
+    last = next((r for r in reversed(rows[1:])
+                 if len(r) > 1 and r[1] not in ("", ".", "NA")), None)
+    if not last:
+        raise ValueError("no usable observation")
+    return float(last[1]), _iso_date(last[0])
+
+
 def _read_erapi(body, symbol):
     """exchangerate-api's open endpoint: rates against USD, with its own stamp."""
     doc = json.loads(body)
@@ -131,6 +162,8 @@ def _read(style, body, symbol):
         return _read_yahoo_chart(body)
     if style == "erapi_json":
         return _read_erapi(body, symbol)
+    if style == "fred_csv":
+        return _read_fred_csv(body)
     raise ValueError(f"unknown source style {style!r}")
 
 
@@ -151,7 +184,7 @@ def _mock(root):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
 
 
-def quote(instrument, sources, mocked=None):
+def quote(instrument, sources, mocked=None, allow_zero=False):
     """One instrument's price, and everything needed to audit it later.
 
     Returns (record, tried), where `record` is None when no link answered and
@@ -169,11 +202,15 @@ def quote(instrument, sources, mocked=None):
     tried = []
     if mocked is not None:
         if instrument["id"] in mocked:
-            value = float(mocked[instrument["id"]])
-            return {"close": value, "source": "mock", "symbol": None,
-                    "raw": value, "transform": {"invert": False, "scale": 1.0},
-                    "asof": None, "fetched_utc": _now_utc(),
-                    "adjusted": "unknown"}, tried
+            entry = mocked[instrument["id"]]
+            value = float(entry["close"] if isinstance(entry, dict) else entry)
+            record = {"close": value, "source": "mock", "symbol": None,
+                      "raw": value, "transform": {"invert": False, "scale": 1.0},
+                      "asof": None, "fetched_utc": _now_utc(),
+                      "adjusted": "unknown"}
+            if isinstance(entry, dict) and entry.get("distributions"):
+                record["distributions"] = list(entry["distributions"])
+            return record, tried
         return None, [{"source": "mock", "why": "not in the fixture"}]
     for entry in instrument.get("quotes", []):
         source = sources.get(entry.get("source"))
@@ -193,13 +230,18 @@ def quote(instrument, sources, mocked=None):
                     raise ValueError("a rate of zero cannot be inverted")
                 price = 1.0 / price
             price *= scale
-            if price <= 0:
+            if price < 0 or (price == 0 and not allow_zero):
                 raise ValueError(f"a price of {price} is not a price")
-            return {"close": round(price, 6), "source": source["source"],
-                    "symbol": entry["symbol"], "raw": raw,
-                    "transform": {"invert": invert, "scale": scale},
-                    "asof": asof, "fetched_utc": fetched,
-                    "adjusted": source.get("adjusted", "unknown")}, tried
+            record = {"close": round(price, 6), "source": source["source"],
+                      "symbol": entry["symbol"], "raw": raw,
+                      "transform": {"invert": invert, "scale": scale},
+                      "asof": asof, "fetched_utc": fetched,
+                      "adjusted": source.get("adjusted", "unknown")}
+            if source["style"] == "yahoo_chart" and "events=div" in source["url"]:
+                paid = _yahoo_distributions(body)
+                if paid:
+                    record["distributions"] = paid
+            return record, tried
         except (urllib.error.URLError, OSError, ValueError, KeyError,
                 IndexError, TypeError, json.JSONDecodeError) as e:
             tried.append({"source": source["source"],
@@ -220,8 +262,18 @@ def snapshot_id(quotes):
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()[:12]
 
 
+def load_rates(root):
+    doc = json.loads((Path(root) / "company/data/universe.json").read_text(encoding="utf-8"))
+    return doc.get("rates") or []
+
+
 def prices(root, date):
-    """Today's price for every instrument the desk is allowed to touch."""
+    """Today's price for every instrument the desk is allowed to touch.
+
+    Also the rates the ledger needs and nobody can trade: the overnight rate a
+    book's cash earns is quoted the same way a price is, recorded in the same file,
+    and missing the same way — named, with what every provider said.
+    """
     sources = load_sources(root)
     universe = load_universe(root)
     mocked = _mock(root) if os.environ.get("MOCK_HTTP") == "1" else None
@@ -233,6 +285,18 @@ def prices(root, date):
             continue
         out[instrument["id"]] = dict(record, name=instrument["name"],
                                      **{"class": instrument["class"]})
-    return {"date": date, "quotes": out, "short": short,
+    rates, rates_short = {}, []
+    for rate in load_rates(root):
+        record, tried = quote(rate, sources, mocked, allow_zero=True)
+        if record is None:
+            rates_short.append({"rate": rate["id"], "tried": tried})
+            continue
+        record.pop("distributions", None)
+        rates[rate["id"]] = dict(record, pct=record["close"], name=rate["name"])
+    book = {"date": date, "quotes": out, "short": short,
             "covered": f"{len(out)}/{len(universe)}",
             "snapshot_id": snapshot_id(out)}
+    if rates or rates_short:
+        book["rates"] = rates
+        book["rates_short"] = rates_short
+    return book

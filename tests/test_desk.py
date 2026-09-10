@@ -30,7 +30,8 @@ def test_a_trading_day_runs_end_to_end(company):
     prices = read(company, "company/data/prices/2026-09-04.json")
     orders = read(company, "company/data/orders/2026-09-04.json")
     board = read(company, "company/data/leaderboard.json")
-    assert prices["covered"] == "27/27"
+    n = len(json.loads((company / "company/data/universe.json").read_text(encoding="utf-8"))["instruments"])
+    assert prices["covered"] == f"{n}/{n}"
     assert len(orders["advisors"]) == 8
     assert len(board["rows"]) == 9      # eight advisors and the market they face
 
@@ -121,7 +122,8 @@ def test_the_minutes_say_what_could_not_be_priced(company):
         json.dumps({"SPY": 660.0, "AAPL": 230.0}), encoding="utf-8")
     run_day(company, "2026-09-04", "fri")
     text = (company / "company/minutes/2026-09-04-desk.md").read_text(encoding="utf-8")
-    assert "Priced 2/27" in text
+    n = len(json.loads((company / "company/data/universe.json").read_text(encoding="utf-8"))["instruments"])
+    assert f"Priced 2/{n}" in text
     assert "could not reach" in text and "XAUUSD" in text
 
 

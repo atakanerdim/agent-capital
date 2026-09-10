@@ -268,4 +268,30 @@ def test_the_shifts_never_touch_the_network_in_a_test(company, logic, monkeypatc
     market._fetch = explode
     monkeypatch.setenv("MOCK_HTTP", "1")
     book = market.prices(company, "2026-09-04")
-    assert book["quotes"] and book["covered"].endswith("/27")
+    n = len(json.loads((company / "company/data/universe.json").read_text(encoding="utf-8"))["instruments"])
+    assert book["quotes"] and book["covered"].endswith(f"/{n}")
+
+
+def test_the_weekly_provider_probe_actually_runs(company, monkeypatch):
+    """The probe is called with `|| true` in the workflow, so a crash in it is
+    silent. It had been unpacking three values from a function that returns two
+    since the day that function changed shape — every Sunday probe since then
+    died on its first instrument and the run stayed green."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("datacheck", company / "kernel/datacheck.py")
+    datacheck = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(datacheck)
+    real = datacheck._market
+
+    def offline(root):
+        market = real(root)
+        market._fetch = lambda url: json.dumps(
+            {"chart": {"result": [{"meta": {"regularMarketPrice": 10.0}}]},
+             "rates": {c: 1.0 for c in ("EUR", "GBP", "JPY", "CHF", "AUD")},
+             "date": "2026-09-10"})
+        return market
+    datacheck._market = offline
+    monkeypatch.chdir(company)
+    datacheck.main()
+    logs = list((company / "company/log").glob("*-data.log"))
+    assert logs and "yahoo:" in logs[0].read_text(encoding="utf-8")

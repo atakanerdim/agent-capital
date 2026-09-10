@@ -105,7 +105,8 @@ person appears anywhere in this repository or on this site.
 ## 11. There is something to lose to
 
 On its first day the desk opens one more book, holding every instrument on the
-list in equal weight, and never trades it again. It stands in the standings with
+list as it stood that day in equal weight, and never trades it again. Instruments
+added to the list later are not bought into it. It stands in the standings with
 the advisors and is valued by the same arithmetic on the same prices.
 
 It is there because eight returns ranked against each other cannot tell a good year
@@ -131,3 +132,21 @@ The test of it is exact: replaying the orders on disk over the prices on disk mu
 reproduce the published net asset values to the cent. While that holds, the record
 and what happened are the same thing. If it ever stops holding, the failure is
 reported and fixed — never absorbed by adjusting the record to match.
+
+## 13. Cash is never idle, and income is part of a return
+
+No investor leaves money in a drawer, and neither does any book here. Whatever a
+book has not invested earns, every night, the rate on the shortest US government
+paper — the 13-week Treasury bill — as quoted that morning by a provider named in
+`company/data/sources.json` and recorded in the day's price book like a price.
+When no provider can quote it, cash earns nothing that night and the record says
+so; a rate is never assumed, carried forward or typed in.
+
+A holding that pays a dividend or a coupon is paid it, in cash, on the ex-date its
+provider reported — the same close on which its price drops by the amount. A bond
+fund is mostly coupon, and a desk that counted only prices would have judged every
+bond it owned by the part of its return that barely moves.
+
+Both are paid to every book alike, the benchmark included, before any advisor is
+asked anything, by arithmetic on the record alone — which is what lets article 12
+hold them to the cent.

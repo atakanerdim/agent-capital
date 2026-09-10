@@ -132,11 +132,11 @@ def allocations(root, rows, dates):
     """What every book held at every close, rebuilt from the record.
 
     A portfolio file only knows today. The mix a book carried last Tuesday is not
-    stored anywhere, but it does not need to be: the orders the desk accepted and
-    the prices it recorded are both on disk, and pushing the one through the
-    desk's own `risk.apply_order` gives it back exactly (article 12 is the promise
-    that this works). Each close is valued at that day's recorded price, or at cost
-    when there was none, the same rule the ledger uses.
+    stored anywhere, but it does not need to be: the orders the desk accepted, the
+    prices it recorded and the rates and distributions in the same price books are
+    all on disk, and `replay` walks them through the desk's own ledger arithmetic
+    (article 12 is the promise that this works). Each close is valued at that day's
+    recorded price, or at cost when there was none, the same rule the ledger uses.
 
     If the rebuilt book does not land on the portfolio file as it stands today,
     the history is not published — only today's mix, read straight from the file.
@@ -144,14 +144,12 @@ def allocations(root, rows, dates):
     """
     data = root / "company/data"
     try:
-        risk = _logic(root, "risk")
-        opening = _logic(root, "ledger").OPENING_CASH
+        replay = _logic(root, "replay")
+        books = replay.load_books(root)
+        series = replay.load_series(root)
     except Exception:  # noqa: BLE001 — the site must build even if logic moved
         return {}
-    quotes = {d: _read_json(data / "prices" / f"{d}.json", {}).get("quotes") or {}
-              for d in dates}
-    orders = {d: _read_json(data / "orders" / f"{d}.json", {}).get("advisors") or {}
-              for d in dates}
+    quotes = {d: (books.get(d) or {}).get("quotes") or {} for d in dates}
 
     def worth(positions, prices):
         parts = {}
@@ -168,32 +166,30 @@ def allocations(root, rows, dates):
         actual = _read_json(data / "portfolios" / f"{key}.json", None)
         if not actual:
             continue
-        days, replayed = [], True
-        if key == "benchmark" or actual.get("frozen"):
-            # Bought once on day one and never touched: the holdings are the file's.
-            for d in dates:
-                days.append({"date": d, "cash": round(actual.get("cash", 0.0), 2),
-                             "parts": worth(actual.get("positions") or {}, quotes[d])})
-        else:
-            book = {"cash": float(opening), "positions": {}}
-            for d in dates:
-                for order in (orders[d].get(key) or {}).get("orders") or []:
-                    risk.apply_order(book, order)
-                book["cash"] = round(book["cash"], 2)
-                for held in book["positions"].values():
-                    held["qty"] = round(held["qty"], 8)
-                    held["cost"] = round(held["cost"], 2)
-                days.append({"date": d, "cash": book["cash"],
-                             "parts": worth(book["positions"], quotes[d])})
-            want = actual.get("positions") or {}
-            replayed = (abs(book["cash"] - float(actual.get("cash", 0.0))) < 0.05
-                        and set(want) == set(book["positions"])
-                        and all(abs(want[s]["qty"] - book["positions"][s]["qty"]) < 1e-6
-                                for s in want))
-            if not replayed:
-                last = dates[-1] if dates else ""
-                days = [{"date": last, "cash": round(actual.get("cash", 0.0), 2),
-                         "parts": worth(want, quotes.get(last, {}))}]
+        captured = {}
+
+        def keep(date, book, _row, captured=captured):
+            captured[date] = {"date": date, "cash": round(book["cash"], 2),
+                              "parts": worth(book["positions"], quotes.get(date, {}))}
+        try:
+            if key == "benchmark" or actual.get("frozen"):
+                final, _ = replay.buy_and_hold(root, series=series, books=books, on_day=keep)
+            else:
+                final, _ = replay.replay_advisor(root, key, series=series, books=books,
+                                                 on_day=keep)
+        except Exception:  # noqa: BLE001
+            final = {"cash": None, "positions": {}}
+        days = [captured[d] for d in dates if d in captured]
+        want = actual.get("positions") or {}
+        got = final.get("positions") or {}
+        replayed = (len(days) == len(dates) and final.get("cash") is not None
+                    and abs(float(final["cash"]) - float(actual.get("cash", 0.0))) < 0.05
+                    and set(want) == set(got)
+                    and all(abs(want[s]["qty"] - got[s]["qty"]) < 1e-6 for s in want))
+        if not replayed:
+            last = dates[-1] if dates else ""
+            days = [{"date": last, "cash": round(actual.get("cash", 0.0), 2),
+                     "parts": worth(want, quotes.get(last, {}))}]
         peak = {}
         for day in days:
             total = day["cash"] + sum(day["parts"].values()) or 1.0
@@ -202,6 +198,16 @@ def allocations(root, rows, dates):
         slots = sorted(peak, key=lambda s: (-peak[s], s))[:PIE_SLOTS]
         out[key] = {"slots": slots, "days": days, "history": replayed}
     return out
+
+def _sweep(data, as_of):
+    """The rate idle cash earned on the last day, as recorded — or None."""
+    if not as_of:
+        return None
+    book = _read_json(data / "prices" / f"{as_of}.json", {})
+    rate = ((book.get("rates") or {}).get("TBILL3M")) or {}
+    if not isinstance(rate.get("pct"), (int, float)):
+        return None
+    return {"pct": rate["pct"], "asof": rate.get("asof"), "name": rate.get("name", "")}
 
 
 def views(root, out, roster):
@@ -274,7 +280,8 @@ def views(root, out, roster):
     (out / "view-standings.json").write_text(json.dumps(
         {"as_of": as_of, "day": len(dates), "rows": rows, "dates": dates,
          "series": series, "holds": holds, "record": record, "feed": feed,
-         "alloc": alloc, "instruments": instruments},
+         "alloc": alloc, "instruments": instruments,
+         "sweep": _sweep(data, as_of)},
         ensure_ascii=False, indent=1), encoding="utf-8")
 
     today = history.get(as_of, {})

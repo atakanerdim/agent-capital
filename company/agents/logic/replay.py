@@ -59,6 +59,25 @@ def load_series(root):
     return days
 
 
+def load_books(root):
+    """Every recorded price book whole, by date: quotes, rates and all.
+
+    `load_series` hands a policy the quotes and nothing else, on purpose. The
+    ledger needs a little more — the overnight rate and each quote's own date — to
+    pay a book what it earned between two closes, and it reads it from here.
+    """
+    folder = Path(root) / "company/data/prices"
+    out = {}
+    for path in sorted(folder.glob("*.json")):
+        try:
+            book = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if book.get("quotes"):
+            out[book.get("date") or path.stem] = book
+    return out
+
+
 def load_orders(root):
     """What each advisor was recorded as having done, by date: {date: {advisor: [...]}}."""
     folder = Path(root) / "company/data/orders"
@@ -79,7 +98,8 @@ def empty_book(opening_cash, opened):
             "opened": opened, "currency": "USD"}
 
 
-def run(root, policy, series=None, opening_cash=None, screen=True):
+def run(root, policy, series=None, opening_cash=None, screen=True, books=None,
+        on_day=None):
     """Walk the recorded days, one policy, one book. Returns (book, nav_series).
 
     `policy(date, quotes, book) -> orders` is called once per day with a *copy* of
@@ -97,10 +117,20 @@ def run(root, policy, series=None, opening_cash=None, screen=True):
     universe = {i["id"] for i in market.load_universe(root)}
 
     days = series if series is not None else load_series(root)
+    if books is None:
+        books = load_books(root) if series is None else {}
     cash = ledger.OPENING_CASH if opening_cash is None else opening_cash
     book = empty_book(cash, days[0][0] if days else "")
     navs = []
+    previous = None
     for date, quotes in days:
+        today = books.get(date) or {"date": date, "quotes": quotes}
+        # Paid for the night before, exactly as the desk pays every book before it
+        # asks anybody anything: same function, same record, same rounding.
+        if previous is not None:
+            ledger.apply_carry(book, ledger.carry(book, previous[0], previous[1],
+                                                  date, today))
+        previous = (date, today)
         nav, _, _ = ledger.value(book, quotes)
         orders = policy(date, quotes, copy.deepcopy(book)) or []
         if screen:
@@ -112,12 +142,16 @@ def run(root, policy, series=None, opening_cash=None, screen=True):
             held["qty"] = round(held["qty"], 8)
             held["cost"] = round(held["cost"], 2)
         nav, invested, unpriced = ledger.value(book, quotes)
-        navs.append({"date": date, "nav": nav, "cash": round(book["cash"], 2),
-                     "invested": invested, "unpriced": unpriced})
+        row = {"date": date, "nav": nav, "cash": round(book["cash"], 2),
+               "invested": invested, "unpriced": unpriced}
+        navs.append(row)
+        if on_day is not None:
+            on_day(date, copy.deepcopy(book), dict(row))
     return book, navs
 
 
-def replay_advisor(root, advisor, series=None, orders_by_date=None):
+def replay_advisor(root, advisor, series=None, orders_by_date=None, books=None,
+                   on_day=None):
     """Re-run one advisor's own recorded orders. The archive's self-check.
 
     Orders are replayed unscreened because they were screened when they were made:
@@ -130,7 +164,10 @@ def replay_advisor(root, advisor, series=None, orders_by_date=None):
     def policy(date, quotes, book):
         return (recorded.get(date) or {}).get(advisor) or []
 
-    return run(root, policy, series=days, screen=False)
+    return run(root, policy, series=days, screen=False,
+               books=books if books is not None
+               else (load_books(root) if series is None else {}),
+               on_day=on_day)
 
 
 # --------------------------------------------------------------------------
@@ -260,7 +297,7 @@ def score_all(root, series=None):
     return out
 
 
-def buy_and_hold(root, series=None, opening_cash=None):
+def buy_and_hold(root, series=None, opening_cash=None, books=None, on_day=None):
     """Equal weight into everything priced on the first day, then nothing.
 
     The same rule the desk's own benchmark book follows, expressed as a policy so
@@ -288,4 +325,7 @@ def buy_and_hold(root, series=None, opening_cash=None):
                  "conviction": None, "horizon_days": None}
                 for symbol, price in priced]
 
-    return run(root, policy, series=days, opening_cash=cash, screen=False)
+    return run(root, policy, series=days, opening_cash=cash, screen=False,
+               books=books if books is not None
+               else (load_books(root) if series is None else {}),
+               on_day=on_day)
