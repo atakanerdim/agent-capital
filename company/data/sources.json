@@ -1,22 +1,24 @@
 {
  "_comment": "How to reach a price. A chain, not a provider — the same shape as company/models.json, and for the same reason: the day one link dies the desk keeps valuing. Each entry says how to call a provider and how to read what comes back; universe.json says which providers can quote which instrument. Both are data. Adding a provider is an edit here, never to code. Each provider also declares `adjusted`: whether the closes it publishes are restated backwards for splits and dividends. This cannot be detected from a response, so it is declared here and written onto every quote. A provider nobody has checked says \"unknown\" — which is a fact, where a confident guess would be a silent error in every return computed from the series.",
- "_history": "2026-09-04: stooq was removed after being probed live for the first time. Its light quote endpoint (/q/l/) returned HTTP 404 for every symbol including aapl.us, so the failure was the path and not the symbols, and its daily CSV endpoint answered 'Access denied' to programmatic requests. It had been first in the chain for all 27 instruments and had never been called. It may be put back the day somebody verifies a working endpoint against a live response — not from documentation, which is how it got here.",
+ "_history": "2026-09-04: stooq was removed after being probed live for the first time. Its light quote endpoint (/q/l/) returned HTTP 404 for every symbol including aapl.us, so the failure was the path and not the symbols, and its daily CSV endpoint answered 'Access denied' to programmatic requests. It had been first in the chain for all 27 instruments and had never been called. It may be put back the day somebody verifies a working endpoint against a live response — not from documentation, which is how it got here. 2026-09-10: yahoo requests widened to range=1mo&events=div so distributions are recorded; fred added for rates.",
  "chain": [
   {
    "source": "yahoo",
    "style": "yahoo_chart",
-   "url": "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=5d&interval=1d",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=1mo&interval=1d&events=div",
    "adjusted": "split_and_dividend",
    "adjusted_note": "The chart endpoint serves adjusted closes by default.",
-   "note": "Undocumented and unpromised, and now first in the chain, which is not where an undocumented endpoint belongs. Verified live 2026-09-04."
+   "note": "Undocumented and unpromised, and now first in the chain, which is not where an undocumented endpoint belongs. Verified live 2026-09-04.",
+   "events_note": "events=div makes the same response carry the dividends paid in the window, which the ledger credits to holders on the ex-date. range=1mo so a fortnight of missed shifts still finds them. Verified live 2026-09-10 on EMB, HYG, IEF, LQD, SHY, TLT."
   },
   {
    "source": "yahoo2",
    "style": "yahoo_chart",
-   "url": "https://query2.finance.yahoo.com/v8/finance/chart/{symbol}?range=5d&interval=1d",
+   "url": "https://query2.finance.yahoo.com/v8/finance/chart/{symbol}?range=1mo&interval=1d&events=div",
    "adjusted": "split_and_dividend",
    "adjusted_note": "Same service as `yahoo`, so the same restatement.",
-   "note": "The second Yahoo host. Honest about what this is: a different machine, not a different source. It survives one host going down and nothing else — if Yahoo blocks this project, both links go together. Finding a genuinely independent keyless quote for equities and funds is an open problem, and until it is solved that is a real single point of failure for 22 of the 27 instruments. Verified live 2026-09-04."
+   "note": "The second Yahoo host. Honest about what this is: a different machine, not a different source. It survives one host going down and nothing else — if Yahoo blocks this project, both links go together. Finding a genuinely independent keyless quote for equities and funds is an open problem, and until it is solved that is a real single point of failure for 22 of the 27 instruments. Verified live 2026-09-04.",
+   "events_note": "events=div makes the same response carry the dividends paid in the window, which the ledger credits to holders on the ex-date. range=1mo so a fortnight of missed shifts still finds them. Verified live 2026-09-10 on EMB, HYG, IEF, LQD, SHY, TLT."
   },
   {
    "source": "frankfurter",
@@ -33,6 +35,14 @@
    "adjusted": "none",
    "adjusted_note": "Spot rates, nothing restated.",
    "note": "exchangerate-api's open endpoint, no key. A genuinely separate source from the ECB feed rather than a second host for it, which is why the five currencies have better redundancy than the twenty-two equities do. Carries its own update stamp. Verified live 2026-09-04."
+  },
+  {
+   "source": "fred",
+   "style": "fred_csv",
+   "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id={symbol}",
+   "adjusted": "none",
+   "adjusted_note": "An observed rate, not a price series; nothing to restate.",
+   "note": "FRED's keyless CSV, used only for rates, as the fallback behind Yahoo's quote of the same thing. Verified live 2026-09-09: this exact endpoint has answered the desk's news collector every day since (DFF, DGS10, T10YIE, CPIAUCSL, UNRATE). The DTB3 series itself has not been probed from here, which is why it is last in the chain."
   }
  ]
 }

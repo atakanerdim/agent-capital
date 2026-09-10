@@ -11,7 +11,8 @@ sys.path.insert(0, str(ROOT / "kernel"))
 # fixture wipes it: tests describe behaviour, never accumulated history.
 ACCUMULATED = ("company/minutes", "company/hallway", "company/log",
                "company/evolution", "company/data/prices", "company/data/orders",
-               "company/data/portfolios", "company/data/nav")
+               "company/data/portfolios", "company/data/nav",
+               "company/data/income")
 
 # Files the desk writes as it runs, as opposed to directories it fills.
 ACCUMULATED_FILES = ("company/data/leaderboard.json", "company/data/evolution.json")

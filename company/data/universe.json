@@ -1,5 +1,5 @@
 {
- "_comment": "Everything the desk is allowed to touch, and nothing else. An advisor cannot trade what is not in this list, because risk.py checks membership before anything reaches a book. Each instrument names the providers that can quote it, in the order they should be asked; 'invert' means the provider publishes the pair the other way up. Prices are in USD. 2026-09-04: every remaining provider was probed live for the first time and stooq was removed after answering 404 on every symbol; the surviving symbols have been confirmed against a live response for yahoo, frankfurter and erapi — a symbol that is wrong shows up as an instrument with no price and a named reason in company/data/prices/<date>.json, which is the point of recording why each link failed.",
+ "_comment": "Everything the desk is allowed to touch, and nothing else. An advisor cannot trade what is not in this list, because risk.py checks membership before anything reaches a book. Each instrument names the providers that can quote it, in the order they should be asked; 'invert' means the provider publishes the pair the other way up. Prices are in USD. 2026-09-04: every remaining provider was probed live for the first time and stooq was removed after answering 404 on every symbol; the surviving symbols have been confirmed against a live response for yahoo, frankfurter and erapi — a symbol that is wrong shows up as an instrument with no price and a named reason in company/data/prices/<date>.json, which is the point of recording why each link failed. 2026-09-10: eight bond and property funds added (SHY IEF TIP LQD HYG EMB VNQI REM), symbols and dividend events verified live on Yahoo; TLT reclassed bond, VNQ property. `rates` lists quotes that are read by the ledger and never traded.",
  "currency": "USD",
  "instruments": [
   {
@@ -265,7 +265,7 @@
   {
    "id": "TLT",
    "name": "Long US government bonds",
-   "class": "fund",
+   "class": "bond",
    "about": "Where money goes when equities frighten it.",
    "quotes": [
     {
@@ -281,7 +281,7 @@
   {
    "id": "VNQ",
    "name": "US property",
-   "class": "fund",
+   "class": "property",
    "about": "Listed real estate.",
    "quotes": [
     {
@@ -423,6 +423,155 @@
      "source": "erapi",
      "symbol": "AUD",
      "invert": true
+    }
+   ]
+  },
+  {
+   "id": "SHY",
+   "name": "Short US government bonds, 1-3 years",
+   "class": "bond",
+   "about": "Two-year Treasuries: close to cash, with a coupon.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "SHY"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "SHY"
+    }
+   ]
+  },
+  {
+   "id": "IEF",
+   "name": "Intermediate US government bonds, 7-10 years",
+   "class": "bond",
+   "about": "The middle of the Treasury curve.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "IEF"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "IEF"
+    }
+   ]
+  },
+  {
+   "id": "TIP",
+   "name": "US inflation-linked government bonds",
+   "class": "bond",
+   "about": "Treasuries whose principal rises with inflation.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "TIP"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "TIP"
+    }
+   ]
+  },
+  {
+   "id": "LQD",
+   "name": "US investment-grade corporate bonds",
+   "class": "bond",
+   "about": "Debt of large, highly rated American companies.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "LQD"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "LQD"
+    }
+   ]
+  },
+  {
+   "id": "HYG",
+   "name": "US high-yield corporate bonds",
+   "class": "bond",
+   "about": "Lower-rated corporate debt: more coupon, more default risk.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "HYG"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "HYG"
+    }
+   ]
+  },
+  {
+   "id": "EMB",
+   "name": "Emerging-market sovereign eurobonds, in dollars",
+   "class": "bond",
+   "about": "Dollar bonds issued by emerging-market governments, Turkey among them.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "EMB"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "EMB"
+    }
+   ]
+  },
+  {
+   "id": "VNQI",
+   "name": "Property outside the US",
+   "class": "property",
+   "about": "Listed real estate in developed and emerging markets outside America.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "VNQI"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "VNQI"
+    }
+   ]
+  },
+  {
+   "id": "REM",
+   "name": "US mortgage real estate",
+   "class": "property",
+   "about": "Companies that hold and finance property loans and mortgage paper.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "REM"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "REM"
+    }
+   ]
+  }
+ ],
+ "rates": [
+  {
+   "id": "TBILL3M",
+   "name": "US 13-week Treasury bill yield, percent",
+   "about": "What a book's uninvested cash earns overnight. Not tradable; the ledger reads it.",
+   "quotes": [
+    {
+     "source": "yahoo",
+     "symbol": "%5EIRX"
+    },
+    {
+     "source": "yahoo2",
+     "symbol": "%5EIRX"
+    },
+    {
+     "source": "fred",
+     "symbol": "DTB3"
     }
    ]
   }
