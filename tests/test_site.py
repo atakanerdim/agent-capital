@@ -167,3 +167,51 @@ def test_the_changelog_only_carries_autonomous_merges(company):
     entries = module.changelog(company, ["desk", "chief", "evaluator"])
     assert all(e["message"].split(":")[0] in ("desk", "chief", "evaluator")
                for e in entries)
+
+
+def test_the_holdings_history_lands_exactly_on_todays_books(company):
+    """The pies under every advisor are rebuilt from the recorded orders, day by
+    day. The last day of that rebuild must be the portfolio file as it stands, or
+    the history on the page is a past that does not add up to the present."""
+    trading_day(company, "2026-09-04", "fri")
+    trading_day(company, "2026-09-07", "mon")
+    assert build(company).returncode == 0
+    view = json.loads((company / "site/data/view-standings.json").read_text(encoding="utf-8"))
+    assert view["alloc"], "no holdings were published"
+    for key, alloc in view["alloc"].items():
+        assert alloc["history"], f"{key}: the recorded orders did not rebuild today's book"
+        assert [d["date"] for d in alloc["days"]] == view["dates"]
+        book = json.loads((company / f"company/data/portfolios/{key}.json")
+                          .read_text(encoding="utf-8"))
+        last = alloc["days"][-1]
+        assert set(last["parts"]) == set(book["positions"]), key
+        assert abs(last["cash"] - book["cash"]) < 0.05, key
+        assert len(alloc["slots"]) <= 7
+
+
+def test_a_book_that_does_not_replay_shows_only_today(company):
+    """If the record and the book disagree, the page draws today and nothing else."""
+    trading_day(company, "2026-09-04", "fri")
+    trading_day(company, "2026-09-07", "mon")
+    path = company / "company/data/portfolios/index.json"
+    book = json.loads(path.read_text(encoding="utf-8"))
+    book["cash"] = round(book["cash"] - 1234.0, 2)
+    path.write_text(json.dumps(book), encoding="utf-8")
+    assert build(company).returncode == 0
+    view = json.loads((company / "site/data/view-standings.json").read_text(encoding="utf-8"))
+    alloc = view["alloc"]["index"]
+    assert alloc["history"] is False
+    assert len(alloc["days"]) == 1
+    assert abs(alloc["days"][0]["cash"] - book["cash"]) < 0.01
+
+
+def test_no_page_prints_a_date_or_a_rewrite_nobody_recorded(company):
+    """The redesign shipped with sample copy baked into the markup: a fixed
+    "4 September", "since 7 August", and a brief rewrite for an advisor on a
+    Sunday before the desk had opened. Article 6 — facts are not invented."""
+    for page in PAGES:
+        text = (company / "site" / page).read_text(encoding="utf-8")
+        for stale in ("4 September", "7 August", "30 August", "Twenty-one days"):
+            assert stale not in text, f"{page} still carries '{stale}'"
+    app = (company / "site/app.js").read_text(encoding="utf-8")
+    assert "7 August" not in app

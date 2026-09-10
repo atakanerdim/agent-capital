@@ -11,6 +11,7 @@
   let NAV_DATES = [];
   let NAV_SERIES = {};
   let TODAY = [];
+  let TODAY_AS_OF = "";
   let BOOK = null;
   let ROSTER = {advisors: [], staff: []};
 
@@ -26,6 +27,10 @@
 
   /* One character per weekday: m moved, h held, r all refused, u unreachable. */
   let RECORD = {};
+
+  /* What each book held at each close: {advisor: {slots, days:[{date, cash, parts}]}}. */
+  let ALLOC = {};
+  let INSTR = {};
   const RECORD_KEY = {m:"moved", h:"held", r:"refused", u:"unreachable"};
 
   const $ = function (sel, root) { return (root || document).querySelector(sel); };
@@ -57,6 +62,19 @@
     span.appendChild(val);
     return span;
   }
+
+  function ddText(v) {
+    return v > 0.004 ? "\u2212" + v.toFixed(2) + "%" : "0.00%";
+  }
+
+  function longDate(iso) {
+    const parts = iso.split("-");
+    const months = ["January","February","March","April","May","June","July","August",
+      "September","October","November","December"];
+    return Number(parts[2]) + " " + months[Number(parts[1]) - 1];
+  }
+
+  function bookHref(key) { return "desk.html?a=" + encodeURIComponent(key) + "#advisor"; }
 
   function shortDate(iso) {
     const parts = iso.split("-");
@@ -163,13 +181,276 @@
     return svg;
   }
 
+  /* ---------------- what a book holds: the pie and its history ----------------
+     One component, drawn in three sizes. The pie is today's close; the columns
+     under it are every close so far, each one the whole book, so a reader sees
+     both what an advisor owns and how they got there. Colours are handed out per
+     book in a fixed order (largest position the book has ever carried first) and
+     never re-dealt from day to day, so an instrument keeps its colour across the
+     whole history. Past seven, the rest fold into "Other". Cash is always the
+     pale neutral slice. Every colour sits next to a written label and a figure. */
+
+  const SLOT_COLORS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7"];
+  const OTHER_COLOR = "#8a8786";
+  const CASH_COLOR = "#d6d3d2";
+
+  function mixOf(key, day) {
+    const a = ALLOC[key];
+    const total = day.cash + Object.keys(day.parts).reduce(function (t, k) { return t + day.parts[k]; }, 0);
+    const out = [];
+    let other = 0, otherN = 0;
+    Object.keys(day.parts).forEach(function (sym) {
+      if (a.slots.indexOf(sym) < 0) { other += day.parts[sym]; otherN += 1; }
+    });
+    a.slots.forEach(function (sym, i) {
+      if (day.parts[sym]) {
+        out.push({key:sym, label:sym, name:(INSTR[sym] || {}).name || sym,
+                  value:day.parts[sym], color:SLOT_COLORS[i]});
+      }
+    });
+    if (other > 0) {
+      out.push({key:"__other", label:"Other", name:otherN + " more holding" + (otherN === 1 ? "" : "s"), value:other, color:OTHER_COLOR});
+    }
+    if (day.cash > 0.5) {
+      out.push({key:"__cash", label:"Cash", name:"not invested", value:day.cash, color:CASH_COLOR});
+    }
+    out.forEach(function (p) { p.share = total ? p.value / total : 0; });
+    return {parts:out, total:total};
+  }
+
+  function shareText(x) {
+    const v = x * 100;
+    return (v > 0 && v < 1 ? "<1" : (v >= 99.5 && v < 100 ? ">99" : Math.round(v))) + "%";
+  }
+
+  /* One tooltip for the whole page, positioned on the pointer. */
+  let TIP = null;
+  function tipFor(el, text) {
+    el.setAttribute("data-tip", text);
+    el.addEventListener("pointerenter", showTip);
+    el.addEventListener("pointermove", moveTip);
+    el.addEventListener("pointerleave", hideTip);
+  }
+  function showTip(e) {
+    if (!TIP) {
+      TIP = document.createElement("div");
+      TIP.className = "tip";
+      TIP.setAttribute("role", "tooltip");
+      document.body.appendChild(TIP);
+    }
+    TIP.textContent = e.currentTarget.getAttribute("data-tip");
+    TIP.hidden = false;
+    moveTip(e);
+  }
+  function moveTip(e) {
+    if (!TIP) { return; }
+    const pad = 14;
+    const w = TIP.offsetWidth, h = TIP.offsetHeight;
+    let x = e.clientX + pad, y = e.clientY + pad;
+    if (x + w > window.innerWidth - 8) { x = e.clientX - w - pad; }
+    if (y + h > window.innerHeight - 8) { y = e.clientY - h - pad; }
+    TIP.style.left = Math.max(8, x) + "px";
+    TIP.style.top = Math.max(8, y) + "px";
+  }
+  function hideTip() { if (TIP) { TIP.hidden = true; } }
+
+  function arcPath(cx, cy, r0, r1, a0, a1) {
+    const large = a1 - a0 > Math.PI ? 1 : 0;
+    const p = function (r, a) { return (cx + r * Math.sin(a)).toFixed(2) + " " + (cy - r * Math.cos(a)).toFixed(2); };
+    return "M" + p(r1, a0) + " A" + r1 + " " + r1 + " 0 " + large + " 1 " + p(r1, a1) +
+      " L" + p(r0, a1) + " A" + r0 + " " + r0 + " 0 " + large + " 0 " + p(r0, a0) + " Z";
+  }
+
+  function donut(mix, size, caption) {
+    const r1 = size / 2 - 1, r0 = r1 * 0.58, c = size / 2;
+    const svg = sv("svg", {class:"donut", viewBox:"0 0 " + size + " " + size, width:size, height:size,
+      role:"img", "aria-label":caption});
+    let a = 0;
+    mix.parts.forEach(function (p) {
+      const sweep = p.share * Math.PI * 2;
+      let el;
+      if (p.share >= 0.9999) {
+        el = sv("path", {d:"M" + c + " " + (c - r1) + " A" + r1 + " " + r1 + " 0 1 1 " + (c - 0.01) + " " + (c - r1) +
+          " Z M" + c + " " + (c - r0) + " A" + r0 + " " + r0 + " 0 1 0 " + (c + 0.01) + " " + (c - r0) + " Z",
+          "fill-rule":"evenodd"});
+      } else {
+        el = sv("path", {d:arcPath(c, c, r0, r1, a, a + sweep)});
+      }
+      el.setAttribute("fill", p.color);
+      el.setAttribute("class", "slice" + (p.key === "__cash" ? " cash" : ""));
+      tipFor(el, p.label + (p.key.indexOf("__") ? " · " + p.name : "") + " — " +
+        usd0.format(p.value) + " (" + shareText(p.share) + ")");
+      svg.appendChild(el);
+      a += sweep;
+    });
+    const invested = mix.parts.filter(function (p) { return p.key !== "__cash"; })
+      .reduce(function (t, p) { return t + p.share; }, 0);
+    const big = sv("text", {x:c, y:c + (size > 100 ? 2 : 1), "text-anchor":"middle", class:"d-big"});
+    big.textContent = shareText(invested);
+    const small = sv("text", {x:c, y:c + (size > 100 ? 17 : 12), "text-anchor":"middle", class:"d-small"});
+    small.textContent = "invested";
+    svg.appendChild(big);
+    svg.appendChild(small);
+    return svg;
+  }
+
+  function legendList(mix, limit) {
+    const ul = document.createElement("ul");
+    ul.className = "alegend";
+    let rows = mix.parts;
+    if (limit && rows.length > limit) {
+      const cash = rows.filter(function (p) { return p.key === "__cash"; });
+      rows = rows.filter(function (p) { return p.key !== "__cash"; }).slice(0, limit - cash.length).concat(cash);
+    }
+    rows.forEach(function (p) {
+      const li = document.createElement("li");
+      const sw = document.createElement("i");
+      sw.style.background = p.color;
+      if (p.key === "__cash") { sw.className = "cash"; }
+      const b = document.createElement("b");
+      b.textContent = p.label;
+      const nm = document.createElement("span");
+      nm.className = "an";
+      nm.textContent = p.name;
+      const v = document.createElement("span");
+      v.className = "av num";
+      v.textContent = shareText(p.share);
+      li.appendChild(sw); li.appendChild(b); li.appendChild(nm); li.appendChild(v);
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
+  function historyColumns(key, height) {
+    const a = ALLOC[key];
+    const days = a.days.slice(-66);
+    const n = days.length;
+    const W = 240, H = height, gap = n > 30 ? 1 : 3;
+    const cw = Math.min(26, (W - gap * (n - 1)) / n);
+    const used = n * cw + gap * (n - 1);
+    const wrap = document.createElement("div");
+    wrap.className = "ahist";
+    const svg = sv("svg", {viewBox:"0 0 " + used.toFixed(1) + " " + H, width:used.toFixed(1), height:H,
+      preserveAspectRatio:"none", role:"img",
+      "aria-label":"Holdings at each close, oldest first, " + n + " day" + (n === 1 ? "" : "s")});
+    days.forEach(function (day, i) {
+      const mix = mixOf(key, day);
+      const x = i * (cw + gap);
+      let yTop = H;
+      const g = sv("g", {class:"col"});
+      /* instruments from the floor up, cash on top: a rising floor is a book getting invested */
+      const order = mix.parts.filter(function (p) { return p.key !== "__cash"; })
+        .concat(mix.parts.filter(function (p) { return p.key === "__cash"; }));
+      order.forEach(function (p) {
+        const h = p.share * H;
+        if (h <= 0) { return; }
+        yTop -= h;
+        g.appendChild(sv("rect", {x:x.toFixed(1), y:yTop.toFixed(2), width:cw.toFixed(1),
+          height:Math.max(0, h - (h > 2 ? 1 : 0)).toFixed(2), fill:p.color,
+          class:p.key === "__cash" ? "cash" : ""}));
+      });
+      g.appendChild(sv("rect", {x:x.toFixed(1), y:0, width:cw.toFixed(1), height:H, class:"hit"}));
+      tipFor(g, shortDate(day.date) + " · " + usd0.format(mix.total) + " — " +
+        mix.parts.map(function (p) { return p.label + " " + shareText(p.share); }).join(", "));
+      svg.appendChild(g);
+    });
+    wrap.appendChild(svg);
+    const axis = document.createElement("div");
+    axis.className = "ahist-axis";
+    const l = document.createElement("span");
+    l.textContent = shortDate(days[0].date);
+    const r = document.createElement("span");
+    r.textContent = n > 1 ? shortDate(days[n - 1].date) : "";
+    axis.appendChild(l); axis.appendChild(r);
+    axis.style.width = Math.max(used, 96).toFixed(1) + "px";
+    wrap.appendChild(axis);
+    return wrap;
+  }
+
+  /* size: "row" (standings), "card" (the desk page), "day" (today), "book" (the book page) */
+  function allocBlock(key, size) {
+    const a = ALLOC[key];
+    if (!a || !a.days || !a.days.length) { return null; }
+    const last = a.days[a.days.length - 1];
+    const mix = mixOf(key, last);
+    const px = {row:104, card:92, day:72, book:168}[size] || 96;
+    const host = document.createElement("div");
+    host.className = "alloc alloc-" + size;
+
+    const pie = document.createElement("div");
+    pie.className = "apie";
+    const caption = "Holdings at the close, " + shortDate(last.date) + ": " +
+      mix.parts.map(function (p) { return p.label + " " + shareText(p.share); }).join(", ") + ".";
+    pie.appendChild(donut(mix, px, caption));
+    host.appendChild(pie);
+
+    const side = document.createElement("div");
+    side.className = "aside";
+    const h = document.createElement("h4");
+    h.className = "ahead";
+    h.textContent = "Holdings at the close, " + shortDate(last.date);
+    side.appendChild(h);
+    side.appendChild(legendList(mix, size === "day" ? 4 : (size === "card" ? 5 : 0)));
+    host.appendChild(side);
+
+    if (size !== "day") {
+      const hist = document.createElement("div");
+      hist.className = "ahistbox";
+      const hh = document.createElement("h4");
+      hh.className = "ahead";
+      hh.textContent = a.history ? "Every close so far" : "History not shown";
+      hist.appendChild(hh);
+      if (a.history) {
+        hist.appendChild(historyColumns(key, size === "book" ? 120 : (size === "card" ? 48 : 64)));
+        const note = document.createElement("p");
+        note.className = "anote";
+        note.textContent = changeLine(key);
+        hist.appendChild(note);
+      } else {
+        const note = document.createElement("p");
+        note.className = "anote";
+        note.textContent = "The recorded orders do not rebuild today’s book exactly, so only today is drawn.";
+        hist.appendChild(note);
+      }
+      host.appendChild(hist);
+    }
+    return host;
+  }
+
+  /* One sentence on how the mix moved, from the first close to the last. */
+  function changeLine(key) {
+    const a = ALLOC[key];
+    const days = a.days;
+    if (days.length < 2) { return "One close so far."; }
+    const first = days[0], last = days[days.length - 1];
+    const inv = function (d) {
+      const t = d.cash + Object.keys(d.parts).reduce(function (s, k) { return s + d.parts[k]; }, 0);
+      return t ? 1 - d.cash / t : 0;
+    };
+    const opened = Object.keys(last.parts).filter(function (s) { return !(s in first.parts); });
+    const closed = Object.keys(first.parts).filter(function (s) { return !(s in last.parts); });
+    const bits = [];
+    bits.push("Invested " + shareText(inv(first)) + " on " + shortDate(first.date) + ", " +
+      shareText(inv(last)) + " on " + shortDate(last.date) + ".");
+    if (opened.length) { bits.push("Added " + opened.join(", ") + "."); }
+    if (closed.length) { bits.push("Closed " + closed.join(", ") + "."); }
+    if (!opened.length && !closed.length && !Object.keys(last.parts).length) {
+      bits.push("Never held a position.");
+    }
+    return bits.join(" ");
+  }
+
   function todayLine(key) {
     if (key === "benchmark") {
       return "Nothing. This book has never placed an order and never will \u2014 that is the point of it.";
     }
     const d = TODAY.filter(function (t) { return t.advisor === key; })[0];
     if (!d) { return "No entry published for today."; }
-    if (d.held) { return OUTCOMES[d.held.kind].text + ". " + d.held.why; }
+    if (d.held) {
+      const head = OUTCOMES[d.held.kind] ? OUTCOMES[d.held.kind].text : "Held";
+      const why = d.note || (d.held.why && d.held.why !== GENERIC_HOLD ? d.held.why : "");
+      return head + "." + (why ? " " + why : "");
+    }
     const parts = (d.orders || []).map(function (o) {
       return (o.action === "buy" ? "Bought " : "Sold ") + usd0.format(o.amount_usd) + " of " + o.instrument;
     });
@@ -195,11 +476,13 @@
 
     const sp = sparkline(r.advisor);
     if (sp) { $(".sparkhost", row).appendChild(sp); }
+    const since = $(".sincehead", row);
+    if (since && NAV_DATES.length) { since.textContent = "Since " + shortDate(NAV_DATES[0]); }
     const bench = byKey("benchmark");
     const gap = bench ? r.return_pct - bench.return_pct : 0;
     $(".sparknote", row).textContent = usd2.format(r.nav) + " today, " + pct(r.return_pct) +
-      " since the open. Against buy and hold: " + pct(gap) + ". Deepest fall from a peak \u2212" +
-      r.max_drawdown_pct.toFixed(2) + "%.";
+      " since the open. Against buy and hold: " + pct(gap) + ". Deepest fall from a peak " +
+      ddText(r.max_drawdown_pct) + ".";
 
     $(".dmandate", row).textContent = r.mandate;
     $(".dtoday", row).textContent = todayLine(r.advisor);
@@ -214,7 +497,9 @@
         chips.appendChild(c);
       });
     } else {
-      chips.textContent = "All 27 instruments, equally weighted, untouched since 7 August.";
+      chips.textContent = r.is_benchmark
+        ? "Every instrument, equally weighted, untouched since day one."
+        : "No positions. The whole book is in cash.";
       chips.style.fontSize = "14px";
     }
 
@@ -258,7 +543,7 @@
 
       const link = $(".who a", tr);
       link.textContent = r.name;
-      link.setAttribute("href", "#advisor");
+      link.setAttribute("href", bookHref(r.advisor));
       $(".role-sm", tr).textContent = r.is_benchmark ? "Benchmark" : roleOf(r.advisor);
       $(".pslot", tr).replaceWith(portraitNode(r.is_benchmark ? "__none" : r.advisor, r.name));
 
@@ -276,7 +561,7 @@
       $(".c-nav", tr).textContent = usd2.format(r.nav);
       $(".c-ret", tr).appendChild(delta(r.return_pct));
       $(".c-days", tr).appendChild(document.createTextNode(String(r.days)));
-      $(".c-dd", tr).appendChild(document.createTextNode("\u2212" + r.max_drawdown_pct.toFixed(2) + "%"));
+      $(".c-dd", tr).appendChild(document.createTextNode(ddText(r.max_drawdown_pct)));
       $(".c-best", tr).appendChild(delta(r.best_day_pct));
       $(".c-worst", tr).appendChild(delta(r.worst_day_pct));
 
@@ -291,6 +576,14 @@
       });
 
       body.appendChild(tr);
+      const block = allocBlock(r.advisor, "row");
+      if (block) {
+        const prow = tpl("tpl-prow");
+        if (r.is_benchmark) { prow.classList.add("is-benchmark-p"); }
+        $("td", prow).appendChild(block);
+        body.appendChild(prow);
+        tr.classList.add("has-prow");
+      }
       body.appendChild(drow);
     });
   }
@@ -316,7 +609,7 @@
     const w = Math.max(300, host.clientWidth || 360);
     const narrow = w < 560;
     const h = narrow ? 190 : 260;
-    const padL = 46, padR = narrow ? 14 : 74, padT = 14, padB = 26;
+    const padL = 58, padR = narrow ? 14 : 74, padT = 14, padB = 26;
 
     let lo = Infinity, hi = -Infinity;
     keys.forEach(function (k) {
@@ -334,18 +627,27 @@
 
     svg.appendChild(sv("line", {class:"axis", x1:padL, y1:padT, x2:padL, y2:h - padB}));
 
+    /* Tick labels carry as many decimals as the range needs: on a day when every
+       book is within a few hundred dollars of the open, "100k" three times over
+       says nothing. Labels closer than 14px to one already drawn are dropped. */
+    const digits = span < 2000 ? 2 : (span < 20000 ? 1 : 0);
+    const kfmt = function (v) { return "$" + (v / 1000).toFixed(digits) + "k"; };
+    const drawn = [];
+    const tick = function (v) {
+      const yy = y(v);
+      if (drawn.some(function (d) { return Math.abs(d - yy) < 14; })) { return; }
+      drawn.push(yy);
+      const t = sv("text", {x:padL - 6, y:yy + 3.5, "text-anchor":"end"});
+      t.textContent = kfmt(v);
+      svg.appendChild(t);
+    };
     /* the opening $100,000 */
     if (100000 > lo && 100000 < hi) {
       svg.appendChild(sv("line", {class:"base", x1:padL, y1:y(100000), x2:w - padR, y2:y(100000)}));
-      const bl = sv("text", {x:padL - 6, y:y(100000) + 3.5, "text-anchor":"end"});
-      bl.textContent = "100k";
-      svg.appendChild(bl);
+      tick(100000);
     }
-    [hi - span * 0.03, lo + span * 0.03].forEach(function (v) {
-      const t = sv("text", {x:padL - 6, y:y(v) + 3.5, "text-anchor":"end"});
-      t.textContent = Math.round(v / 1000) + "k";
-      svg.appendChild(t);
-    });
+    tick(hi - span * 0.03);
+    tick(lo + span * 0.03);
 
     const path = function (arr) {
       let d = "";
@@ -412,6 +714,7 @@
 
   /* ---------------- today ---------------- */
 
+  const GENERIC_HOLD = "the advisor sent no orders";
   const OUTCOMES = {
     chose_to_hold:{cls:"o-hold", glyph:"tpl-glyph-hold", text:"Held by choice \u2014 no orders placed"},
     all_rejected:{cls:"o-rejected", glyph:"tpl-glyph-refused", text:"Every order refused \u2014 book unchanged"},
@@ -456,6 +759,8 @@
   function renderToday(list) {
     const host = $("#today-list");
     host.textContent = "";
+    const deck = $("#today-deck");
+    if (deck && TODAY_AS_OF) { deck.textContent = "Orders, refusals and reasons \u2014 " + longDate(TODAY_AS_OF) + "."; }
     if (!list.length) { setState("today", "empty"); return; }
 
     list.forEach(function (d) {
@@ -463,9 +768,12 @@
       const art = tpl("tpl-day");
       const link = $(".day-head h3 a", art);
       link.textContent = st ? st.name : d.advisor;
+      link.setAttribute("href", bookHref(d.advisor));
       $(".pslot", art).replaceWith(portraitNode(d.advisor, st ? st.name : d.advisor, "sm"));
       $(".role", art).textContent = roleOf(d.advisor);
-      $(".navline", art).textContent = "Opened at " + usd2.format(d.nav_before);
+      $(".navline", art).textContent = "Book before today\u2019s orders: " + usd2.format(d.nav_before);
+      const mini = allocBlock(d.advisor, "day");
+      if (mini) { $(".day-head", art).appendChild(mini); }
 
       const ul = $(".orders", art);
       (d.orders || []).forEach(function (o) { ul.appendChild(renderOrder(o)); });
@@ -489,7 +797,9 @@
         box.classList.add(spec.cls);
         $(".glyph", box).appendChild(svgTpl(spec.glyph));
         $(".text", box).textContent = spec.text;
-        $("p", box).textContent = d.held.why;
+        const why = d.held.why && d.held.why !== GENERIC_HOLD ? d.held.why : "";
+        $("p", box).textContent = why;
+        $("p", box).hidden = !why;
       }
 
       if (d.note) {
@@ -512,9 +822,10 @@
     if (deck) { deck.textContent = (b.title || "Advisor") + " \u00b7 day " + b.days; }
     const slot = $("#advisor-pslot");
     if (slot) {
-      const pn = portraitNode(b.advisor, b.name, "lg");
+      const pn = portraitNode(b.advisor === "benchmark" ? "__none" : b.advisor, b.name, "lg");
       pn.style.flex = "none";
       pn.style.width = "130px";
+      pn.id = "advisor-pslot";
       slot.replaceWith(pn);
     }
 
@@ -524,7 +835,7 @@
       {k:"Net asset value", v:usd2.format(b.nav)},
       {k:"Return", node:delta(b.return_pct)},
       {k:"Cash / invested", v:usd0.format(b.cash) + " / " + usd0.format(b.invested)},
-      {k:"Max drawdown", v:"\u2212" + b.max_drawdown_pct.toFixed(2) + "%"}
+      {k:"Max drawdown", v:ddText(b.max_drawdown_pct)}
     ];
     items.forEach(function (it) {
       const dt = document.createElement("dt");
@@ -537,6 +848,19 @@
       figs.appendChild(wrapper);
     });
 
+    const cap = $("#positions-caption");
+    if (cap) {
+      const n = b.positions.length;
+      cap.textContent = n
+        ? (n === 1 ? "One instrument" : n + " instruments") + " held, of a limit of twelve. Value is marked at the close."
+        : "No positions. The whole book is in cash.";
+    }
+    const ah = $("#advisor-alloc");
+    if (ah) {
+      ah.textContent = "";
+      const block = allocBlock(b.advisor, "book");
+      if (block) { ah.appendChild(block); ah.hidden = false; } else { ah.hidden = true; }
+    }
     const pb = $("#positions-body");
     pb.textContent = "";
     b.positions.forEach(function (p) {
@@ -578,6 +902,31 @@
     });
   }
 
+  /* Switch books in place; the address keeps up so a book can be linked to. */
+  function bookPicker(books, current) {
+    const host = $("#book-picker");
+    if (!host) { return; }
+    host.textContent = "";
+    const order = STANDINGS.map(function (r) { return r.advisor; })
+      .filter(function (k) { return Object.prototype.hasOwnProperty.call(books, k); });
+    order.forEach(function (k) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = k === "benchmark" ? "bench" : "";
+      b.textContent = k === "benchmark" ? "Buy and hold" : books[k].name.split(" ").slice(-1)[0];
+      b.setAttribute("aria-pressed", k === current ? "true" : "false");
+      b.addEventListener("click", function () {
+        renderBook(books[k]);
+        Array.prototype.forEach.call(host.children, function (c) { c.setAttribute("aria-pressed", "false"); });
+        b.setAttribute("aria-pressed", "true");
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, "", "?a=" + encodeURIComponent(k) + "#advisor");
+        }
+      });
+      host.appendChild(b);
+    });
+  }
+
   /* ---------------- the desk ---------------- */
 
   function renderRoster(r) {
@@ -602,6 +951,8 @@
       $(".desk-role", node).textContent = p.role;
       $(".mandate", node).textContent = p.mandate;
       $(".char", node).textContent = p.character;
+      const block = allocBlock(p.advisor, "card");
+      if (block) { node.appendChild(block); }
       a.appendChild(node);
     });
     r.staff.forEach(function (p) {
@@ -642,6 +993,20 @@
         if (head) { head.hidden = true; }
       }
     });
+    const rw = $("#rewrite");
+    const rwd = d.rewrite;
+    if (rw) {
+      if (rwd && (rwd.changed || rwd.why)) {
+        $("#rewrite-when").textContent = longDate(rwd.date) + " \u00b7 " + rwd.name +
+          (rwd.title ? ", " + rwd.title.replace(/^Advisor,\s*/, "").toLowerCase() : "");
+        $("#rewrite-changed").textContent = rwd.changed;
+        $("#rewrite-why").textContent = rwd.why;
+        rw.hidden = false;
+        shown = true;
+      } else {
+        rw.hidden = true;
+      }
+    }
     host.hidden = !shown;
   }
 
@@ -760,6 +1125,8 @@
         NAV_SERIES = s.series || {};
         HOLDS = s.holds || {};
         RECORD = s.record || {};
+        ALLOC = s.alloc || {};
+        INSTR = s.instruments || {};
         stamp(s.as_of, s.day);
         renderHealth(s.as_of, s.feed);
       }
@@ -767,7 +1134,7 @@
         ROSTER = {advisors: d.advisors || [], staff: d.staff || []};
         PORTRAITS = d.portraits || {};
       }
-      if (t) { TODAY = t.entries || []; }
+      if (t) { TODAY = t.entries || []; TODAY_AS_OF = t.as_of || ""; }
 
       if (have("standings")) {
         if (STANDINGS.length) {
@@ -775,8 +1142,9 @@
           renderSummary(STANDINGS);
           renderStandings(STANDINGS);
           buildPicker();
-          drawChart();
+          /* ready first: a chart drawn into a hidden container measures 0px wide */
           setState("standings", "ready");
+          drawChart();
         } else { setState("standings", "empty"); }
       }
 
@@ -789,7 +1157,11 @@
         const books = (a && a.books) || {};
         const key = wantedBook(books);
         BOOK = key ? books[key] : null;
-        if (BOOK && BOOK.positions) { renderBook(BOOK); setState("advisor", "ready"); }
+        if (BOOK && BOOK.positions) {
+          renderBook(BOOK);
+          bookPicker(books, key);
+          setState("advisor", "ready");
+        }
         else { setState("advisor", "empty"); }
       }
 

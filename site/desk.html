@@ -70,7 +70,7 @@
         <span class="secnum" aria-hidden="true">02</span>
         <div>
           <h2 id="h-today">Today</h2>
-          <p class="deck">Orders, refusals and reasons &mdash; 4 September.</p>
+          <p class="deck" id="today-deck">Orders, refusals and reasons for the latest close.</p>
         </div>
       </header>
 
@@ -99,7 +99,7 @@
       <header class="sechead">
         <span class="secnum" aria-hidden="true">03</span>
         <div>
-          <h2 id="h-advisor">Anton Weiss</h2>
+          <h2 id="h-advisor">One book</h2>
           <p class="deck" id="advisor-deck"></p>
         </div>
       </header>
@@ -119,6 +119,7 @@
       </div>
 
       <div class="st-ready book">
+        <div class="picker book-picker" id="book-picker" role="group" aria-label="Choose a book"></div>
         <div class="book-head">
           <div class="who-row" style="align-items:flex-start;gap:var(--s4)">
             <span class="pslot" id="advisor-pslot" style="flex:none;width:130px"></span>
@@ -127,11 +128,13 @@
           <dl class="figures" id="advisor-figures"></dl>
         </div>
 
+        <div class="book-alloc" id="advisor-alloc" hidden></div>
+
         <div class="book-cols">
           <div>
             <h3>Positions</h3>
             <table class="positions">
-              <caption>Nine instruments held of a limit of twelve. Value is marked at today&rsquo;s close.</caption>
+              <caption id="positions-caption">Value is marked at the close.</caption>
               <thead>
                 <tr>
                   <th scope="col">Instrument</th>
@@ -206,6 +209,12 @@
   </tr>
 </template>
 
+<template id="tpl-prow">
+  <tr class="prow">
+    <td colspan="9"></td>
+  </tr>
+</template>
+
 <template id="tpl-portrait">
   <span class="portrait" aria-hidden="true"><span class="init"></span></span>
 </template>
@@ -221,7 +230,7 @@
           <p class="dtoday"></p>
         </div>
         <div>
-          <h4>Since 7 August</h4>
+          <h4 class="sincehead">Since the open</h4>
           <div class="sparkhost"></div>
           <p class="sparknote"></p>
         </div>
