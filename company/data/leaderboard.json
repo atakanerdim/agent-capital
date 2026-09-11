@@ -1,5 +1,5 @@
 {
- "date": "2026-09-10",
+ "date": "2026-09-11",
  "opening_cash": 100000.0,
  "rows": [
   {
@@ -7,11 +7,11 @@
    "name": "Tobias Lindgren",
    "mandate": "Own what is already working. Add to strength, cut what has stopped moving.",
    "is_benchmark": false,
-   "nav": 100000.0,
-   "return_pct": 0.0,
+   "nav": 100010.68,
+   "return_pct": 0.01,
    "max_drawdown_pct": 0.0,
-   "days": 2,
-   "best_day_pct": 0.0,
+   "days": 3,
+   "best_day_pct": 0.01,
    "worst_day_pct": 0.0
   },
   {
@@ -19,11 +19,11 @@
    "name": "Priya Raghunathan",
    "mandate": "Buy what is cheap against its own history and wait. Price paid is the only edge you control.",
    "is_benchmark": false,
-   "nav": 100000.0,
-   "return_pct": 0.0,
+   "nav": 100010.68,
+   "return_pct": 0.01,
    "max_drawdown_pct": 0.0,
-   "days": 2,
-   "best_day_pct": 0.0,
+   "days": 3,
+   "best_day_pct": 0.01,
    "worst_day_pct": 0.0
   },
   {
@@ -31,11 +31,11 @@
    "name": "Beatriz Salgado",
    "mandate": "Lose as little as possible. Cash is a position and drawdown is the number that matters.",
    "is_benchmark": false,
-   "nav": 100000.0,
-   "return_pct": 0.0,
+   "nav": 100010.68,
+   "return_pct": 0.01,
    "max_drawdown_pct": 0.0,
-   "days": 2,
-   "best_day_pct": 0.0,
+   "days": 3,
+   "best_day_pct": 0.01,
    "worst_day_pct": 0.0
   },
   {
@@ -43,11 +43,11 @@
    "name": "Marisol Vega",
    "mandate": "Trade the dollar against the world. Currencies first; everything else is a relative price.",
    "is_benchmark": false,
-   "nav": 100000.0,
-   "return_pct": 0.0,
+   "nav": 100010.68,
+   "return_pct": 0.01,
    "max_drawdown_pct": 0.0,
-   "days": 2,
-   "best_day_pct": 0.0,
+   "days": 3,
+   "best_day_pct": 0.01,
    "worst_day_pct": 0.0
   },
   {
@@ -55,60 +55,60 @@
    "name": "Anton Weiss",
    "mandate": "Gold and silver first, and the reasons people reach for them. Patience over activity.",
    "is_benchmark": false,
-   "nav": 100000.0,
-   "return_pct": 0.0,
-   "max_drawdown_pct": 0.0,
-   "days": 2,
+   "nav": 99811.02,
+   "return_pct": -0.19,
+   "max_drawdown_pct": 0.19,
+   "days": 3,
    "best_day_pct": 0.0,
-   "worst_day_pct": 0.0
-  },
-  {
-   "advisor": "index",
-   "name": "Grace Okonkwo",
-   "mandate": "Broad funds, few decisions, low turnover. Beat the others by not trading.",
-   "is_benchmark": false,
-   "nav": 100000.0,
-   "return_pct": 0.0,
-   "max_drawdown_pct": 0.0,
-   "days": 2,
-   "best_day_pct": 0.0,
-   "worst_day_pct": 0.0
+   "worst_day_pct": -0.19
   },
   {
    "advisor": "contrarian",
    "name": "Ines Kovac",
    "mandate": "Take the other side of whatever this desk agrees on. Consensus is the signal.",
    "is_benchmark": false,
-   "nav": 99972.5,
-   "return_pct": -0.03,
-   "max_drawdown_pct": 0.03,
-   "days": 2,
+   "nav": 99691.41,
+   "return_pct": -0.31,
+   "max_drawdown_pct": 0.31,
+   "days": 3,
    "best_day_pct": -0.03,
-   "worst_day_pct": -0.03
+   "worst_day_pct": -0.28
+  },
+  {
+   "advisor": "index",
+   "name": "Grace Okonkwo",
+   "mandate": "Broad funds, few decisions, low turnover. Beat the others by not trading.",
+   "is_benchmark": false,
+   "nav": 99505.51,
+   "return_pct": -0.49,
+   "max_drawdown_pct": 0.49,
+   "days": 3,
+   "best_day_pct": 0.0,
+   "worst_day_pct": -0.49
   },
   {
    "advisor": "benchmark",
    "name": "Buy and hold",
-   "mandate": "Every instrument the desk may touch, equal weight, bought on the first day and never traded again.",
+   "mandate": "Every instrument on the list the day the desk opened, equal weight, bought on the first day and never traded again.",
    "is_benchmark": true,
-   "nav": 99833.57,
-   "return_pct": -0.17,
-   "max_drawdown_pct": 0.17,
-   "days": 2,
+   "nav": 99331.24,
+   "return_pct": -0.67,
+   "max_drawdown_pct": 0.67,
+   "days": 3,
    "best_day_pct": -0.17,
-   "worst_day_pct": -0.17
+   "worst_day_pct": -0.5
   },
   {
    "advisor": "macro",
    "name": "Emeka Nwosu",
    "mandate": "Start from the world — rates, oil, the dollar — and let the holdings follow from it.",
    "is_benchmark": false,
-   "nav": 99707.72,
-   "return_pct": -0.29,
-   "max_drawdown_pct": 0.29,
-   "days": 2,
+   "nav": 99293.94,
+   "return_pct": -0.71,
+   "max_drawdown_pct": 0.71,
+   "days": 3,
    "best_day_pct": -0.29,
-   "worst_day_pct": -0.29
+   "worst_day_pct": -0.41
   }
  ]
 }
