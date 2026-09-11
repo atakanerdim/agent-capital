@@ -1,8 +1,9 @@
 {
  "advisor": "careful",
- "cash": 100000.0,
+ "cash": 100010.68,
  "positions": {},
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": ""
+ "last_traded": "",
+ "carried_to": "2026-09-11"
 }
