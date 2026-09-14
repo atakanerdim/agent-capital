@@ -1,0 +1,247 @@
+{
+ "date": "2026-09-14",
+ "advisors": {
+  "momentum": {
+   "orders": [],
+   "rejected": [],
+   "note": "No clear price momentum can be identified from today’s snapshot, so there’s no obvious up‑trend to chase. Keeping cash to earn the 3.92% Treasury‑bill rate is the safest choice until a direction emerges.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "2a969fe594ce",
+   "prompt_sha": "bf7d449b108b",
+   "memory_sha": "6f79fa6f73e1",
+   "nav_before": 100042.73,
+   "decided_utc": "2026-09-14T13:00:59+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08",
+    "fomc:2026-10-27",
+    "fomc:2026-09-15"
+   ]
+  },
+  "value": {
+   "orders": [],
+   "rejected": [],
+   "note": "Cash is earning the 3.92% Treasury rate and none of the listed instruments appear clearly cheap relative to their recent history, so I will stay in cash today. I will review the 30‑day trends for WTI, XAU and bond discounts tomorrow before committing any capital.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "2a969fe594ce",
+   "prompt_sha": "e61c074f59e9",
+   "memory_sha": "bf183c583469",
+   "nav_before": 100042.73,
+   "decided_utc": "2026-09-14T13:01:00+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08",
+    "fomc:2026-10-27",
+    "fomc:2026-09-15"
+   ]
+  },
+  "macro": {
+   "orders": [],
+   "rejected": [],
+   "note": "Oil holds near $104 and gold is softer while the dollar is modestly firmer. Bond prices have slipped as yields rise, and I am staying on the sidelines until the FOMC outcome sets the next macro bias.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "2a969fe594ce",
+   "prompt_sha": "5c00e8b8732d",
+   "memory_sha": "80b59212c9f2",
+   "nav_before": 99472.21,
+   "decided_utc": "2026-09-14T13:01:01+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08",
+    "fomc:2026-10-27",
+    "fomc:2026-09-15"
+   ]
+  },
+  "careful": {
+   "orders": [],
+   "rejected": [],
+   "note": "With the FOMC meeting tomorrow, I expect potential volatility and prefer to keep the book in cash earning the Treasury bill rate. The cash position already modestly outperforms most short‑term alternatives given the uncertainty.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "2a969fe594ce",
+   "prompt_sha": "bd8b9599dd5d",
+   "memory_sha": "ca8474b17436",
+   "nav_before": 100042.73,
+   "decided_utc": "2026-09-14T13:01:53+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08",
+    "fomc:2026-10-27",
+    "fomc:2026-09-15"
+   ]
+  },
+  "contrarian": {
+   "orders": [
+    {
+     "action": "buy",
+     "instrument": "XAUUSD",
+     "qty": 1.1582653817642699,
+     "price": 4316.8,
+     "amount_usd": 5000.0,
+     "reason": "Gold may rise on risk‑off after the Fed meeting while the crowd stays in bonds",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "TLT",
+       "why_not": "crowded bond exposure"
+      },
+      {
+       "instrument": "HYG",
+       "why_not": "already over‑weighted"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "The Fed decision tomorrow could trigger a move into safe‑haven assets; most of the desk appears entrenched in bonds, which are already down. I’m adding a modest gold position as a contrarian hedge.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "2a969fe594ce",
+   "prompt_sha": "cc583b70b187",
+   "memory_sha": "cff8be1ffbac",
+   "nav_before": 99739.99,
+   "decided_utc": "2026-09-14T13:01:54+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08",
+    "fomc:2026-10-27",
+    "fomc:2026-09-15"
+   ]
+  },
+  "fx": {
+   "orders": [],
+   "rejected": [],
+   "note": "The upcoming FOMC meeting on 2026‑6‑15 will likely dictate near‑term dollar direction, so I am preserving cash earning the Treasury bill rate while awaiting the policy outcome. With no new price signals in the FX list, any move would be speculative rather than data‑driven.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "2a969fe594ce",
+   "prompt_sha": "f0d2ceb91983",
+   "memory_sha": "29c946edfcf9",
+   "nav_before": 100042.73,
+   "decided_utc": "2026-09-14T13:01:57+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08",
+    "fomc:2026-10-27",
+    "fomc:2026-09-15"
+   ]
+  },
+  "metals": {
+   "orders": [],
+   "rejected": [],
+   "note": "Gold is down modestly and the upcoming FOMC meeting adds uncertainty; I’ll keep the current gold position and let cash earn the Treasury rate for now. No new metal exposure added pending the policy outcome.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "2a969fe594ce",
+   "prompt_sha": "0ea57d63ab76",
+   "memory_sha": "5bca2df36c6d",
+   "nav_before": 99546.02,
+   "decided_utc": "2026-09-14T13:02:24+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08",
+    "fomc:2026-10-27",
+    "fomc:2026-09-15"
+   ]
+  },
+  "index": {
+   "orders": [],
+   "rejected": [],
+   "note": "SPY and EFA are modestly higher, while TLT is down as the market anticipates the upcoming FOMC meeting. Our core weights remain close to the original allocations, so no rebalancing is required. I will hold the positions and watch for any significant move after the meeting.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "2a969fe594ce",
+   "prompt_sha": "c29c64cf1991",
+   "memory_sha": "c268df5bfc69",
+   "nav_before": 99934.5,
+   "decided_utc": "2026-09-14T13:02:26+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08",
+    "fomc:2026-10-27",
+    "fomc:2026-09-15"
+   ]
+  }
+ }
+}
