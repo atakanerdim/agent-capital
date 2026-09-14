@@ -5,3 +5,5 @@
 - [2026-09-10] Record bond reduction before Fed meeting.
 
 - [2026-09-11] Monitor risk appetite shift after 2026‑09‑15 Fed outcome.
+
+- [2026-09-14] Re‑evaluate bond exposure after Fed minutes
