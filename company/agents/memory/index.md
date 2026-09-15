@@ -7,3 +7,5 @@
 - [2026-09-11] Watch 2026-09-15 FOMC for any bond market shifts.
 
 - [2026-09-14] No trade today; weights unchanged, monitor FOMC.
+
+- [2026-09-15] FOMC 2026-09-15; watch for bond market shifts before next valuation.

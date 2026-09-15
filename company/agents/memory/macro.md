@@ -7,3 +7,5 @@
 - [2026-09-11] Log any shift in oil or dollar strength after the meeting before adjusting holdings.
 
 - [2026-09-14] Record any oil/dollar move after the 2026‑09‑15 meeting before adjusting holdings.
+
+- [2026-09-15] Record oil/dollar moves after 2026‑09‑15 meeting before adjusting holdings.
