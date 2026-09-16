@@ -9,3 +9,5 @@
 - [2026-09-14] Record FOMC 2026‑6‑15 decision before re‑evaluating positions.
 
 - [2026-09-15] Re‑evaluate currency pairs after today's FOMC results.
+
+- [2026-09-16] Monitor FX pairs after FOMC; keep cash ready for next move.
