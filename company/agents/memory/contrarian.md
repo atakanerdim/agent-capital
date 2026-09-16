@@ -9,3 +9,5 @@
 - [2026-09-14] Re‑evaluate bond exposure after Fed minutes
 
 - [2026-09-15] Fed meeting 2026-09-15; bond exposure reduced.
+
+- [2026-09-16] Monitor TLT price over the next two weeks for reversal signals.
