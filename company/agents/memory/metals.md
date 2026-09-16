@@ -9,3 +9,5 @@
 - [2026-09-14] Review metal exposure after 2026-09-15 FOMC results.
 
 - [2026-09-15] If the Fed signals higher rates, consider trimming gold next week.
+
+- [2026-09-16] Reassess metal allocation after next FOMC minutes

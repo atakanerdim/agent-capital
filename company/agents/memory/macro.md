@@ -9,3 +9,5 @@
 - [2026-09-14] Record any oil/dollar move after the 2026‑09‑15 meeting before adjusting holdings.
 
 - [2026-09-15] Record oil/dollar moves after 2026‑09‑15 meeting before adjusting holdings.
+
+- [2026-09-16] Log oil/dollar moves post‑FOMC before any further adjustments.
