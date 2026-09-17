@@ -11,3 +11,5 @@
 - [2026-09-15] If the Fed signals higher rates, consider trimming gold next week.
 
 - [2026-09-16] Reassess metal allocation after next FOMC minutes
+
+- [2026-09-17] Watch upcoming FOMC minutes for any shift in rate guidance and adjust metal allocation accordingly
