@@ -1,22 +1,26 @@
 {
  "advisor": "macro",
- "cash": 25888.13,
+ "cash": 25890.98,
  "positions": {
   "XOM": {
    "qty": 146.67338721,
    "cost": 24151.97
   },
   "CAT": {
-   "qty": 30.61080806,
-   "cost": 25000.0
+   "qty": 28.05561591,
+   "cost": 22913.16
   },
   "XAUUSD": {
    "qty": 5.606764,
    "cost": 25000.0
+  },
+  "TIP": {
+   "qty": 18.97713256,
+   "cost": 2000.0
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-09-16",
- "carried_to": "2026-09-16"
+ "last_traded": "2026-09-17",
+ "carried_to": "2026-09-17"
 }

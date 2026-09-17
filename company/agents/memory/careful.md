@@ -9,3 +9,5 @@
 - [2026-09-14] Maintain cash until post‑FOMC outcome clarifies direction.
 
 - [2026-09-15] Re‑evaluate positioning after the next FOMC release.
+
+- [2026-09-17] Review positioning after the Dec 2026 FOMC meeting.

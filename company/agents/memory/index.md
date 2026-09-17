@@ -11,3 +11,5 @@
 - [2026-09-15] FOMC 2026-09-15; watch for bond market shifts before next valuation.
 
 - [2026-09-16] Re‑check portfolio weights after the next FOMC meeting.
+
+- [2026-09-17] Logged no trade; weights still ~1% off target, monitor for larger drift.
