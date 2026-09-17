@@ -11,3 +11,5 @@
 - [2026-09-15] Re‑evaluate currency pairs after today's FOMC results.
 
 - [2026-09-16] Monitor FX pairs after FOMC; keep cash ready for next move.
+
+- [2026-09-17] Log cash hold and rationale for next FX review.
