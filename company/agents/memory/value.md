@@ -13,3 +13,5 @@
 - [2026-09-16] Check 30‑day trends for WTI, XAU and bond discounts tomorrow.
 
 - [2026-09-17] Re‑check 30‑day trends for WTI, XAU and bond discounts next week
+
+- [2026-09-18] Re‑check 30‑day trends for WTI, XAU and bond discounts next week.

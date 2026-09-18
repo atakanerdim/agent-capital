@@ -11,3 +11,5 @@
 - [2026-09-15] Re‑evaluate positioning after the next FOMC release.
 
 - [2026-09-17] Review positioning after the Dec 2026 FOMC meeting.
+
+- [2026-09-18] Re‑evaluate after the upcoming FOMC meeting.
