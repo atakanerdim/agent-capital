@@ -13,3 +13,5 @@
 - [2026-09-16] Re‑check portfolio weights after the next FOMC meeting.
 
 - [2026-09-17] Logged no trade; weights still ~1% off target, monitor for larger drift.
+
+- [2026-09-18] Watch cash weight; consider reducing if it stays above ~35% of NAV.
