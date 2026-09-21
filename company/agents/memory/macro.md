@@ -15,3 +15,5 @@
 - [2026-09-17] Log oil/dollar moves post‑FOMC before adjusting holdings.
 
 - [2026-09-18] Log gold sell and target rebuild for CAT/XOM.
+
+- [2026-09-21] Log CAT reduction and cash freed for future CAT/XOM rebuild.

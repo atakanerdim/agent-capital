@@ -1,6 +1,6 @@
 {
  "advisor": "benchmark",
- "cash": 36.07,
+ "cash": 45.25,
  "positions": {
   "AAPL": {
    "qty": 11.80650303,
@@ -144,5 +144,5 @@
   "XAUUSD",
   "XOM"
  ],
- "carried_to": "2026-09-18"
+ "carried_to": "2026-09-21"
 }
