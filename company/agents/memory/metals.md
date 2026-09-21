@@ -15,3 +15,5 @@
 - [2026-09-17] Watch upcoming FOMC minutes for any shift in rate guidance and adjust metal allocation accordingly
 
 - [2026-09-18] Log metal allocation review after 2026-12-08 FOMC meeting.
+
+- [2026-09-21] Reevaluate metal exposure after the 2026-10-27 FOMC meeting.
