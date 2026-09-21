@@ -15,3 +15,5 @@
 - [2026-09-17] Re‑check 30‑day trends for WTI, XAU and bond discounts next week
 
 - [2026-09-18] Re‑check 30‑day trends for WTI, XAU and bond discounts next week.
+
+- [2026-09-21] Re‑evaluate bond discounts and commodities after 30‑day price trend data is available.

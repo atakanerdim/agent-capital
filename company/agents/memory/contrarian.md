@@ -15,3 +15,5 @@
 - [2026-09-17] Watch next Fed minutes; if equities surge, consider adding a modest IEF position.
 
 - [2026-09-18] Re‑evaluate equity tilt if bond yields rise sharply
+
+- [2026-09-21] Watch HYG price action after next FOMC minutes.

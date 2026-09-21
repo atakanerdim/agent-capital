@@ -1,6 +1,6 @@
 {
  "advisor": "contrarian",
- "cash": 60155.52,
+ "cash": 45175.4,
  "positions": {
   "TLT": {
    "qty": 304.49362997,
@@ -13,10 +13,14 @@
   "MSFT": {
    "qty": 20.09040683,
    "cost": 10000.0
+  },
+  "HYG": {
+   "qty": 191.00980517,
+   "cost": 15000.0
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-09-18",
- "carried_to": "2026-09-18"
+ "last_traded": "2026-09-21",
+ "carried_to": "2026-09-21"
 }

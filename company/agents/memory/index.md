@@ -15,3 +15,5 @@
 - [2026-09-17] Logged no trade; weights still ~1% off target, monitor for larger drift.
 
 - [2026-09-18] Watch cash weight; consider reducing if it stays above ~35% of NAV.
+
+- [2026-09-21] Cash note: above 35%; monitor drift.

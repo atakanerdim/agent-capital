@@ -15,3 +15,5 @@
 - [2026-09-17] Log cash hold and rationale for next FX review.
 
 - [2026-09-18] Hold cash until clearer Fed direction emerges after Sep 15 meeting.
+
+- [2026-09-21] Record cash hold until Fed clarifies direction post‑Sep15.
