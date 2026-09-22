@@ -17,3 +17,5 @@
 - [2026-09-18] Re‑evaluate equity tilt if bond yields rise sharply
 
 - [2026-09-21] Watch HYG price action after next FOMC minutes.
+
+- [2026-09-22] Monitor TLT vs IEF performance over the next 2‑4 weeks.

@@ -1,10 +1,10 @@
 {
  "advisor": "contrarian",
- "cash": 45175.4,
+ "cash": 45180.39,
  "positions": {
   "TLT": {
-   "qty": 304.49362997,
-   "cost": 24844.9
+   "qty": 182.24424122,
+   "cost": 14870.06
   },
   "XAUUSD": {
    "qty": 1.15826538,
@@ -17,10 +17,14 @@
   "HYG": {
    "qty": 191.00980517,
    "cost": 15000.0
+  },
+  "IEF": {
+   "qty": 109.70927043,
+   "cost": 10000.0
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-09-21",
- "carried_to": "2026-09-21"
+ "last_traded": "2026-09-22",
+ "carried_to": "2026-09-22"
 }
