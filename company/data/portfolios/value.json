@@ -1,14 +1,18 @@
 {
  "advisor": "value",
- "cash": 75108.66,
+ "cash": 50116.96,
  "positions": {
   "HYG": {
    "qty": 318.79622545,
+   "cost": 25000.0
+  },
+  "EMB": {
+   "qty": 266.58136063,
    "cost": 25000.0
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-09-17",
- "carried_to": "2026-09-21"
+ "last_traded": "2026-09-22",
+ "carried_to": "2026-09-22"
 }

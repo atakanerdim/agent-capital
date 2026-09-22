@@ -17,3 +17,5 @@
 - [2026-09-18] Watch cash weight; consider reducing if it stays above ~35% of NAV.
 
 - [2026-09-21] Cash note: above 35%; monitor drift.
+
+- [2026-09-22] 2026-09-22: cash >35%; reduce by $5k to EFA.

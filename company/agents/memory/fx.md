@@ -17,3 +17,5 @@
 - [2026-09-18] Hold cash until clearer Fed direction emerges after Sep 15 meeting.
 
 - [2026-09-21] Record cash hold until Fed clarifies direction post‑Sep15.
+
+- [2026-09-22] Maintain cash position until Sep 26 or until Fed provides explicit guidance.
