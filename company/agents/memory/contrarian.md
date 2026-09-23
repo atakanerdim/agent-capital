@@ -19,3 +19,5 @@
 - [2026-09-21] Watch HYG price action after next FOMC minutes.
 
 - [2026-09-22] Monitor TLT vs IEF performance over the next 2‑4 weeks.
+
+- [2026-09-23] Note: added XAGUSD as contrarian to bond crowd.

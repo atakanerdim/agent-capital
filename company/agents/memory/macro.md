@@ -19,3 +19,5 @@
 - [2026-09-21] Log CAT reduction and cash freed for future CAT/XOM rebuild.
 
 - [2026-09-22] Record TIP addition and XOM size for later CAT/XOM rebuild planning.
+
+- [2026-09-23] Log CAT/XOM sell amounts and new cash for later rebuild planning.
