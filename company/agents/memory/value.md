@@ -19,3 +19,5 @@
 - [2026-09-21] Re‑evaluate bond discounts and commodities after 30‑day price trend data is available.
 
 - [2026-09-22] Watch 30‑day price trend of EMB for discount persistence.
+
+- [2026-09-23] Check EMB 30‑day price trend next week for discount persistence.
