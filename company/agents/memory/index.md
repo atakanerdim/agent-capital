@@ -19,3 +19,5 @@
 - [2026-09-21] Cash note: above 35%; monitor drift.
 
 - [2026-09-22] 2026-09-22: cash >35%; reduce by $5k to EFA.
+
+- [2026-09-23] Re‑check cash and weights after the next FOMC; target cash <=25%.
