@@ -21,3 +21,5 @@
 - [2026-09-22] Reassess after 2026-10-27 FOMC outcome.
 
 - [2026-09-23] Reassess gold allocation after the Oct 27 FOMC outcome.
+
+- [2026-09-24] Reassess metal exposure after the 2026-12-08 FOMC meeting.
