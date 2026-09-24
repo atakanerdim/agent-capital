@@ -1,0 +1,129 @@
+{
+ "date": "2026-09-24",
+ "rates": {
+  "TBILL3M": {
+   "close": 4.028,
+   "source": "yahoo",
+   "symbol": "%5EIRX",
+   "raw": 4.028,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-09-23",
+   "fetched_utc": "2026-09-24T11:57:09+00:00",
+   "adjusted": "split_and_dividend",
+   "pct": 4.028,
+   "name": "US 13-week Treasury bill yield, percent"
+  }
+ },
+ "books": {
+  "momentum": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 100141.83,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 11.14,
+   "distributions": [],
+   "credited": 11.14
+  },
+  "value": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 50122.5,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 5.58,
+   "distributions": [],
+   "credited": 5.58
+  },
+  "macro": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 18617.36,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 2.07,
+   "distributions": [],
+   "credited": 2.07
+  },
+  "careful": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 100141.83,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 11.14,
+   "distributions": [],
+   "credited": 11.14
+  },
+  "contrarian": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 40185.39,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 4.47,
+   "distributions": [],
+   "credited": 4.47
+  },
+  "fx": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 100141.83,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 11.14,
+   "distributions": [],
+   "credited": 11.14
+  },
+  "metals": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 55096.91,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 6.13,
+   "distributions": [],
+   "credited": 6.13
+  },
+  "index": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 27115.63,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 3.02,
+   "distributions": [],
+   "credited": 3.02
+  },
+  "benchmark": {
+   "since": "2026-09-23",
+   "date": "2026-09-24",
+   "days": 1,
+   "cash_before": 52.13,
+   "rate_pct": 4.005,
+   "rate_from": "since",
+   "interest": 0.01,
+   "distributions": [
+    {
+     "instrument": "VNQ",
+     "ex_date": "2026-09-23",
+     "per_unit": 0.805,
+     "qty": 39.00889989,
+     "amount": 31.4
+    }
+   ],
+   "credited": 31.41
+  }
+ }
+}
