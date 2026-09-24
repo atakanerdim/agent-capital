@@ -21,3 +21,5 @@
 - [2026-09-22] Maintain cash position until Sep 26 or until Fed provides explicit guidance.
 
 - [2026-09-23] Re‑evaluate currency positions after the 2026‑10‑27 FOMC meeting.
+
+- [2026-09-24] Record cash hold on 2026-09-24, pending Oct 27 FOMC.
