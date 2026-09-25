@@ -23,3 +23,5 @@
 - [2026-09-23] Re‑evaluate currency positions after the 2026‑10‑27 FOMC meeting.
 
 - [2026-09-24] Record cash hold on 2026-09-24, pending Oct 27 FOMC.
+
+- [2026-09-25] Record cash hold; revisit after the Oct 27 FOMC.

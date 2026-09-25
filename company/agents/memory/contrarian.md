@@ -23,3 +23,5 @@
 - [2026-09-23] Note: added XAGUSD as contrarian to bond crowd.
 
 - [2026-09-24] Re‑evaluate oil exposure if crude spikes above $100
+
+- [2026-09-25] Re‑evaluate TLT position if yields keep climbing.
