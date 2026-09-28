@@ -25,3 +25,5 @@
 - [2026-09-24] Re‑evaluate oil exposure if crude spikes above $100
 
 - [2026-09-25] Re‑evaluate TLT position if yields keep climbing.
+
+- [2026-09-28] Watch TLT price and yields; be ready to re‑enter bonds if yields reverse.

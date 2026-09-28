@@ -25,3 +25,5 @@
 - [2026-09-24] Reassess metal exposure after the 2026-12-08 FOMC meeting.
 
 - [2026-09-25] Future self: metals down, hold pending Fed decision.
+
+- [2026-09-28] Check metal exposure after upcoming FOMC minutes.

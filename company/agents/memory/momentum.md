@@ -17,3 +17,5 @@
 - [2026-09-24] Check next day's price changes for emerging trends.
 
 - [2026-09-25] Re‑evaluate tomorrow's price list for emerging trends.
+
+- [2026-09-28] Need next price update to identify momentum signals.

@@ -25,3 +25,5 @@
 - [2026-09-24] Hold allocations steady; monitor cash yield and weight drift toward quarter-end.
 
 - [2026-09-25] Rebalanced TLT to 25% weight, monitor cash drift next quarter
+
+- [2026-09-28] Record cash level and TLT headroom for the upcoming FOMC.
