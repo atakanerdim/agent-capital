@@ -25,3 +25,5 @@
 - [2026-09-24] Check 30‑day price trends for EMB, HYG, and other bonds next week.
 
 - [2026-09-25] Re‑evaluate EMB discount after 30‑day trend data
+
+- [2026-09-28] If EMB stays below cost after 30‑day trend, consider a small addition.

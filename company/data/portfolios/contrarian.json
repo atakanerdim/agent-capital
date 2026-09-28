@@ -1,10 +1,10 @@
 {
  "advisor": "contrarian",
- "cash": 40193.8,
+ "cash": 35207.43,
  "positions": {
   "TLT": {
-   "qty": 182.24424122,
-   "cost": 14870.06
+   "qty": 55.17943817,
+   "cost": 4502.32
   },
   "XAUUSD": {
    "qty": 1.15826538,
@@ -29,10 +29,14 @@
   "WTI": {
    "qty": 53.36179296,
    "cost": 5000.0
+  },
+  "NVDA": {
+   "qty": 64.88450558,
+   "cost": 15000.0
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-09-25",
- "carried_to": "2026-09-25"
+ "last_traded": "2026-09-28",
+ "carried_to": "2026-09-28"
 }

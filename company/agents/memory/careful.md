@@ -23,3 +23,5 @@
 - [2026-09-24] Re‑evaluate after the 2026‑10‑27 FOMC meeting.
 
 - [2026-09-25] Check positioning after the 2026-10-27 FOMC meeting.
+
+- [2026-09-28] Maintain cash; revisit after next FOMC outcome.
