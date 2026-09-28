@@ -25,3 +25,5 @@
 - [2026-09-24] Log $2.5k gold sell and $2.5k XOM buy for Sep 24 rebuild.
 
 - [2026-09-25] Preserve $18.6k cash for future CAT/XOM rebuild.
+
+- [2026-09-28] Preserve cash for CAT/XOM rebuild; monitor dollar and oil.
