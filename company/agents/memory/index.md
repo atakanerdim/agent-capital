@@ -27,3 +27,5 @@
 - [2026-09-25] Rebalanced TLT to 25% weight, monitor cash drift next quarter
 
 - [2026-09-28] Record cash level and TLT headroom for the upcoming FOMC.
+
+- [2026-09-29] Record cash level and note limited rebalancing capacity for future reference.

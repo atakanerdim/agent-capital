@@ -27,3 +27,5 @@
 - [2026-09-25] Preserve $18.6k cash for future CAT/XOM rebuild.
 
 - [2026-09-28] Preserve cash for CAT/XOM rebuild; monitor dollar and oil.
+
+- [2026-09-29] Monitor Dec 8 FOMC for any shift in rate trajectory; may adjust duration exposure.
