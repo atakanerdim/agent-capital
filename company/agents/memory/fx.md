@@ -27,3 +27,5 @@
 - [2026-09-25] Record cash hold; revisit after the Oct 27 FOMC.
 
 - [2026-09-28] Cash hold pending 2026‑10‑27 Fed meeting; revisit after.
+
+- [2026-09-29] Re‑evaluate after Oct 27 FOMC for potential USD strength or weakness.
