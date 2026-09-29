@@ -25,3 +25,5 @@
 - [2026-09-25] Check positioning after the 2026-10-27 FOMC meeting.
 
 - [2026-09-28] Maintain cash; revisit after next FOMC outcome.
+
+- [2026-09-29] Stay cash‑heavy until post‑FOMC market direction emerges.
