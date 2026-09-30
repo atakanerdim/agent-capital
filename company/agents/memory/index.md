@@ -29,3 +29,5 @@
 - [2026-09-28] Record cash level and TLT headroom for the upcoming FOMC.
 
 - [2026-09-29] Record cash level and note limited rebalancing capacity for future reference.
+
+- [2026-09-30] Watch TLT; rebalance if its weight drifts further below target.

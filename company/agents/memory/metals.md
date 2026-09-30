@@ -29,3 +29,5 @@
 - [2026-09-28] Check metal exposure after upcoming FOMC minutes.
 
 - [2026-09-29] Reevaluate after the 2026-10-27 FOMC meeting.
+
+- [2026-09-30] Metals down, hold pending Fed decision.

@@ -29,3 +29,5 @@
 - [2026-09-28] Preserve cash for CAT/XOM rebuild; monitor dollar and oil.
 
 - [2026-09-29] Monitor Dec 8 FOMC for any shift in rate trajectory; may adjust duration exposure.
+
+- [2026-09-30] Log Sep30: reduced gold/TIP, increased CAT for oil‑driven cyclicals.
