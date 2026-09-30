@@ -29,3 +29,5 @@
 - [2026-09-28] If EMB stays below cost after 30‑day trend, consider a small addition.
 
 - [2026-09-29] Record EMB discount persistence for next review on 2026-10-06.
+
+- [2026-09-30] Re‑evaluate EMB discount after next 30‑day trend
