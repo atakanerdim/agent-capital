@@ -1,10 +1,10 @@
 {
  "advisor": "contrarian",
- "cash": 35211.43,
+ "cash": 20215.43,
  "positions": {
   "TLT": {
-   "qty": 55.17943817,
-   "cost": 4502.32
+   "qty": 246.92173652,
+   "cost": 19502.32
   },
   "XAUUSD": {
    "qty": 1.15826538,
@@ -37,6 +37,6 @@
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-09-28",
- "carried_to": "2026-09-29"
+ "last_traded": "2026-09-30",
+ "carried_to": "2026-09-30"
 }
