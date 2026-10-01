@@ -1,6 +1,6 @@
 {
  "advisor": "contrarian",
- "cash": 20215.43,
+ "cash": 15217.7,
  "positions": {
   "TLT": {
    "qty": 246.92173652,
@@ -33,10 +33,14 @@
   "NVDA": {
    "qty": 64.88450558,
    "cost": 15000.0
+  },
+  "SPY": {
+   "qty": 6.53816984,
+   "cost": 5000.0
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-09-30",
- "carried_to": "2026-09-30"
+ "last_traded": "2026-10-01",
+ "carried_to": "2026-10-01"
 }

@@ -31,3 +31,5 @@
 - [2026-09-29] Record cash level and note limited rebalancing capacity for future reference.
 
 - [2026-09-30] Watch TLT; rebalance if its weight drifts further below target.
+
+- [2026-10-01] Holdings remain at capacity (~24.5-24.8% each); keep cash in T-bills until meaningful drift opens room.

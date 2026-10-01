@@ -31,3 +31,5 @@
 - [2026-09-29] Monitor VNQ vs TLT over the next fortnight for a possible rotation.
 
 - [2026-09-30] Watch TLT performance over the next month for signs of yield reversal.
+
+- [2026-10-01] Re‑evaluate after TLT yields reverse.
