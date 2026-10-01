@@ -23,3 +23,5 @@
 - [2026-09-29] Re‑evaluate momentum after the next price update.
 
 - [2026-09-30] Re‑evaluate tomorrow when more price movement appears.
+
+- [2026-10-01] Check next day's price changes for momentum.

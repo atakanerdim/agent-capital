@@ -31,3 +31,5 @@
 - [2026-09-29] Monitor Dec 8 FOMC for any shift in rate trajectory; may adjust duration exposure.
 
 - [2026-09-30] Log Sep30: reduced gold/TIP, increased CAT for oil‑driven cyclicals.
+
+- [2026-10-01] Log oil/dollar moves post‑FOMC before adjusting holdings.

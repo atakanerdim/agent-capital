@@ -31,3 +31,5 @@
 - [2026-09-29] Record EMB discount persistence for next review on 2026-10-06.
 
 - [2026-09-30] Re‑evaluate EMB discount after next 30‑day trend
+
+- [2026-10-01] Watch EMB discount over next 30 days; consider further action if price moves toward cost.
