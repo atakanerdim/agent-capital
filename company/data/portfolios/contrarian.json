@@ -1,6 +1,6 @@
 {
  "advisor": "contrarian",
- "cash": 15217.7,
+ "cash": 219.4,
  "positions": {
   "TLT": {
    "qty": 246.92173652,
@@ -37,10 +37,14 @@
   "SPY": {
    "qty": 6.53816984,
    "cost": 5000.0
+  },
+  "LQD": {
+   "qty": 147.01558365,
+   "cost": 15000.0
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-10-01",
- "carried_to": "2026-10-01"
+ "last_traded": "2026-10-02",
+ "carried_to": "2026-10-02"
 }

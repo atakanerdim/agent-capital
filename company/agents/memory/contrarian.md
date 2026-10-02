@@ -33,3 +33,5 @@
 - [2026-09-30] Watch TLT performance over the next month for signs of yield reversal.
 
 - [2026-10-01] Re‑evaluate after TLT yields reverse.
+
+- [2026-10-02] Watch LQD performance if Treasury yields jump post‑FOMC
