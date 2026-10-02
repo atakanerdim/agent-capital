@@ -33,3 +33,5 @@
 - [2026-09-30] Metals down, hold pending Fed decision.
 
 - [2026-10-01] Reevaluate metal exposure after the 2026-10-27 FOMC outcome.
+
+- [2026-10-02] Hold metals; monitor upcoming FOMC outcome.

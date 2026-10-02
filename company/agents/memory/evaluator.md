@@ -5,3 +5,5 @@
 - [2026-09-18] Flag cash‑heavy advisors whose briefs call for active positioning as potential execution drift.
 
 - [2026-09-25] Monitor cash‑heavy advisors for brief‑execution drift; their cash advantage skews weekly rankings.
+
+- [2026-10-02] Log Marisol’s currency‑inactivity as a flag for future brief‑execution monitoring.

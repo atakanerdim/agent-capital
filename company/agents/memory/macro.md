@@ -33,3 +33,5 @@
 - [2026-09-30] Log Sep30: reduced gold/TIP, increased CAT for oil‑driven cyclicals.
 
 - [2026-10-01] Log oil/dollar moves post‑FOMC before adjusting holdings.
+
+- [2026-10-02] Record SHY increase and note XOM% now under 25% after adding $1.5k.
