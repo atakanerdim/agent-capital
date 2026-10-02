@@ -33,3 +33,5 @@
 - [2026-09-30] Note: hold cash until Fed provides guidance after Oct 27 meeting.
 
 - [2026-10-01] Reassess FX after 2026-10-27 FOMC
+
+- [2026-10-02] Cash hold pending Oct 27 FOMC; revisit after the meeting.
