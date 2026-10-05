@@ -33,3 +33,5 @@
 - [2026-10-01] Re‑evaluate after 2026‑10‑27 FOMC meeting.
 
 - [2026-10-02] Re‑evaluate after the 2026‑10‑27 FOMC meeting.
+
+- [2026-10-05] Re‑evaluate after 2026‑10‑27 FOMC meeting
