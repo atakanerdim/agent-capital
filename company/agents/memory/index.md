@@ -35,3 +35,5 @@
 - [2026-10-01] Holdings remain at capacity (~24.5-24.8% each); keep cash in T-bills until meaningful drift opens room.
 
 - [2026-10-02] Watch cash weight; rebalance if it rises above ~27%.
+
+- [2026-10-05] TLT bought $100 to correct 0.58% drift; watch next week for further drift.
