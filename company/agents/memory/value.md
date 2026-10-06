@@ -37,3 +37,5 @@
 - [2026-10-02] Re‑evaluate EMB and HYG discounts after next 30‑day trend data.
 
 - [2026-10-05] Re‑evaluate EMB and HYG discounts after next 30‑day trend data.
+
+- [2026-10-06] Check if any bond drops further to open room for new buys.

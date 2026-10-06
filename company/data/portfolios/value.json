@@ -1,6 +1,6 @@
 {
  "advisor": "value",
- "cash": 49589.54,
+ "cash": 49595.05,
  "positions": {
   "HYG": {
    "qty": 318.79622545,
@@ -14,5 +14,5 @@
  "opened": "2026-09-09",
  "currency": "USD",
  "last_traded": "2026-10-01",
- "carried_to": "2026-10-05"
+ "carried_to": "2026-10-06"
 }
