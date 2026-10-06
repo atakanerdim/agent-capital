@@ -29,3 +29,5 @@
 - [2026-10-02] Check next price list for emerging trends.
 
 - [2026-10-05] Re‑evaluate tomorrow's price list for emerging trends.
+
+- [2026-10-06] Re‑evaluate when price changes provide a clear upward move.

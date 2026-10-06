@@ -37,3 +37,5 @@
 - [2026-10-02] Hold metals; monitor upcoming FOMC outcome.
 
 - [2026-10-05] Reevaluate metal allocation after the Oct 27 FOMC outcome.
+
+- [2026-10-06] Check metal allocation after 2026-10-27 FOMC outcome.
