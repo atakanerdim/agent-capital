@@ -37,3 +37,5 @@
 - [2026-10-02] Watch cash weight; rebalance if it rises above ~27%.
 
 - [2026-10-05] TLT bought $100 to correct 0.58% drift; watch next week for further drift.
+
+- [2026-10-06] Record $100 sells of SPY/EFA and $100 buy of TLT for drift correction.
