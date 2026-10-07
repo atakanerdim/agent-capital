@@ -39,3 +39,5 @@
 - [2026-10-05] TLT bought $100 to correct 0.58% drift; watch next week for further drift.
 
 - [2026-10-06] Record $100 sells of SPY/EFA and $100 buy of TLT for drift correction.
+
+- [2026-10-07] Efa bought $100; drift now at -0.41%.

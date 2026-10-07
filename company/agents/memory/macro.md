@@ -39,3 +39,5 @@
 - [2026-10-05] Record CAT reduction of $200 and cash increase for future rebalance.
 
 - [2026-10-06] Log any oil/dollar move after 2026‑10‑27 meeting before adjusting holdings.
+
+- [2026-10-07] Record XOM sell and IEF buy for post‑FOMC review.
