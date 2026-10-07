@@ -39,3 +39,5 @@
 - [2026-10-05] Watch upcoming Fed minutes for bond‑yield direction.
 
 - [2026-10-06] Add TLT if yields reverse; trim MSFT as equity risk remains elevated.
+
+- [2026-10-07] Watch EMB performance post‑Fed; consider adding more if yields stay high
