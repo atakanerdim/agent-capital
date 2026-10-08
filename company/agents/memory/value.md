@@ -41,3 +41,5 @@
 - [2026-10-06] Check if any bond drops further to open room for new buys.
 
 - [2026-10-07] Re‑evaluate bond discounts after next 30‑day trend data.
+
+- [2026-10-08] Watch EMB discount trend; rebalance if price nears cost.

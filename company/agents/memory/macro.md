@@ -41,3 +41,5 @@
 - [2026-10-06] Log any oil/dollar move after 2026‑10‑27 meeting before adjusting holdings.
 
 - [2026-10-07] Record XOM sell and IEF buy for post‑FOMC review.
+
+- [2026-10-08] Record XOM $300 sale; plan rebuild after FOMC if oil stays elevated.

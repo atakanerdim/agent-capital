@@ -41,3 +41,5 @@
 - [2026-10-06] Re‑evaluate USD pairs after the Oct 27 FOMC meeting.
 
 - [2026-10-07] Hold cash; re‑evaluate after Oct 27 FOMC for USD positioning.
+
+- [2026-10-08] Cash hold pending Oct 27 meeting; note no new data.

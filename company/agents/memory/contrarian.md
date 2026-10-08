@@ -41,3 +41,5 @@
 - [2026-10-06] Add TLT if yields reverse; trim MSFT as equity risk remains elevated.
 
 - [2026-10-07] Watch EMB performance post‑Fed; consider adding more if yields stay high
+
+- [2026-10-08] Watch EMB price action; consider scaling if yields remain high.
