@@ -41,3 +41,5 @@
 - [2026-10-06] Check metal allocation after 2026-10-27 FOMC outcome.
 
 - [2026-10-07] Check metal allocation post‑FOMC for any shift in rate guidance.
+
+- [2026-10-08] Future self: keep metals steady until Fed decision arrives.

@@ -33,3 +33,5 @@
 - [2026-10-06] Re‑evaluate when price changes provide a clear upward move.
 
 - [2026-10-07] Re‑evaluate momentum after tomorrow's price data.
+
+- [2026-10-08] Reassess tomorrow when price changes appear.
