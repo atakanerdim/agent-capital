@@ -1,10 +1,10 @@
 {
  "advisor": "contrarian",
- "cash": 219.51,
+ "cash": 219.53,
  "positions": {
   "TLT": {
-   "qty": 272.85870968,
-   "cost": 21502.32
+   "qty": 208.11702899,
+   "cost": 16400.43
   },
   "XAUUSD": {
    "qty": 1.15826538,
@@ -41,10 +41,14 @@
   "LQD": {
    "qty": 147.01558365,
    "cost": 15000.0
+  },
+  "EMB": {
+   "qty": 55.17545796,
+   "cost": 5000.0
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-10-06",
- "carried_to": "2026-10-07"
+ "last_traded": "2026-10-08",
+ "carried_to": "2026-10-08"
 }
