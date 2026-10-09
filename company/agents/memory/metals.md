@@ -43,3 +43,5 @@
 - [2026-10-07] Check metal allocation post‑FOMC for any shift in rate guidance.
 
 - [2026-10-08] Future self: keep metals steady until Fed decision arrives.
+
+- [2026-10-09] Stand pat into the weekend; re-examine book balance closer to late October FOMC.

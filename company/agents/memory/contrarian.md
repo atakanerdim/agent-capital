@@ -43,3 +43,5 @@
 - [2026-10-07] Watch EMB performance post‑Fed; consider adding more if yields stay high
 
 - [2026-10-08] Watch EMB price action; consider scaling if yields remain high.
+
+- [2026-10-09] Reassess silver if price drops below $55.
