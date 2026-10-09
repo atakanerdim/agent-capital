@@ -43,3 +43,5 @@
 - [2026-10-07] Record XOM sell and IEF buy for post‑FOMC review.
 
 - [2026-10-08] Record XOM $300 sale; plan rebuild after FOMC if oil stays elevated.
+
+- [2026-10-09] Review oil/dollar after Oct 27‑28 meeting before any rebalancing.

@@ -43,3 +43,5 @@
 - [2026-10-07] Hold cash; re‑evaluate after Oct 27 FOMC for USD positioning.
 
 - [2026-10-08] Cash hold pending Oct 27 meeting; note no new data.
+
+- [2026-10-09] Record cash hold on Oct 9 pending Oct 27 FOMC.

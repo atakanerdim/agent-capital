@@ -43,3 +43,5 @@
 - [2026-10-07] Efa bought $100; drift now at -0.41%.
 
 - [2026-10-08] Remember to monitor cash and core weights after the 2026‑10‑27 FOMC; small adjustments keep us within limits.
+
+- [2026-10-09] Watch cash weight after 2026-10-27 FOMC; consider small buy if it exceeds 27%.
