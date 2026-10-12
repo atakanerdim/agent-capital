@@ -37,3 +37,5 @@
 - [2026-10-08] Reassess tomorrow when price changes appear.
 
 - [2026-10-09] Re‑evaluate next price update for emerging momentum.
+
+- [2026-10-12] Re‑evaluate momentum after next price list.
