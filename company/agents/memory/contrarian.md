@@ -45,3 +45,5 @@
 - [2026-10-08] Watch EMB price action; consider scaling if yields remain high.
 
 - [2026-10-09] Reassess silver if price drops below $55.
+
+- [2026-10-12] Monitor TLT; if yields keep falling, consider scaling further

@@ -45,3 +45,5 @@
 - [2026-10-08] Remember to monitor cash and core weights after the 2026‑10‑27 FOMC; small adjustments keep us within limits.
 
 - [2026-10-09] Watch cash weight after 2026-10-27 FOMC; consider small buy if it exceeds 27%.
+
+- [2026-10-12] Watch cash drift before 2026-10-27 FOMC; consider small buy if cash >27%.
