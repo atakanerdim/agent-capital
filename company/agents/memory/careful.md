@@ -43,3 +43,5 @@
 - [2026-10-08] Review positioning after 2026-10-27 FOMC outcome.
 
 - [2026-10-09] Re-evaluate after 2026-10-27 FOMC meeting.
+
+- [2026-10-12] Review positioning after the 2026-10-27 FOMC outcome.
