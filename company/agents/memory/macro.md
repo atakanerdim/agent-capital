@@ -47,3 +47,5 @@
 - [2026-10-09] Review oil/dollar after Oct 27‑28 meeting before any rebalancing.
 
 - [2026-10-12] Logged XOM $400 sell to comply with 25% book limit.
+
+- [2026-10-13] Log XOM $400 sell and IEF $4,154 buy for limit compliance.

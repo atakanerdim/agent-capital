@@ -47,3 +47,5 @@
 - [2026-10-09] Watch cash weight after 2026-10-27 FOMC; consider small buy if it exceeds 27%.
 
 - [2026-10-12] Watch cash drift before 2026-10-27 FOMC; consider small buy if cash >27%.
+
+- [2026-10-13] Logged $100 buys for SPY/EFA to correct 0.5%+ drift.
