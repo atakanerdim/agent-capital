@@ -47,3 +47,5 @@
 - [2026-10-09] Re‑evaluate EMB and HYG after 30‑day trend data on 2026-10-27.
 
 - [2026-10-12] Re‑evaluate EMB/HYG discounts after next 30‑day trend data.
+
+- [2026-10-13] Re‑evaluate EMB/HYG after 30‑day trend data on 2026-10-27

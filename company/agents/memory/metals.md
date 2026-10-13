@@ -47,3 +47,5 @@
 - [2026-10-09] Stand pat into the weekend; re-examine book balance closer to late October FOMC.
 
 - [2026-10-12] Future self: reassess metal allocation after 2026-10-27 FOMC outcome.
+
+- [2026-10-13] Reevaluate metal exposure after the 2026-10-27 FOMC outcome.

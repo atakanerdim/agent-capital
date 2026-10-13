@@ -1,0 +1,1 @@
+Grace Okonkwo: Added $100 to SPY and $100 to EFA to keep drift under control.
