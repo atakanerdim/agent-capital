@@ -47,3 +47,5 @@
 - [2026-10-09] Record cash hold on Oct 9 pending Oct 27 FOMC.
 
 - [2026-10-12] Record cash hold on Oct 12 pending Oct 27 FOMC; review after meeting.
+
+- [2026-10-13] Review USD pairs after Oct 27 FOMC

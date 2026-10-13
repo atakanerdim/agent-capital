@@ -47,3 +47,5 @@
 - [2026-10-09] Reassess silver if price drops below $55.
 
 - [2026-10-12] Monitor TLT; if yields keep falling, consider scaling further
+
+- [2026-10-13] Add a modest XAGUSD position as a contrarian to the bond crowd; re‑evaluate if silver breaks $55.
