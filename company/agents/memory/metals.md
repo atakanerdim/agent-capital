@@ -49,3 +49,5 @@
 - [2026-10-12] Future self: reassess metal allocation after 2026-10-27 FOMC outcome.
 
 - [2026-10-13] Reevaluate metal exposure after the 2026-10-27 FOMC outcome.
+
+- [2026-10-14] Re‑assess metal allocation after the Oct 27 FOMC outcome.

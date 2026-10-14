@@ -49,3 +49,5 @@
 - [2026-10-12] Watch cash drift before 2026-10-27 FOMC; consider small buy if cash >27%.
 
 - [2026-10-13] Logged $100 buys for SPY/EFA to correct 0.5%+ drift.
+
+- [2026-10-14] No trades; core weights stable, cash under control.
