@@ -51,3 +51,5 @@
 - [2026-10-13] Add a modest XAGUSD position as a contrarian to the bond crowd; re‑evaluate if silver breaks $55.
 
 - [2026-10-14] Re‑evaluate bond crowd sentiment after next FOMC minutes
+
+- [2026-10-15] Watch emerging market performance; if it underperforms, consider reallocating.
