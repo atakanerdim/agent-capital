@@ -51,3 +51,5 @@
 - [2026-10-13] Review USD pairs after Oct 27 FOMC
 
 - [2026-10-14] Remain parked in cash through to the October 27 FOMC meeting.
+
+- [2026-10-15] Continue holding cash sweep into the October 27 FOMC meeting.

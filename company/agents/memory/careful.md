@@ -49,3 +49,5 @@
 - [2026-10-13] Re‑evaluate after Oct 27 FOMC results.
 
 - [2026-10-14] Review after the 2026-10-27 FOMC outcome.
+
+- [2026-10-15] Maintain full cash position until after the 2026-10-27 FOMC meeting.
