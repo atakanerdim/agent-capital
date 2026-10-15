@@ -1,0 +1,121 @@
+{
+ "date": "2026-10-15",
+ "rates": {
+  "TBILL3M": {
+   "close": 4.085,
+   "source": "yahoo",
+   "symbol": "%5EIRX",
+   "raw": 4.085,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-10-14",
+   "fetched_utc": "2026-10-15T11:42:59+00:00",
+   "adjusted": "split_and_dividend",
+   "pct": 4.085,
+   "name": "US 13-week Treasury bill yield, percent"
+  }
+ },
+ "books": {
+  "momentum": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 100377.79,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 11.31,
+   "distributions": [],
+   "credited": 11.31
+  },
+  "value": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 49539.62,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 5.58,
+   "distributions": [],
+   "credited": 5.58
+  },
+  "macro": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 24638.38,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 2.78,
+   "distributions": [],
+   "credited": 2.78
+  },
+  "careful": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 100377.79,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 11.31,
+   "distributions": [],
+   "credited": 11.31
+  },
+  "contrarian": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 219.66,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 0.02,
+   "distributions": [],
+   "credited": 0.02
+  },
+  "fx": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 100377.79,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 11.31,
+   "distributions": [],
+   "credited": 11.31
+  },
+  "metals": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 55226.74,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 6.22,
+   "distributions": [],
+   "credited": 6.22
+  },
+  "index": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 25316.22,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 2.85,
+   "distributions": [],
+   "credited": 2.85
+  },
+  "benchmark": {
+   "since": "2026-10-14",
+   "date": "2026-10-15",
+   "days": 1,
+   "cash_before": 100.98,
+   "rate_pct": 4.057,
+   "rate_from": "since",
+   "interest": 0.01,
+   "distributions": [],
+   "credited": 0.01
+  }
+ }
+}

@@ -43,3 +43,5 @@
 - [2026-10-13] Watch tomorrow's price list for emerging trends.
 
 - [2026-10-14] Re‑evaluate momentum after tomorrow's price list.
+
+- [2026-10-15] Re‑evaluate when next price list shows clear upward moves.
