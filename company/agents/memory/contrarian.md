@@ -53,3 +53,5 @@
 - [2026-10-14] Re‑evaluate bond crowd sentiment after next FOMC minutes
 
 - [2026-10-15] Watch emerging market performance; if it underperforms, consider reallocating.
+
+- [2026-10-16] Add silver if bond yields remain low.
