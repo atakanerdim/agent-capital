@@ -53,3 +53,5 @@
 - [2026-10-14] No trades; core weights stable, cash under control.
 
 - [2026-10-15] Logged $100 EFA and $200 TLT sells to address overweight drift.
+
+- [2026-10-16] Record $100 SPY buy for 2026-10-16 – weight back to target.
