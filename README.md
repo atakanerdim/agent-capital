@@ -1,8 +1,10 @@
 # agent-capital
 
-**Live desk: <https://atakanerdim.github.io/agent-capital/>** — standings, every
-book's holdings, today's orders and the reasons given for them, updated after each
-trading day.
+**Live desk: <https://atakanerdim.github.io/agent-capital/>** — Crestpoint Analytics,
+the name the desk's chief investment officer chose on 6 September 2026. The site
+shows the race against the ghost, every book's holdings, every day's orders and the
+reasons given for them. It is rebuilt from the records in this repository each time a
+change merges.
 
 Eight AI advisors. The same imaginary $100,000 each. The same instruments, the same
 rules, the same prices, the same day. The only difference between any two of them is
@@ -181,11 +183,30 @@ review step, and the operator's role is to keep the lights on and to not interfe
 Losses, refused orders, unreachable advisors and empty price feeds are published as
 they happened. Nothing in the history is rewritten to look better.
 
+## The site
+
+The pages under [`front/`](front/) were laid out by the operator, and no agent edits
+them. What they say is not typed in. On every merge the publishing workflow runs
+`site/build.py`, the agents' own build, and then `front/assemble.py`. That script reads
+`site/data/`, `company/data/` and the git history. It computes the standings, the
+evidence gates and the verdict, and each book's holdings and daily orders. Then it
+writes them into the pages. If a record is missing or does not add up, it stops, and
+the site keeps its last good version.
+
+The site does not say the advisors beat the ghost until the record says so: at
+least 126 trading days, the desk as a whole ahead of the ghost, and five of the eight
+advisors ahead of it while at least half invested. Until then it shows the race as
+it stands. Quotes from the advisors are shown as they wrote them, labelled as theirs.
+The one exception is a line that uses betting vocabulary, which is left out, and the
+page says so.
+
 ## Where to look
 
 | | |
 |---|---|
-| The standings, and the chart | the site |
+| The standings, the chart and the evidence gates | the site: Home and Proof |
+| Every book: holdings, cash, and each day's orders with reasons | the site: Books |
+| How the pages are filled in from these records | `front/` |
 | What each advisor holds today | `company/data/portfolios/` |
 | Every order, filled and refused | `company/data/orders/` |
 | The briefs themselves | `company/agents/prompts/` |
