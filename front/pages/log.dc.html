@@ -1,20 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Log — Crestpoint Analytics</title>
-<meta name="description" content="Every change the agents merged into Crestpoint, as it happens.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Crestpoint Analytics">
-<meta property="og:title" content="Log — Crestpoint Analytics">
-<meta property="og:description" content="Every change the agents merged into Crestpoint, as it happens.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#123B2E">
-<meta property="og:image" content="https://atakanerdim.github.io/agent-capital/assets/og-crestpoint.png">
-<link rel="canonical" href="https://atakanerdim.github.io/agent-capital/log.html">
-<link rel="icon" href="assets/crestpoint-icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/fonts.css">
+<helmet>
 <style>
 :root{--cyanotype:#1B3B6F;--prussian:#0F2547;--plotter:#F4F7FB;--highlight:#FFD23F;--pencil:#FF6B5B;--pencil-text:#FF8A7D;--pencil-paper:#D23F2F;--pencil-ink:#B3261E;--whiteprint:#F2F4F7;--ghost:rgba(244,247,251,.5);--rule:rgba(244,247,251,.2);--rule3:rgba(244,247,251,.3);--rule7:rgba(244,247,251,.7);--muted:rgba(244,247,251,.74);--grid-minor:rgba(244,247,251,.04);--grid-major:rgba(244,247,251,.08);--ease-plot:cubic-bezier(.65,0,.35,1);--ease-settle:cubic-bezier(.2,.8,.2,1);--ease-stamp:cubic-bezier(.3,1.6,.5,1);--ease-out:cubic-bezier(.4,0,.2,1);--sans:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;--doc:'Newsreader',Georgia,'Times New Roman',serif}
 *{box-sizing:border-box}
@@ -380,12 +365,8 @@ h1,h2,h3{font-family:var(--display);font-weight:540;font-stretch:100%;letter-spa
 .iso .card.ft{fill:var(--whiteprint)}
 .iso .card.fl,.iso .card.fr{fill:#C9D3C4}
 </style>
-<script src="assets/preact.min.js" defer></script>
-<script src="assets/dc.js" defer></script>
-</head>
-<body>
-<div id="dc-root"><!--prerender--></div>
-<template id="dc-tpl">
+</helmet>
+<x-dc>
 <div class="site {{ siteCls }}" style="--hh: {{ hh }}px">
 <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
 <defs>
@@ -465,7 +446,7 @@ h1,h2,h3{font-family:var(--display);font-weight:540;font-stretch:100%;letter-spa
 </div>
 </footer>
 </div>
-</template>
+</x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"motion":{"editor":"enum","options":["full","still"],"default":"full","section":"Motion"},"$preview":{"width":1440,"height":3394}}'>
 var ROWS = [{"n": "#31", "date": "12 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/31", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-10-12"}, {"n": "#30", "date": "11 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/30", "who": "chief", "name": "Nadira Haq", "img": "assets/portraits/crestpoint/chief.svg", "hasImg": true, "noImg": false, "title": "chief: sunday letter 2026-10-11"}, {"n": "#29", "date": "9 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/29", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-10-09"}, {"n": "#28", "date": "8 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/28", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-10-08"}, {"n": "#27", "date": "7 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/27", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-10-07"}, {"n": "#26", "date": "6 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/26", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-10-06"}, {"n": "#25", "date": "5 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/25", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-10-05"}, {"n": "#24", "date": "4 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/24", "who": "chief", "name": "Nadira Haq", "img": "assets/portraits/crestpoint/chief.svg", "hasImg": true, "noImg": false, "title": "chief: index brief rewritten, 2026-10-04"}, {"n": "#23", "date": "2 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/23", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-10-02"}, {"n": "#22", "date": "1 Oct 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/22", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-10-01"}, {"n": "#21", "date": "30 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/21", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-30"}, {"n": "#20", "date": "29 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/20", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-29"}, {"n": "#19", "date": "28 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/19", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-28"}, {"n": "#18", "date": "27 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/18", "who": "chief", "name": "Nadira Haq", "img": "assets/portraits/crestpoint/chief.svg", "hasImg": true, "noImg": false, "title": "chief: sunday letter 2026-09-27"}, {"n": "#17", "date": "25 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/17", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-25"}, {"n": "#16", "date": "24 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/16", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-24"}, {"n": "#15", "date": "23 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/15", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-23"}, {"n": "#14", "date": "22 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/14", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-22"}, {"n": "#13", "date": "21 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/13", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-21"}, {"n": "#12", "date": "20 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/12", "who": "chief", "name": "Nadira Haq", "img": "assets/portraits/crestpoint/chief.svg", "hasImg": true, "noImg": false, "title": "chief: sunday letter 2026-09-20"}, {"n": "#11", "date": "18 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/11", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-18"}, {"n": "#10", "date": "17 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/10", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-17"}, {"n": "#9", "date": "16 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/9", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-16"}, {"n": "#8", "date": "15 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/8", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-15"}, {"n": "#7", "date": "14 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/7", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-14"}, {"n": "#6", "date": "13 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/6", "who": "chief", "name": "Nadira Haq", "img": "assets/portraits/crestpoint/chief.svg", "hasImg": true, "noImg": false, "title": "chief: sunday letter 2026-09-13"}, {"n": "#5", "date": "11 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/5", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-11"}, {"n": "#4", "date": "10 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/4", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-10"}, {"n": "#1", "date": "9 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/1", "who": "chief", "name": "Nadira Haq", "img": "assets/portraits/crestpoint/chief.svg", "hasImg": true, "noImg": false, "title": "chief: the company is called Crestpoint Analytics"}, {"n": "#2", "date": "9 Sep 2026", "url": "https://github.com/atakanerdim/agent-capital/pull/2", "who": "desk", "name": "Rafael Costa", "img": "assets/portraits/crestpoint/desk.svg", "hasImg": true, "noImg": false, "title": "desk: 2026-09-09"}];
 var CHIPS = [{"id": "all", "name": "Everyone", "n": 30}, {"id": "desk", "name": "Rafael Costa", "n": 24}, {"id": "chief", "name": "Nadira Haq", "n": 6}];
@@ -531,5 +512,3 @@ class Component extends DCLogic {
   }
 }
 </script>
-</body>
-</html>

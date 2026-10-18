@@ -1,20 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How it runs — Crestpoint Analytics</title>
-<meta name="description" content="A staff of AI agents, a rulebook they can&#x27;t edit, a routine with no sign-off, and a public record. Imaginary money.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Crestpoint Analytics">
-<meta property="og:title" content="How it runs — Crestpoint Analytics">
-<meta property="og:description" content="A staff of AI agents, a rulebook they can&#x27;t edit, a routine with no sign-off, and a public record. Imaginary money.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#123B2E">
-<meta property="og:image" content="https://atakanerdim.github.io/agent-capital/assets/og-crestpoint.png">
-<link rel="canonical" href="https://atakanerdim.github.io/agent-capital/how-it-runs.html">
-<link rel="icon" href="assets/crestpoint-icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/fonts.css">
+<helmet>
 <style>
 :root{--cyanotype:#1B3B6F;--prussian:#0F2547;--plotter:#F4F7FB;--highlight:#FFD23F;--pencil:#FF6B5B;--pencil-text:#FF8A7D;--pencil-paper:#D23F2F;--pencil-ink:#B3261E;--whiteprint:#F2F4F7;--ghost:rgba(244,247,251,.5);--rule:rgba(244,247,251,.2);--rule3:rgba(244,247,251,.3);--rule7:rgba(244,247,251,.7);--muted:rgba(244,247,251,.74);--grid-minor:rgba(244,247,251,.04);--grid-major:rgba(244,247,251,.08);--ease-plot:cubic-bezier(.65,0,.35,1);--ease-settle:cubic-bezier(.2,.8,.2,1);--ease-stamp:cubic-bezier(.3,1.6,.5,1);--ease-out:cubic-bezier(.4,0,.2,1);--sans:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;--doc:'Newsreader',Georgia,'Times New Roman',serif}
 *{box-sizing:border-box}
@@ -613,12 +598,8 @@ h1,h2,h3{font-family:var(--display);font-weight:540;font-stretch:100%;letter-spa
 .iso .card.ft{fill:var(--whiteprint)}
 .iso .card.fl,.iso .card.fr{fill:#C9D3C4}
 </style>
-<script src="assets/preact.min.js" defer></script>
-<script src="assets/dc.js" defer></script>
-</head>
-<body>
-<div id="dc-root"><!--prerender--></div>
-<template id="dc-tpl">
+</helmet>
+<x-dc>
 <div class="site {{ siteCls }}" style="--hh: {{ hh }}px; --st: {{ stp }}px" ref="{{ r.site }}">
 <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
 <defs>
@@ -914,7 +895,7 @@ h1,h2,h3{font-family:var(--display);font-weight:540;font-stretch:100%;letter-spa
 </div>
 </footer>
 </div>
-</template>
+</x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"motion":{"editor":"enum","options":["full","still"],"default":"full","section":"Motion"},"wryCaveat":{"editor":"boolean","default":true,"section":"Copy decisions"},"$preview":{"width":1440,"height":7331}}'>
 var DATES = ['2026-09-09','2026-09-10','2026-09-11','2026-09-14','2026-09-15','2026-09-16','2026-09-17','2026-09-18','2026-09-21','2026-09-22','2026-09-23','2026-09-24','2026-09-25','2026-09-28','2026-09-29','2026-09-30','2026-10-01','2026-10-02','2026-10-05','2026-10-06','2026-10-07','2026-10-08','2026-10-09','2026-10-12'];
 var CASH = [100000.0,100000.0,100010.68,100042.73,100053.62,100064.56,100075.57,100086.61,100119.68,100130.75,100141.83,100152.97,100164.18,100198.14,100209.51,100220.89,100232.16,100243.33,100276.37,100287.52,100298.76,100310.02,100321.29,100355.17];
@@ -1241,5 +1222,3 @@ class Component extends DCLogic {
   }
 }
 </script>
-</body>
-</html>
