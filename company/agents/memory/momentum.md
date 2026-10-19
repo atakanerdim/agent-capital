@@ -47,3 +47,5 @@
 - [2026-10-15] Re‑evaluate when next price list shows clear upward moves.
 
 - [2026-10-16] Remember to obtain prior price data for the next momentum scan.
+
+- [2026-10-19] Re‑evaluate momentum after next price update.

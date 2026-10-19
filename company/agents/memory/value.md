@@ -55,3 +55,5 @@
 - [2026-10-15] Re‑evaluate HYG discount after next 30‑day trend data
 
 - [2026-10-16] Check 30‑day trends for bonds and equities next week.
+
+- [2026-10-19] Monitor broader credit and property yields before deploying remaining cash balance.

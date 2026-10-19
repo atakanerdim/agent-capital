@@ -55,3 +55,5 @@
 - [2026-10-15] Trimmed XOM by $1,500 into IEF to establish a comfortable buffer under the 25% ceiling ahead of FOMC.
 
 - [2026-10-16] Log oil/dollar moves after Oct 27-28 FOMC before adjusting holdings.
+
+- [2026-10-19] Monitor oil price and Fed guidance post‑Oct 27; be ready to adjust XOM if oil rebounds.
