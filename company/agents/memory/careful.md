@@ -53,3 +53,5 @@
 - [2026-10-15] Maintain full cash position until after the 2026-10-27 FOMC meeting.
 
 - [2026-10-16] Check rates after 2026‑10‑27 FOMC.
+
+- [2026-10-19] Future self: stay cash until after the 2026-10-27 FOMC.

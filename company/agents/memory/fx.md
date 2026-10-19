@@ -55,3 +55,5 @@
 - [2026-10-15] Continue holding cash sweep into the October 27 FOMC meeting.
 
 - [2026-10-16] Review USD pairs after Oct 27 FOMC.
+
+- [2026-10-19] Re‑evaluate FX positions after the Oct 27 FOMC meeting.

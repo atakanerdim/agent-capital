@@ -55,3 +55,5 @@
 - [2026-10-15] Maintain steady metals book; reassess exposure after the October 27-28 FOMC meeting.
 
 - [2026-10-16] Reevaluate metal allocation after the 2026-10-27 FOMC outcome.
+
+- [2026-10-19] Future self: reassess metal allocation after the 2026-10-27 FOMC outcome.

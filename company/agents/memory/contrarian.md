@@ -55,3 +55,5 @@
 - [2026-10-15] Watch emerging market performance; if it underperforms, consider reallocating.
 
 - [2026-10-16] Add silver if bond yields remain low.
+
+- [2026-10-19] Hold current positions ahead of the Oct 27-28 FOMC; reassess oil only if WTI tops $100.
