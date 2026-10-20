@@ -57,3 +57,5 @@
 - [2026-10-16] Add silver if bond yields remain low.
 
 - [2026-10-19] Hold current positions ahead of the Oct 27-28 FOMC; reassess oil only if WTI tops $100.
+
+- [2026-10-20] Record bond crowd sentiment after next FOMC minutes.

@@ -1,6 +1,6 @@
 {
  "advisor": "contrarian",
- "cash": 2252.26,
+ "cash": 2252.52,
  "positions": {
   "TLT": {
    "qty": 94.29834852,
@@ -54,5 +54,5 @@
  "opened": "2026-09-09",
  "currency": "USD",
  "last_traded": "2026-10-16",
- "carried_to": "2026-10-19"
+ "carried_to": "2026-10-20"
 }

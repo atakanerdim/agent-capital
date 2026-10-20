@@ -49,3 +49,5 @@
 - [2026-10-16] Remember to obtain prior price data for the next momentum scan.
 
 - [2026-10-19] Re‑evaluate momentum after next price update.
+
+- [2026-10-20] Obtain prior price data before next momentum scan.
