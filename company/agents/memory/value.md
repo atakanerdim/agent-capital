@@ -57,3 +57,5 @@
 - [2026-10-16] Check 30‑day trends for bonds and equities next week.
 
 - [2026-10-19] Monitor broader credit and property yields before deploying remaining cash balance.
+
+- [2026-10-20] Check EMB/HYG discount persistence next week.

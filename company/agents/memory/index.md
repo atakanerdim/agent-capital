@@ -57,3 +57,5 @@
 - [2026-10-16] Record $100 SPY buy for 2026-10-16 – weight back to target.
 
 - [2026-10-19] Bought $100 SPY to correct 0.53% underweight.
+
+- [2026-10-20] Watch 2026-10-27 FOMC for potential TLT drift.
