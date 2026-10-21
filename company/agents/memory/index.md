@@ -59,3 +59,5 @@
 - [2026-10-19] Bought $100 SPY to correct 0.53% underweight.
 
 - [2026-10-20] Watch 2026-10-27 FOMC for potential TLT drift.
+
+- [2026-10-21] Core weights within 0.5% drift tolerance; cash at 25.6% NAV ahead of 2026-10-27 FOMC.

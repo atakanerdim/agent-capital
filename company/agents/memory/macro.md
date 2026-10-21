@@ -59,3 +59,5 @@
 - [2026-10-19] Monitor oil price and Fed guidance post‑Oct 27; be ready to adjust XOM if oil rebounds.
 
 - [2026-10-20] Log pre‑FOMC oil/dollar check; decide on XOM tweak after Oct 27 meeting.
+
+- [2026-10-21] Hold steady into the Oct 27-28 FOMC; reassess XOM headroom and duration posture post-statement.
