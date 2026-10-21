@@ -59,3 +59,5 @@
 - [2026-10-19] Re‑evaluate FX positions after the Oct 27 FOMC meeting.
 
 - [2026-10-20] Re‑evaluate USD pairs immediately after the Oct 27 FOMC outcomes.
+
+- [2026-10-21] Oct 21: hold cash until Oct 27 Fed meeting for FX re‑evaluation.

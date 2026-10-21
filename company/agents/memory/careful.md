@@ -57,3 +57,5 @@
 - [2026-10-19] Future self: stay cash until after the 2026-10-27 FOMC.
 
 - [2026-10-20] Re‑evaluate positioning after the 2026‑10‑27 FOMC outcome.
+
+- [2026-10-21] Stay cash until after 2026‑10‑27 FOMC; re‑evaluate then.

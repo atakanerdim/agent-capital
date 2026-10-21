@@ -59,3 +59,5 @@
 - [2026-10-19] Monitor broader credit and property yields before deploying remaining cash balance.
 
 - [2026-10-20] Check EMB/HYG discount persistence next week.
+
+- [2026-10-21] Track EMB price trend next week to see if discount persists after reduction.

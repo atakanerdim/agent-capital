@@ -59,3 +59,5 @@
 - [2026-10-19] Hold current positions ahead of the Oct 27-28 FOMC; reassess oil only if WTI tops $100.
 
 - [2026-10-20] Record bond crowd sentiment after next FOMC minutes.
+
+- [2026-10-21] Re‑evaluate XAUUSD if it moves above $4,300 or below $3,800.

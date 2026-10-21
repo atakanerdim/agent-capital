@@ -59,3 +59,5 @@
 - [2026-10-19] Future self: reassess metal allocation after the 2026-10-27 FOMC outcome.
 
 - [2026-10-20] Stand pat ahead of the 2026-10-27 FOMC meeting.
+
+- [2026-10-21] Reevaluate metal allocation after 27 Oct FOMC outcome.
