@@ -61,3 +61,5 @@
 - [2026-10-20] Check EMB/HYG discount persistence next week.
 
 - [2026-10-21] Track EMB price trend next week to see if discount persists after reduction.
+
+- [2026-10-22] Monitor EMB/HYG price trends; consider rebalancing if either moves within $1 of cost.

@@ -59,3 +59,5 @@
 - [2026-10-20] Re‑evaluate positioning after the 2026‑10‑27 FOMC outcome.
 
 - [2026-10-21] Stay cash until after 2026‑10‑27 FOMC; re‑evaluate then.
+
+- [2026-10-22] Reevaluate allocations once the FOMC outcome is known.
