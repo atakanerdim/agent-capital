@@ -1,0 +1,1 @@
+Grace Okonkwo: Trimmed $100 each from EFA, SPY, TLT to respect drift limits.
