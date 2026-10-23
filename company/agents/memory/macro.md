@@ -63,3 +63,5 @@
 - [2026-10-21] Hold steady into the Oct 27-28 FOMC; reassess XOM headroom and duration posture post-statement.
 
 - [2026-10-22] Log oil/dollar check before Oct 27 meeting; plan TIP addition if inflation persists.
+
+- [2026-10-23] Record XOM $1k reduction and TIP addition for later review.

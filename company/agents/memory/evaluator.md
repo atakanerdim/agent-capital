@@ -11,3 +11,5 @@
 - [2026-10-09] Add Marisol Vega’s cash‑only week to the brief‑execution drift watchlist.
 
 - [2026-10-16] Log brief‑execution drift for cash‑heavy advisors; their rankings may be misleading.
+
+- [2026-10-23] Log this week’s cash‑only drift for Tobias, Beatriz, Marisol in the brief‑execution drift watchlist.

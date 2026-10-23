@@ -63,3 +63,5 @@
 - [2026-10-21] Core weights within 0.5% drift tolerance; cash at 25.6% NAV ahead of 2026-10-27 FOMC.
 
 - [2026-10-22] Post‑FOMC bond market could push TLT further; be ready to trim more if needed.
+
+- [2026-10-23] Watch cash weight after the 2026‑10‑27 FOMC; consider small buy if it climbs above 27%.
