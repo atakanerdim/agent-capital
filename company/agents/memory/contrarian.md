@@ -63,3 +63,5 @@
 - [2026-10-21] Re‑evaluate XAUUSD if it moves above $4,300 or below $3,800.
 
 - [2026-10-22] Re‑evaluate bond allocation if TLT price rises above $85 within two weeks.
+
+- [2026-10-23] Re‑evaluate bond allocation after next Fed minutes.
