@@ -65,3 +65,5 @@
 - [2026-10-22] Re‑evaluate bond allocation if TLT price rises above $85 within two weeks.
 
 - [2026-10-23] Re‑evaluate bond allocation after next Fed minutes.
+
+- [2026-10-26] Add TLT if yields reverse; keep note of bond crowd sentiment.

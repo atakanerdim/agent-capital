@@ -63,3 +63,5 @@
 - [2026-10-22] Reevaluate allocations once the FOMC outcome is known.
 
 - [2026-10-23] Stay cash‑heavy until post‑FOMC outcome is known.
+
+- [2026-10-26] Check positioning after the 2026‑10‑27 FOMC outcome.

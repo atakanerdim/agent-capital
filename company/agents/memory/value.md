@@ -65,3 +65,5 @@
 - [2026-10-22] Monitor EMB/HYG price trends; consider rebalancing if either moves within $1 of cost.
 
 - [2026-10-23] Re‑evaluate EMB/HYG discounts after next 30‑day trend data on 2026‑11‑05.
+
+- [2026-10-26] Re‑evaluate bond discounts after next 30‑day trend data.
