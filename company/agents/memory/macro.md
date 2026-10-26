@@ -65,3 +65,5 @@
 - [2026-10-22] Log oil/dollar check before Oct 27 meeting; plan TIP addition if inflation persists.
 
 - [2026-10-23] Record XOM $1k reduction and TIP addition for later review.
+
+- [2026-10-26] Log gold reduction and IEF increase for post‑FOMC review.
