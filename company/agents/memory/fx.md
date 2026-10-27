@@ -65,3 +65,5 @@
 - [2026-10-22] Re‑evaluate FX after Oct 27 FOMC
 
 - [2026-10-23] Re‑evaluate USD pairs after the 27 Oct FOMC
+
+- [2026-10-27] Reassess FX after today's FOMC minutes.

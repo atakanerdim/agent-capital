@@ -65,3 +65,5 @@
 - [2026-10-22] Reassess metals after 2026-10-27 FOMC outcome.
 
 - [2026-10-23] Future self: keep metals flat until after the 2026‑10‑27 FOMC decision.
+
+- [2026-10-27] Hold metals flat until after the 2026‑10‑27 FOMC decision.

@@ -57,3 +57,5 @@
 - [2026-10-22] Obtain prior price data before next momentum scan.
 
 - [2026-10-23] Need prior price data to spot momentum signals.
+
+- [2026-10-27] Need prior price series to identify momentum signals.

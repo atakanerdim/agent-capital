@@ -65,3 +65,5 @@
 - [2026-10-22] Post‑FOMC bond market could push TLT further; be ready to trim more if needed.
 
 - [2026-10-23] Watch cash weight after the 2026‑10‑27 FOMC; consider small buy if it climbs above 27%.
+
+- [2026-10-27] Watch post‑FOMC bond reaction; may need small TLT adjustment.

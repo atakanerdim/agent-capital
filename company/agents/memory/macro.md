@@ -65,3 +65,5 @@
 - [2026-10-22] Log oil/dollar check before Oct 27 meeting; plan TIP addition if inflation persists.
 
 - [2026-10-23] Record XOM $1k reduction and TIP addition for later review.
+
+- [2026-10-27] Record post‑FOMC oil/dollar check and XOM headroom before next trade.

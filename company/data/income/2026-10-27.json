@@ -1,0 +1,137 @@
+{
+ "date": "2026-10-27",
+ "rates": {
+  "TBILL3M": {
+   "close": 4.025,
+   "source": "yahoo",
+   "symbol": "%5EIRX",
+   "raw": 4.025,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-10-26",
+   "fetched_utc": "2026-10-27T12:25:37+00:00",
+   "adjusted": "split_and_dividend",
+   "pct": 4.025,
+   "name": "US 13-week Treasury bill yield, percent"
+  }
+ },
+ "books": {
+  "momentum": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 100480.16,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 44.9,
+   "distributions": [],
+   "credited": 44.9
+  },
+  "value": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 49740.17,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 22.23,
+   "distributions": [],
+   "credited": 22.23
+  },
+  "macro": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 23462.57,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 10.49,
+   "distributions": [
+    {
+     "instrument": "CAT",
+     "ex_date": "2026-10-26",
+     "per_unit": 1.63,
+     "qty": 23.89476545,
+     "amount": 38.95
+    }
+   ],
+   "credited": 49.44
+  },
+  "careful": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 100480.16,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 44.9,
+   "distributions": [],
+   "credited": 44.9
+  },
+  "contrarian": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 12620.14,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 5.64,
+   "distributions": [],
+   "credited": 5.64
+  },
+  "fx": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 100480.16,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 44.9,
+   "distributions": [],
+   "credited": 44.9
+  },
+  "metals": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 55283.07,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 24.71,
+   "distributions": [],
+   "credited": 24.71
+  },
+  "index": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 25742.21,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 11.5,
+   "distributions": [],
+   "credited": 11.5
+  },
+  "benchmark": {
+   "since": "2026-10-23",
+   "date": "2026-10-27",
+   "days": 4,
+   "cash_before": 101.07,
+   "rate_pct": 4.022,
+   "rate_from": "since",
+   "interest": 0.05,
+   "distributions": [
+    {
+     "instrument": "CAT",
+     "ex_date": "2026-10-26",
+     "per_unit": 1.63,
+     "qty": 4.53492999,
+     "amount": 7.39
+    }
+   ],
+   "credited": 7.44
+  }
+ }
+}
