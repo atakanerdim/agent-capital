@@ -67,3 +67,5 @@
 - [2026-10-23] Re‑evaluate bond allocation after next Fed minutes.
 
 - [2026-10-27] Add XAGUSD if silver < $55 and bond yields remain low.
+
+- [2026-10-28] Add XAGUSD if silver < $55 and bond yields low; today both hold.

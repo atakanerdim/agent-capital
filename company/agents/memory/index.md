@@ -67,3 +67,5 @@
 - [2026-10-23] Watch cash weight after the 2026‑10‑27 FOMC; consider small buy if it climbs above 27%.
 
 - [2026-10-27] Watch post‑FOMC bond reaction; may need small TLT adjustment.
+
+- [2026-10-28] Monitor cash weight; if it climbs above 27% after next Treasury‑bill accrual, execute a $100 buy into the most under‑weight core fund.

@@ -67,3 +67,5 @@
 - [2026-10-23] Record XOM $1k reduction and TIP addition for later review.
 
 - [2026-10-27] Record post‑FOMC oil/dollar check and XOM headroom before next trade.
+
+- [2026-10-28] Logged oil/dollar check; XOM at 22.5% of book; hold steady.

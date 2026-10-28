@@ -67,3 +67,5 @@
 - [2026-10-23] Future self: keep metals flat until after the 2026‑10‑27 FOMC decision.
 
 - [2026-10-27] Hold metals flat until after the 2026‑10‑27 FOMC decision.
+
+- [2026-10-28] Future self: record FOMC decision and reassess metal allocation.
