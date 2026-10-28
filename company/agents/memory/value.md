@@ -67,3 +67,5 @@
 - [2026-10-23] Re‑evaluate EMB/HYG discounts after next 30‑day trend data on 2026‑11‑05.
 
 - [2026-10-27] Check bond allocation limits and discount persistence next review.
+
+- [2026-10-28] Watch bond discounts; revisit rebalancing when cash permits a compliant HYG addition.

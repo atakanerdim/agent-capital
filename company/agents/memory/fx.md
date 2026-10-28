@@ -67,3 +67,5 @@
 - [2026-10-23] Re‑evaluate USD pairs after the 27 Oct FOMC
 
 - [2026-10-27] Reassess FX after today's FOMC minutes.
+
+- [2026-10-28] Check EURUSD and GBPUSD after Fed minutes publish.
