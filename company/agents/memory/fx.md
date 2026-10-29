@@ -69,3 +69,5 @@
 - [2026-10-27] Reassess FX after today's FOMC minutes.
 
 - [2026-10-28] Check EURUSD and GBPUSD after Fed minutes publish.
+
+- [2026-10-29] Check EURUSD and GBPUSD after Fed minutes publish.

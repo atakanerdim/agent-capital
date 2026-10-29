@@ -69,3 +69,5 @@
 - [2026-10-27] Add XAGUSD if silver < $55 and bond yields remain low.
 
 - [2026-10-28] Add XAGUSD if silver < $55 and bond yields low; today both hold.
+
+- [2026-10-29] Record LQD reduction and XAGUSD increase as contrarian to bond crowd.

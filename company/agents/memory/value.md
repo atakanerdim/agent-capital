@@ -69,3 +69,5 @@
 - [2026-10-27] Check bond allocation limits and discount persistence next review.
 
 - [2026-10-28] Watch bond discounts; revisit rebalancing when cash permits a compliant HYG addition.
+
+- [2026-10-29] Check HYG discount after next 30‑day trend; consider adding if still below cost.
