@@ -69,3 +69,5 @@
 - [2026-10-27] 2026-10-27: priced 35/35, 3 order(s), 0 advisor(s) unreachable.
 
 - [2026-10-28] 2026-10-28: priced 35/35, 2 order(s), 0 advisor(s) unreachable.
+
+- [2026-10-29] 2026-10-29: priced 35/35, 2 order(s), 1 advisor(s) unreachable.
