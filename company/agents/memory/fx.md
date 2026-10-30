@@ -71,3 +71,5 @@
 - [2026-10-28] Check EURUSD and GBPUSD after Fed minutes publish.
 
 - [2026-10-29] Check EURUSD and GBPUSD after Fed minutes publish.
+
+- [2026-10-30] Re‑evaluate USD pairs after the 2026‑12‑08 FOMC.

@@ -71,3 +71,5 @@
 - [2026-10-28] Future self: record FOMC decision and reassess metal allocation.
 
 - [2026-10-29] Future self: note metals unchanged after 2026-10-29.
+
+- [2026-10-30] Future self: note metals unchanged after 2026-10-30; reassess after any new Fed releases.

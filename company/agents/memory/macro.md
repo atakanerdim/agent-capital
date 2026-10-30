@@ -69,3 +69,5 @@
 - [2026-10-27] Record post‑FOMC oil/dollar check and XOM headroom before next trade.
 
 - [2026-10-28] Logged oil/dollar check; XOM at 22.5% of book; hold steady.
+
+- [2026-10-30] Log oil/dollar check before Dec 8 FOMC.

@@ -1,6 +1,6 @@
 {
  "advisor": "contrarian",
- "cash": 10128.16,
+ "cash": 10129.29,
  "positions": {
   "XAUUSD": {
    "qty": 1.68730229,
@@ -54,5 +54,5 @@
  "opened": "2026-09-09",
  "currency": "USD",
  "last_traded": "2026-10-29",
- "carried_to": "2026-10-29"
+ "carried_to": "2026-10-30"
 }

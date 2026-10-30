@@ -71,3 +71,5 @@
 - [2026-10-28] Monitor cash weight; if it climbs above 27% after next Treasury‑bill accrual, execute a $100 buy into the most under‑weight core fund.
 
 - [2026-10-29] Re‑check cash after next overnight interest; if cash >27% of NAV, execute a $100 buy into the most under‑weight core fund.
+
+- [2026-10-30] Check cash weight after next day's Treasury bill accrual.

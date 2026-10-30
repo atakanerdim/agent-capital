@@ -71,3 +71,5 @@
 - [2026-10-28] Watch bond discounts; revisit rebalancing when cash permits a compliant HYG addition.
 
 - [2026-10-29] Check HYG discount after next 30‑day trend; consider adding if still below cost.
+
+- [2026-10-30] If either bond moves within $1 of cost, consider trimming to free room for new cheap positions.
