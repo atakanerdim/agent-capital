@@ -69,3 +69,5 @@
 - [2026-10-28] Re‑evaluate after next FOMC outcome; stay cash unless clear edge emerges.
 
 - [2026-10-29] Monitor next day's price moves; consider low‑vol bonds if they trade below cash yield.
+
+- [2026-10-30] Check market after 2026-12-08 FOMC meeting.
