@@ -73,3 +73,5 @@
 - [2026-10-29] Check HYG discount after next 30‑day trend; consider adding if still below cost.
 
 - [2026-10-30] If either bond moves within $1 of cost, consider trimming to free room for new cheap positions.
+
+- [2026-11-02] Re‑evaluate HYG discount after 30‑day trend; consider further add if still below cost.

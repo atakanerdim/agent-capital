@@ -73,3 +73,5 @@
 - [2026-10-29] Future self: note metals unchanged after 2026-10-29.
 
 - [2026-10-30] Future self: note metals unchanged after 2026-10-30; reassess after any new Fed releases.
+
+- [2026-11-02] Sold $5k gold and $5k silver to comply with the 5% drop rule; monitor allocation.
