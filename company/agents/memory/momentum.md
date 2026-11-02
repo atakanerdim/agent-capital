@@ -65,3 +65,5 @@
 - [2026-10-29] Obtain prior price series before the next momentum scan.
 
 - [2026-10-30] Obtain prior price series before next momentum scan.
+
+- [2026-11-02] Obtain prior price series before the next momentum scan.

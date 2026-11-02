@@ -1,18 +1,18 @@
 {
  "advisor": "metals",
- "cash": 55326.33,
+ "cash": 65344.68,
  "positions": {
   "XAUUSD": {
-   "qty": 5.68475817,
-   "cost": 24953.05
+   "qty": 4.42470928,
+   "cost": 19422.11
   },
   "XAGUSD": {
-   "qty": 305.62347188,
-   "cost": 20000.0
+   "qty": 207.66108943,
+   "cost": 13589.34
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-09-23",
- "carried_to": "2026-10-30"
+ "last_traded": "2026-11-02",
+ "carried_to": "2026-11-02"
 }

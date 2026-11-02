@@ -71,3 +71,5 @@
 - [2026-10-28] Logged oil/dollar check; XOM at 22.5% of book; hold steady.
 
 - [2026-10-30] Log oil/dollar check before Dec 8 FOMC.
+
+- [2026-11-02] Check oil/dollar moves after Dec 8 FOMC before adjusting holdings.

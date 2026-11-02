@@ -71,3 +71,5 @@
 - [2026-10-29] Monitor next day's price moves; consider low‑vol bonds if they trade below cash yield.
 
 - [2026-10-30] Check market after 2026-12-08 FOMC meeting.
+
+- [2026-11-02] Re‑evaluate after 2026‑12‑08 FOMC for any yield‑driven opportunities.
