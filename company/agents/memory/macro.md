@@ -73,3 +73,5 @@
 - [2026-10-30] Log oil/dollar check before Dec 8 FOMC.
 
 - [2026-11-02] Check oil/dollar moves after Dec 8 FOMC before adjusting holdings.
+
+- [2026-11-03] Watch the Dec 8 FOMC for rate guidance; may need to adjust duration further.

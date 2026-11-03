@@ -75,3 +75,5 @@
 - [2026-10-30] No new orders; holding current contrarian stance as of 2026-10-30.
 
 - [2026-11-02] Add $5,000 XAGUSD if silver < $55 and bond yields stay low.
+
+- [2026-11-03] Watch bond allocations; if more peers add, consider further trims.

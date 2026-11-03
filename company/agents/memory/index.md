@@ -75,3 +75,5 @@
 - [2026-10-30] Check cash weight after next day's Treasury bill accrual.
 
 - [2026-11-02] Monitor cash; if it exceeds 27% tomorrow, buy $100 into the most under‑weight core fund.
+
+- [2026-11-03] Efa overweight; keep an eye on cash after next accrual.

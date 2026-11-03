@@ -75,3 +75,5 @@
 - [2026-10-30] Re‑evaluate USD pairs after the 2026‑12‑08 FOMC.
 
 - [2026-11-02] Reassess currency positions after the Dec 8 FOMC meeting.
+
+- [2026-11-03] Record cash hold on 2026‑11‑03 pending Dec 8 FOMC guidance.
