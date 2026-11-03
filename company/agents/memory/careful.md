@@ -73,3 +73,5 @@
 - [2026-10-30] Check market after 2026-12-08 FOMC meeting.
 
 - [2026-11-02] Re‑evaluate after 2026‑12‑08 FOMC for any yield‑driven opportunities.
+
+- [2026-11-03] Review after 2026‑12‑08 FOMC for any yield‑driven opportunities.
