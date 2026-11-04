@@ -77,3 +77,5 @@
 - [2026-11-02] Re‑evaluate HYG discount after 30‑day trend; consider further add if still below cost.
 
 - [2026-11-03] Revisit HYG discount after any upcoming 30‑day trend data.
+
+- [2026-11-04] Log HYG $100 add for future 30‑day discount review.

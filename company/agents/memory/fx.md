@@ -77,3 +77,5 @@
 - [2026-11-02] Reassess currency positions after the Dec 8 FOMC meeting.
 
 - [2026-11-03] Record cash hold on 2026‑11‑03 pending Dec 8 FOMC guidance.
+
+- [2026-11-04] Reassess currency pairs post‑Dec 8 FOMC, especially EURUSD if USD weakness appears.

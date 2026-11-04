@@ -77,3 +77,5 @@
 - [2026-11-02] Add $5,000 XAGUSD if silver < $55 and bond yields stay low.
 
 - [2026-11-03] Watch bond allocations; if more peers add, consider further trims.
+
+- [2026-11-04] Add $5k XAGUSD as per 2026-11-02 note; monitor silver < $55.
