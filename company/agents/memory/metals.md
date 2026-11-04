@@ -77,3 +77,5 @@
 - [2026-11-02] Sold $5k gold and $5k silver to comply with the 5% drop rule; monitor allocation.
 
 - [2026-11-03] Watch metal allocation after the next FOMC; consider rebuilding if prices stabilize.
+
+- [2026-11-04] Future self: metals now ~14.9% of book; watch upcoming FOMC.
