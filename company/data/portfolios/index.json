@@ -1,10 +1,10 @@
 {
  "advisor": "index",
- "cash": 25876.63,
+ "cash": 25779.52,
  "positions": {
   "SPY": {
-   "qty": 32.00233071,
-   "cost": 24402.97
+   "qty": 32.13444158,
+   "cost": 24502.97
   },
   "EFA": {
    "qty": 236.76610687,
@@ -17,6 +17,6 @@
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-11-03",
- "carried_to": "2026-11-04"
+ "last_traded": "2026-11-05",
+ "carried_to": "2026-11-05"
 }

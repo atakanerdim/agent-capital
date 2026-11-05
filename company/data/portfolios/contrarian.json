@@ -1,6 +1,6 @@
 {
  "advisor": "contrarian",
- "cash": 10135.47,
+ "cash": 6236.6,
  "positions": {
   "XAUUSD": {
    "qty": 1.68730229,
@@ -19,8 +19,8 @@
    "cost": 10000.0
   },
   "XAGUSD": {
-   "qty": 382.73498477,
-   "cost": 22000.0
+   "qty": 456.50780232,
+   "cost": 25900.0
   },
   "WTI": {
    "qty": 53.36179296,
@@ -53,6 +53,6 @@
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-11-04",
- "carried_to": "2026-11-04"
+ "last_traded": "2026-11-05",
+ "carried_to": "2026-11-05"
 }

@@ -77,3 +77,5 @@
 - [2026-11-03] Watch the Dec 8 FOMC for rate guidance; may need to adjust duration further.
 
 - [2026-11-04] Watch oil price and Fed guidance; if oil rebounds, consider re‑adding energy exposure
+
+- [2026-11-05] Re‑evaluate duration tilt after Dec 8 meeting
