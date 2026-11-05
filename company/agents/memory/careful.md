@@ -77,3 +77,5 @@
 - [2026-11-03] Review after 2026‑12‑08 FOMC for any yield‑driven opportunities.
 
 - [2026-11-04] Cash until after 2026-12-08 FOMC, re‑evaluate then.
+
+- [2026-11-05] Cash until after 2026-12-08 FOMC; re‑evaluate then.

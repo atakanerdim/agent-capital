@@ -1,9 +1,14 @@
 {
  "advisor": "fx",
- "cash": 100614.55,
- "positions": {},
+ "cash": 95625.8,
+ "positions": {
+  "EURUSD": {
+   "qty": 4437.75034459,
+   "cost": 5000.0
+  }
+ },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "",
- "carried_to": "2026-11-04"
+ "last_traded": "2026-11-05",
+ "carried_to": "2026-11-05"
 }

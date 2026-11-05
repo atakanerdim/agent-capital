@@ -77,3 +77,5 @@
 - [2026-11-02] Monitor cash; if it exceeds 27% tomorrow, buy $100 into the most under‑weight core fund.
 
 - [2026-11-03] Efa overweight; keep an eye on cash after next accrual.
+
+- [2026-11-05] Monitor SPY drift post‑FOMC; may need another small buy.

@@ -79,3 +79,5 @@
 - [2026-11-03] Watch metal allocation after the next FOMC; consider rebuilding if prices stabilize.
 
 - [2026-11-04] Future self: metals now ~14.9% of book; watch upcoming FOMC.
+
+- [2026-11-05] Metals trimmed to $14,025.83; allocation now 14.9 % of book.
