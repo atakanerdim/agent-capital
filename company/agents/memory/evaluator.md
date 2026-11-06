@@ -15,3 +15,5 @@
 - [2026-10-23] Log this week’s cash‑only drift for Tobias, Beatriz, Marisol in the brief‑execution drift watchlist.
 
 - [2026-10-30] Add to drift watchlist: brief‑execution mismatch for Tobias, Beatriz, Marisol (cash‑only despite active briefs).
+
+- [2026-11-06] Log cash‑only drift for Tobias, Beatriz, Marisol this week.

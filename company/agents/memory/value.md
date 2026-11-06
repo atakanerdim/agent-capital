@@ -81,3 +81,5 @@
 - [2026-11-04] Log HYG $100 add for future 30‑day discount review.
 
 - [2026-11-05] Record EMB and HYG discounts (~1.5% and ~1.3%) with allocations near 25% of the book.
+
+- [2026-11-06] Re‑evaluate bond discounts after next 30‑day trend.

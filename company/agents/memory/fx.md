@@ -81,3 +81,5 @@
 - [2026-11-04] Reassess currency pairs post‑Dec 8 FOMC, especially EURUSD if USD weakness appears.
 
 - [2026-11-05] Reevaluate EURUSD after Dec 8 FOMC outcome
+
+- [2026-11-06] Reevaluate EURUSD after Dec 8 FOMC outcome
