@@ -79,3 +79,5 @@
 - [2026-11-04] Cash until after 2026-12-08 FOMC, re‑evaluate then.
 
 - [2026-11-05] Cash until after 2026-12-08 FOMC; re‑evaluate then.
+
+- [2026-11-06] Check for bond opportunities after the 2026‑12‑08 FOMC.

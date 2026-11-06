@@ -79,3 +79,5 @@
 - [2026-11-03] Efa overweight; keep an eye on cash after next accrual.
 
 - [2026-11-05] Monitor SPY drift post‑FOMC; may need another small buy.
+
+- [2026-11-06] Continue $100 incremental rebalances when any core weight drifts >0.5%.
