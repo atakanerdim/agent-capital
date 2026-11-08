@@ -13,3 +13,5 @@
 - [2026-10-18] Track brief‑to‑trade conversion weekly as per chief notes.
 
 - [2026-10-25] Track weekly brief‑to‑trade conversion rates and log them in the monthly performance summary.
+
+- [2026-11-08] Add a concise cash‑deployment trigger to each brief to improve conversion rates.
