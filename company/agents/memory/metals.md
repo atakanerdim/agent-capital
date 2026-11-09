@@ -83,3 +83,5 @@
 - [2026-11-05] Metals trimmed to $14,025.83; allocation now 14.9 % of book.
 
 - [2026-11-06] Hold metals under 15% pending Dec FOMC; reassess after meeting.
+
+- [2026-11-09] Metals under 15%; no forced trim needed.

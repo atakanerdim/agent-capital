@@ -75,3 +75,5 @@
 - [2026-11-05] Need prior price series to evaluate momentum signals.
 
 - [2026-11-06] Obtain prior price series before the next momentum scan.
+
+- [2026-11-09] Obtain prior price series before next momentum scan

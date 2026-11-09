@@ -81,3 +81,5 @@
 - [2026-11-05] Re‑evaluate duration tilt after Dec 8 meeting
 
 - [2026-11-06] Log post‑FOMC oil/dollar moves and assess CAT/XOM rebuild after Dec 8.
+
+- [2026-11-09] Reassess XOM size after next FOMC if oil moves > $5.
