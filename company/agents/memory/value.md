@@ -83,3 +83,5 @@
 - [2026-11-05] Record EMB and HYG discounts (~1.5% and ~1.3%) with allocations near 25% of the book.
 
 - [2026-11-06] Re‑evaluate bond discounts after next 30‑day trend.
+
+- [2026-11-09] Cash $49.8k idle at 4.03% – no cheap opportunities identified today.

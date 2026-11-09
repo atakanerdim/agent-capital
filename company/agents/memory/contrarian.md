@@ -83,3 +83,5 @@
 - [2026-11-05] Add $3.9k XAGUSD; silver < $55, bond yields low.
 
 - [2026-11-06] Add $250 XAGUSD to reinforce contrarian silver stance.
+
+- [2026-11-09] Monitor bond crowd sentiment; keep silver as hedge.

@@ -1,10 +1,10 @@
 {
  "advisor": "macro",
- "cash": 18537.63,
+ "cash": 15243.81,
  "positions": {
   "XOM": {
-   "qty": 92.72485892,
-   "cost": 15221.41
+   "qty": 112.67407909,
+   "cost": 18521.41
   },
   "CAT": {
    "qty": 23.89476545,
@@ -33,6 +33,6 @@
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-11-05",
- "carried_to": "2026-11-06"
+ "last_traded": "2026-11-09",
+ "carried_to": "2026-11-09"
 }

@@ -1,0 +1,557 @@
+{
+ "date": "2026-11-09",
+ "quotes": {
+  "AAPL": {
+   "close": 349.825,
+   "source": "yahoo",
+   "symbol": "AAPL",
+   "raw": 349.825,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Apple",
+   "class": "equity"
+  },
+  "MSFT": {
+   "close": 541.84,
+   "source": "yahoo",
+   "symbol": "MSFT",
+   "raw": 541.84,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Microsoft",
+   "class": "equity"
+  },
+  "NVDA": {
+   "close": 174.62,
+   "source": "yahoo",
+   "symbol": "NVDA",
+   "raw": 174.62,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "NVIDIA",
+   "class": "equity"
+  },
+  "AMZN": {
+   "close": 268.67,
+   "source": "yahoo",
+   "symbol": "AMZN",
+   "raw": 268.67,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Amazon",
+   "class": "equity"
+  },
+  "GOOGL": {
+   "close": 290.77,
+   "source": "yahoo",
+   "symbol": "GOOGL",
+   "raw": 290.77,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Alphabet",
+   "class": "equity"
+  },
+  "META": {
+   "close": 639.995,
+   "source": "yahoo",
+   "symbol": "META",
+   "raw": 639.995,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Meta Platforms",
+   "class": "equity"
+  },
+  "TSLA": {
+   "close": 376.405,
+   "source": "yahoo",
+   "symbol": "TSLA",
+   "raw": 376.405,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Tesla",
+   "class": "equity"
+  },
+  "JPM": {
+   "close": 341.76,
+   "source": "yahoo",
+   "symbol": "JPM",
+   "raw": 341.76,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "JPMorgan Chase",
+   "class": "equity"
+  },
+  "XOM": {
+   "close": 165.42,
+   "source": "yahoo",
+   "symbol": "XOM",
+   "raw": 165.42,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Exxon Mobil",
+   "class": "equity"
+  },
+  "JNJ": {
+   "close": 279.61,
+   "source": "yahoo",
+   "symbol": "JNJ",
+   "raw": 279.61,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:54+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Johnson & Johnson",
+   "class": "equity"
+  },
+  "KO": {
+   "close": 95.87,
+   "source": "yahoo",
+   "symbol": "KO",
+   "raw": 95.87,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Coca-Cola",
+   "class": "equity"
+  },
+  "CAT": {
+   "close": 593.01,
+   "source": "yahoo",
+   "symbol": "CAT",
+   "raw": 593.01,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "distributions": [
+    {
+     "ex_date": "2026-10-26",
+     "amount": 1.63
+    }
+   ],
+   "name": "Caterpillar",
+   "class": "equity"
+  },
+  "SPY": {
+   "close": 749.71,
+   "source": "yahoo",
+   "symbol": "SPY",
+   "raw": 749.71,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "S&P 500",
+   "class": "fund"
+  },
+  "QQQ": {
+   "close": 674.975,
+   "source": "yahoo",
+   "symbol": "QQQ",
+   "raw": 674.975,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Nasdaq 100",
+   "class": "fund"
+  },
+  "IWM": {
+   "close": 280.86,
+   "source": "yahoo",
+   "symbol": "IWM",
+   "raw": 280.86,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "US small caps",
+   "class": "fund"
+  },
+  "EFA": {
+   "close": 104.325,
+   "source": "yahoo",
+   "symbol": "EFA",
+   "raw": 104.325,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Developed markets outside the US",
+   "class": "fund"
+  },
+  "EEM": {
+   "close": 60.785,
+   "source": "yahoo",
+   "symbol": "EEM",
+   "raw": 60.785,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Emerging markets",
+   "class": "fund"
+  },
+  "TLT": {
+   "close": 81.97,
+   "source": "yahoo",
+   "symbol": "TLT",
+   "raw": 81.97,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Long US government bonds",
+   "class": "bond"
+  },
+  "VNQ": {
+   "close": 97.415,
+   "source": "yahoo",
+   "symbol": "VNQ",
+   "raw": 97.415,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "US property",
+   "class": "property"
+  },
+  "XAUUSD": {
+   "close": 4124.7,
+   "source": "yahoo",
+   "symbol": "GC=F",
+   "raw": 4124.7,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Gold, per ounce",
+   "class": "metal"
+  },
+  "XAGUSD": {
+   "close": 52.705,
+   "source": "yahoo",
+   "symbol": "SI=F",
+   "raw": 52.705,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Silver, per ounce",
+   "class": "metal"
+  },
+  "WTI": {
+   "close": 87.75,
+   "source": "yahoo",
+   "symbol": "CL=F",
+   "raw": 87.75,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Crude oil, WTI, per barrel",
+   "class": "commodity"
+  },
+  "EURUSD": {
+   "close": 1.119294,
+   "source": "frankfurter",
+   "symbol": "EUR",
+   "raw": 0.89342,
+   "transform": {
+    "invert": true,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:55+00:00",
+   "adjusted": "none",
+   "name": "Euro",
+   "class": "fx"
+  },
+  "GBPUSD": {
+   "close": 1.341598,
+   "source": "frankfurter",
+   "symbol": "GBP",
+   "raw": 0.74538,
+   "transform": {
+    "invert": true,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:56+00:00",
+   "adjusted": "none",
+   "name": "British pound",
+   "class": "fx"
+  },
+  "JPYUSD": {
+   "close": 0.006331,
+   "source": "frankfurter",
+   "symbol": "JPY",
+   "raw": 157.95,
+   "transform": {
+    "invert": true,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:56+00:00",
+   "adjusted": "none",
+   "name": "Japanese yen",
+   "class": "fx"
+  },
+  "CHFUSD": {
+   "close": 1.221404,
+   "source": "frankfurter",
+   "symbol": "CHF",
+   "raw": 0.81873,
+   "transform": {
+    "invert": true,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:56+00:00",
+   "adjusted": "none",
+   "name": "Swiss franc",
+   "class": "fx"
+  },
+  "AUDUSD": {
+   "close": 0.689417,
+   "source": "frankfurter",
+   "symbol": "AUD",
+   "raw": 1.4505,
+   "transform": {
+    "invert": true,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:56+00:00",
+   "adjusted": "none",
+   "name": "Australian dollar",
+   "class": "fx"
+  },
+  "SHY": {
+   "close": 81.575,
+   "source": "yahoo",
+   "symbol": "SHY",
+   "raw": 81.575,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:56+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Short US government bonds, 1-3 years",
+   "class": "bond"
+  },
+  "IEF": {
+   "close": 91.79,
+   "source": "yahoo",
+   "symbol": "IEF",
+   "raw": 91.79,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:57+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Intermediate US government bonds, 7-10 years",
+   "class": "bond"
+  },
+  "TIP": {
+   "close": 106.055,
+   "source": "yahoo",
+   "symbol": "TIP",
+   "raw": 106.055,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:57+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "US inflation-linked government bonds",
+   "class": "bond"
+  },
+  "LQD": {
+   "close": 104.675,
+   "source": "yahoo",
+   "symbol": "LQD",
+   "raw": 104.675,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:57+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "US investment-grade corporate bonds",
+   "class": "bond"
+  },
+  "HYG": {
+   "close": 77.455,
+   "source": "yahoo",
+   "symbol": "HYG",
+   "raw": 77.455,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:57+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "US high-yield corporate bonds",
+   "class": "bond"
+  },
+  "EMB": {
+   "close": 92.335,
+   "source": "yahoo",
+   "symbol": "EMB",
+   "raw": 92.335,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:57+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Emerging-market sovereign eurobonds, in dollars",
+   "class": "bond"
+  },
+  "VNQI": {
+   "close": 43.955,
+   "source": "yahoo",
+   "symbol": "VNQI",
+   "raw": 43.955,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:57+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "Property outside the US",
+   "class": "property"
+  },
+  "REM": {
+   "close": 17.275,
+   "source": "yahoo",
+   "symbol": "REM",
+   "raw": 17.275,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:57+00:00",
+   "adjusted": "split_and_dividend",
+   "name": "US mortgage real estate",
+   "class": "property"
+  }
+ },
+ "short": [],
+ "covered": "35/35",
+ "snapshot_id": "9eeff1bea96e",
+ "rates": {
+  "TBILL3M": {
+   "close": 4.03,
+   "source": "yahoo",
+   "symbol": "%5EIRX",
+   "raw": 4.03,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-09",
+   "fetched_utc": "2026-11-09T16:37:57+00:00",
+   "adjusted": "split_and_dividend",
+   "pct": 4.03,
+   "name": "US 13-week Treasury bill yield, percent"
+  }
+ },
+ "rates_short": []
+}
