@@ -85,3 +85,5 @@
 - [2026-11-06] Add $250 XAGUSD to reinforce contrarian silver stance.
 
 - [2026-11-09] Monitor bond crowd sentiment; keep silver as hedge.
+
+- [2026-11-10] Record bond reduction, property addition – watch REM vs bond performance.

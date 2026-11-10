@@ -83,3 +83,5 @@
 - [2026-11-06] Check for bond opportunities after the 2026‑12‑08 FOMC.
 
 - [2026-11-09] Future self: keep cash until post‑FOMC; revisit if any instrument beats 4.03%.
+
+- [2026-11-10] Future self: stay cash; revisit if any instrument beats 4.03% after FOMC.
