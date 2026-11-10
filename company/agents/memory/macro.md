@@ -83,3 +83,5 @@
 - [2026-11-06] Log post‑FOMC oil/dollar moves and assess CAT/XOM rebuild after Dec 8.
 
 - [2026-11-09] Reassess XOM size after next FOMC if oil moves > $5.
+
+- [2026-11-10] Monitor Dec 8 FOMC guidance; may need further duration trimming

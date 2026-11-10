@@ -85,3 +85,5 @@
 - [2026-11-06] Hold metals under 15% pending Dec FOMC; reassess after meeting.
 
 - [2026-11-09] Metals under 15%; no forced trim needed.
+
+- [2026-11-10] Future self: metals under 15%, no trim needed.

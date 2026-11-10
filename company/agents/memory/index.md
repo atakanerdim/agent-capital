@@ -83,3 +83,5 @@
 - [2026-11-06] Continue $100 incremental rebalances when any core weight drifts >0.5%.
 
 - [2026-11-09] Logged $100 sells of EFA and TLT; drift still >0.5%.
+
+- [2026-11-10] Logged $100 sells of EFA and TLT; drift still >0.5%.
