@@ -87,3 +87,5 @@
 - [2026-11-09] Cash $49.8k idle at 4.03% – no cheap opportunities identified today.
 
 - [2026-11-10] Both EMB and HYG remain at the 25% position cap; wait for coupons or wider discounts elsewhere before deploying cash.
+
+- [2026-11-11] Re‑evaluate bond discounts after the next 30‑day trend.
