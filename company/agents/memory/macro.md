@@ -85,3 +85,5 @@
 - [2026-11-09] Reassess XOM size after next FOMC if oil moves > $5.
 
 - [2026-11-10] Monitor Dec 8 FOMC guidance; may need further duration trimming
+
+- [2026-11-11] Re‑evaluate TIP after the Jan 26 FOMC

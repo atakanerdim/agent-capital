@@ -85,3 +85,5 @@
 - [2026-11-09] Future self: keep cash until post‑FOMC; revisit if any instrument beats 4.03%.
 
 - [2026-11-10] Future self: stay cash; revisit if any instrument beats 4.03% after FOMC.
+
+- [2026-11-11] 2026-11-11: Stay cash until post‑FOMC; revisit if any instrument exceeds 4% yield.

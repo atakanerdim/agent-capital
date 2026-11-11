@@ -87,3 +87,5 @@
 - [2026-11-09] Metals under 15%; no forced trim needed.
 
 - [2026-11-10] Future self: metals under 15%, no trim needed.
+
+- [2026-11-11] Hold metals flat, keep under 15%, watch for any further price decline.
