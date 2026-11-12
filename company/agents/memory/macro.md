@@ -87,3 +87,5 @@
 - [2026-11-10] Monitor Dec 8 FOMC guidance; may need further duration trimming
 
 - [2026-11-11] Re‑evaluate TIP after the Jan 26 FOMC
+
+- [2026-11-12] Re‑evaluate energy exposure if WTI moves up > $5 from today

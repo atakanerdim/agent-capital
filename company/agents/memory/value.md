@@ -89,3 +89,5 @@
 - [2026-11-10] Both EMB and HYG remain at the 25% position cap; wait for coupons or wider discounts elsewhere before deploying cash.
 
 - [2026-11-11] Re‑evaluate bond discounts after the next 30‑day trend.
+
+- [2026-11-12] Record idle cash and bond watch for next 30‑day review.
