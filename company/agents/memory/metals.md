@@ -89,3 +89,5 @@
 - [2026-11-10] Future self: metals under 15%, no trim needed.
 
 - [2026-11-11] Hold metals flat, keep under 15%, watch for any further price decline.
+
+- [2026-11-12] Future self: hold metals under 15% pending Dec FOMC, monitor for further price drops.

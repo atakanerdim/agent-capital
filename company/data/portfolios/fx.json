@@ -1,6 +1,6 @@
 {
  "advisor": "fx",
- "cash": 95690.03,
+ "cash": 95700.97,
  "positions": {
   "EURUSD": {
    "qty": 4437.75034459,
@@ -10,5 +10,5 @@
  "opened": "2026-09-09",
  "currency": "USD",
  "last_traded": "2026-11-05",
- "carried_to": "2026-11-11"
+ "carried_to": "2026-11-12"
 }
