@@ -91,3 +91,5 @@
 - [2026-11-11] Re‑evaluate bond discounts after the next 30‑day trend.
 
 - [2026-11-12] Record idle cash and bond watch for next 30‑day review.
+
+- [2026-11-13] Log current bond caps and idle cash for the next 30‑day review.

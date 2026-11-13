@@ -17,3 +17,5 @@
 - [2026-10-30] Add to drift watchlist: brief‑execution mismatch for Tobias, Beatriz, Marisol (cash‑only despite active briefs).
 
 - [2026-11-06] Log cash‑only drift for Tobias, Beatriz, Marisol this week.
+
+- [2026-11-13] Memory: Flag cash‑heavy advisors (Tobias, Beatriz, Marisol, Priya) and Grace’s brief‑action mismatch for future drift watchlist.
