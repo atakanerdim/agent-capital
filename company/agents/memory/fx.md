@@ -91,3 +91,5 @@
 - [2026-11-11] Re‑evaluate EURUSD and other FX after the Dec 8 FOMC outcome.
 
 - [2026-11-12] Reassess EURUSD after Dec 8 FOMC outcome
+
+- [2026-11-13] Reevaluate EURUSD after Dec 8 FOMC results.

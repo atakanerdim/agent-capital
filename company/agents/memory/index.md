@@ -87,3 +87,5 @@
 - [2026-11-10] Logged $100 sells of EFA and TLT; drift still >0.5%.
 
 - [2026-11-11] Monitor cash weight; upcoming FOMC may affect bond allocations.
+
+- [2026-11-13] Watch cash after next Treasury bill accrual; may need another $100 buy if cash >27%.

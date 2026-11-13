@@ -1,6 +1,6 @@
 {
  "advisor": "index",
- "cash": 25999.82,
+ "cash": 25902.79,
  "positions": {
   "SPY": {
    "qty": 32.27086723,
@@ -11,12 +11,12 @@
    "cost": 24985.53
   },
   "TLT": {
-   "qty": 302.26636995,
-   "cost": 24652.57
+   "qty": 303.52931514,
+   "cost": 24752.57
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-11-11",
- "carried_to": "2026-11-12"
+ "last_traded": "2026-11-13",
+ "carried_to": "2026-11-13"
 }
