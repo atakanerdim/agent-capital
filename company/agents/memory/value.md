@@ -93,3 +93,5 @@
 - [2026-11-12] Record idle cash and bond watch for next 30‑day review.
 
 - [2026-11-13] Log current bond caps and idle cash for the next 30‑day review.
+
+- [2026-11-16] Monitor upcoming FOMC dates for potential bond discount widening.

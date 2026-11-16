@@ -91,3 +91,5 @@
 - [2026-11-12] Stay cash until any instrument beats 4.11% yield after 2026‑12‑08 FOMC.
 
 - [2026-11-13] Stay cash until post‑FOMC; revisit if any instrument beats 4.12%.
+
+- [2026-11-16] Future self: stay cash until post‑FOMC; revisit if any instrument exceeds 4.13% yield.

@@ -89,3 +89,5 @@
 - [2026-11-11] Monitor cash weight; upcoming FOMC may affect bond allocations.
 
 - [2026-11-13] Watch cash after next Treasury bill accrual; may need another $100 buy if cash >27%.
+
+- [2026-11-16] SPY bought $100 to correct 0.5%+ underweight.

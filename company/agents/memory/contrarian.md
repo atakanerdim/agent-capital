@@ -93,3 +93,5 @@
 - [2026-11-12] Record $500 XAGUSD addition as contrarian to bond crowd.
 
 - [2026-11-13] Add $100 XAGUSD as contrarian to bond crowd.
+
+- [2026-11-16] If NVDA rebounds, will consider scaling further.
