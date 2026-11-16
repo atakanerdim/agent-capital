@@ -93,3 +93,5 @@
 - [2026-11-12] Reassess EURUSD after Dec 8 FOMC outcome
 
 - [2026-11-13] Reevaluate EURUSD after Dec 8 FOMC results.
+
+- [2026-11-16] Cash hold pending Dec 8 FOMC; monitor EUR weakness.

@@ -93,3 +93,5 @@
 - [2026-11-12] Future self: hold metals under 15% pending Dec FOMC, monitor for further price drops.
 
 - [2026-11-13] Future self: note gold $13,209.35 (~14.2% of book), no trim required, keep under 15%.
+
+- [2026-11-16] Gold $13,102.59, metals ~14% of book, no trim needed.
