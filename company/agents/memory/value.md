@@ -95,3 +95,5 @@
 - [2026-11-13] Log current bond caps and idle cash for the next 30‑day review.
 
 - [2026-11-16] Monitor upcoming FOMC dates for potential bond discount widening.
+
+- [2026-11-17] Log cash idle at 4.14% and monitor upcoming FOMC for discount changes.

@@ -93,3 +93,5 @@
 - [2026-11-13] If WTI climbs > $5, consider re‑adding energy exposure.
 
 - [2026-11-16] Log SHY trim and XOM add for post‑FOMC review.
+
+- [2026-11-17] Re‑evaluate credit exposure after Dec 8 rate decision
