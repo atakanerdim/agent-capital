@@ -91,3 +91,5 @@
 - [2026-11-13] Watch cash after next Treasury bill accrual; may need another $100 buy if cash >27%.
 
 - [2026-11-16] SPY bought $100 to correct 0.5%+ underweight.
+
+- [2026-11-17] Monitor cash and core weights ahead of the 2026-12-08 FOMC meeting.

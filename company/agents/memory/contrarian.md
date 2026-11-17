@@ -95,3 +95,5 @@
 - [2026-11-13] Add $100 XAGUSD as contrarian to bond crowd.
 
 - [2026-11-16] If NVDA rebounds, will consider scaling further.
+
+- [2026-11-17] Add $250 XAGUSD; sell all MSFT $3.36k to lower equity tilt.

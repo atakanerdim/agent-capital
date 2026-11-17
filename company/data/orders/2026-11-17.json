@@ -1,0 +1,265 @@
+{
+ "date": "2026-11-17",
+ "advisors": {
+  "momentum": {
+   "orders": [],
+   "rejected": [],
+   "note": "Without prior price data I cannot identify any clear upward moves, so I keep the book in cash earning the Treasury bill rate. Momentum signals require a recent price rise which I cannot verify today.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "b1b6448101e1",
+   "prompt_sha": "bf7d449b108b",
+   "memory_sha": "df66c2d617ac",
+   "nav_before": 100762.55,
+   "decided_utc": "2026-11-17T16:13:51+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "value": {
+   "orders": [],
+   "rejected": [],
+   "note": "The market shows no clear cheap entries today; EMB and HYG are near their 25% caps and remain below cost, while cash earns the Treasury rate. I'm holding cash and waiting for wider bond discounts before deploying more.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "b1b6448101e1",
+   "prompt_sha": "e61c074f59e9",
+   "memory_sha": "7e00dfdc98de",
+   "nav_before": 99019.47,
+   "decided_utc": "2026-11-17T16:13:52+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "macro": {
+   "orders": [
+    {
+     "action": "buy",
+     "instrument": "LQD",
+     "qty": 48.62630683199611,
+     "price": 102.825,
+     "amount_usd": 5000.0,
+     "reason": "Rising rates favor short‑duration corporate credit for yield and diversification",
+     "conviction": 0.6,
+     "horizon_days": 60,
+     "considered": [
+      {
+       "instrument": "IEF",
+       "why_not": "already have enough intermediate Treasuries"
+      },
+      {
+       "instrument": "SHY",
+       "why_not": "short‑term exposure already high"
+      },
+      {
+       "instrument": "TIP",
+       "why_not": "inflation hedge less urgent with current rate outlook"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "Treasury prices are low, signalling higher rates and a likely hawkish tone before the Dec 8 FOMC. Oil sits around $86.75, limiting energy upside, and the dollar is relatively strong. Adding corporate bonds should capture yield while keeping duration short.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "b1b6448101e1",
+   "prompt_sha": "5c00e8b8732d",
+   "memory_sha": "ccbd03f7979f",
+   "nav_before": 92589.44,
+   "decided_utc": "2026-11-17T16:14:09+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "careful": {
+   "orders": [],
+   "rejected": [],
+   "note": "I’m holding cash, waiting for the Dec 2026 FOMC meeting to clarify direction. No instrument on the list currently offers a clear edge over the 4.14% Treasury yield, so I’m preserving capital.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "b1b6448101e1",
+   "prompt_sha": "bd8b9599dd5d",
+   "memory_sha": "46644bbb41fe",
+   "nav_before": 100762.55,
+   "decided_utc": "2026-11-17T16:14:13+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "contrarian": {
+   "orders": [
+    {
+     "action": "buy",
+     "instrument": "XAGUSD",
+     "qty": 5.242189138184106,
+     "price": 47.69,
+     "amount_usd": 250.0,
+     "reason": "Add silver as a direct contrarian to the bond‑crowd consensus.",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "REM",
+       "why_not": "Property already near 9% exposure, silver offers sharper bond‑crowd hedge"
+      }
+     ]
+    },
+    {
+     "action": "sell",
+     "instrument": "MSFT",
+     "qty": 6.714823731556497,
+     "price": 500.515,
+     "amount_usd": 3360.87,
+     "reason": "Trim MSFT exposure as peers remain bullish on equities, reducing equity risk.",
+     "conviction": 0.7,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "AAPL",
+       "why_not": "AAPL also up but we keep tech exposure for now"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "The desk’s consensus appears to be adding bond exposure, so I am reinforcing my contrarian silver position and reducing equity risk by selling MSFT. This aligns with my existing silver hedge and the note to trim MSFT as equity risk stays elevated. I expect both moves to rebalance the book toward the positions the crowd avoids.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "b1b6448101e1",
+   "prompt_sha": "cc583b70b187",
+   "memory_sha": "3b065b98aa2c",
+   "nav_before": 90453.38,
+   "decided_utc": "2026-11-17T16:14:30+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "fx": {
+   "orders": [],
+   "rejected": [],
+   "note": "With the Dec 8 FOMC meeting still weeks away and no new guidance, the dollar‑euro pair remains uncertain. I will keep the modest EURUSD position and let cash earn the Treasury bill rate while watching the Fed minutes for any shift in USD strength. ",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "b1b6448101e1",
+   "prompt_sha": "f0d2ceb91983",
+   "memory_sha": "982073c8f656",
+   "nav_before": 100632.4,
+   "decided_utc": "2026-11-17T16:15:15+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "metals": {
+   "orders": [],
+   "rejected": [],
+   "note": "Gold is down 11.7% today, pulling metals exposure to ~14% of the book, still under the 15% threshold. I’m holding steady while awaiting the Dec 8‑09 FOMC decision to see if the recent weakness persists.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "b1b6448101e1",
+   "prompt_sha": "263a00ce1ccc",
+   "memory_sha": "91c79a48af78",
+   "nav_before": 93152.39,
+   "decided_utc": "2026-11-17T16:15:18+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "index": {
+   "orders": [],
+   "rejected": [],
+   "note": "Equity and international equity positions are modestly down (~4%) and long bonds down ~2.5%, keeping core weights within the 0.5% drift band. Cash at 26.5% of NAV is comfortably below the 27% ceiling and earns the 4.14% Treasury bill rate, so holding is justified today.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "b1b6448101e1",
+   "prompt_sha": "9068927043b5",
+   "memory_sha": "8f2eb10e8911",
+   "nav_before": 97481.67,
+   "decided_utc": "2026-11-17T16:15:34+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  }
+ }
+}
