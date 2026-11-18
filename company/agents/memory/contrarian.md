@@ -97,3 +97,5 @@
 - [2026-11-16] If NVDA rebounds, will consider scaling further.
 
 - [2026-11-17] Add $250 XAGUSD; sell all MSFT $3.36k to lower equity tilt.
+
+- [2026-11-18] Record: staying contrarian, no new positions, focus on cash and bond reversal signals.
