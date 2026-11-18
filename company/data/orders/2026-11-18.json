@@ -1,0 +1,329 @@
+{
+ "date": "2026-11-18",
+ "advisors": {
+  "momentum": {
+   "orders": [],
+   "rejected": [],
+   "note": "Without prior price series I cannot confirm any upward trend, so I keep the book in cash earning the Treasury bill rate. This avoids buying into a potential top.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "3f677fadfa2c",
+   "prompt_sha": "bf7d449b108b",
+   "memory_sha": "382582438967",
+   "nav_before": 100774.14,
+   "decided_utc": "2026-11-18T15:49:22+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "value": {
+   "orders": [
+    {
+     "action": "buy",
+     "instrument": "TLT",
+     "qty": 1.2486732846350754,
+     "price": 80.085,
+     "amount_usd": 100.0,
+     "reason": "TLT trades at ~20% below par, a deep discount that suggests a cheap long‑government bond opportunity relative to recent history.",
+     "conviction": 0.6,
+     "horizon_days": 180,
+     "considered": [
+      {
+       "instrument": "IEF",
+       "why_not": "higher price, smaller discount"
+      },
+      {
+       "instrument": "SHY",
+       "why_not": "shorter duration, lower yield pickup"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "The upcoming FOMC meetings could add volatility, and the long Treasury market is pricing at a notable discount. I see TLT as the most attractive cheap instrument given its depth of discount and the current cash sweep rate.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "3f677fadfa2c",
+   "prompt_sha": "e61c074f59e9",
+   "memory_sha": "64094f2662e3",
+   "nav_before": 99066.45,
+   "decided_utc": "2026-11-18T15:49:23+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "macro": {
+   "orders": [
+    {
+     "action": "sell",
+     "instrument": "XAUUSD",
+     "qty": 0.7984031936127745,
+     "price": 3757.5,
+     "amount_usd": 3000.0,
+     "reason": "Gold is weak relative to a strong dollar, so reduce exposure",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "TIP",
+       "why_not": "inflation exposure already adequate"
+      },
+      {
+       "instrument": "SHY",
+       "why_not": "duration already covered"
+      }
+     ]
+    },
+    {
+     "action": "buy",
+     "instrument": "XOM",
+     "qty": 18.39926402943882,
+     "price": 163.05,
+     "amount_usd": 3000.0,
+     "reason": "Oil at $83 offers upside, reallocate from gold to energy",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "CAT",
+       "why_not": "catalyst less clear"
+      },
+      {
+       "instrument": "IEF",
+       "why_not": "already at target"
+      },
+      {
+       "instrument": "TIP",
+       "why_not": "inflation tilt set"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "Oil remains low at $83, suggesting potential upside, while gold is lagging amid a strong dollar. I’m shifting a modest amount from gold into Exxon Mobil to capture an energy rebound without breaching the 25% cap.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "3f677fadfa2c",
+   "prompt_sha": "5c00e8b8732d",
+   "memory_sha": "2cce33344ce5",
+   "nav_before": 91709.8,
+   "decided_utc": "2026-11-18T15:49:48+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "careful": {
+   "orders": [],
+   "rejected": [],
+   "note": "The market is awaiting the December FOMC meeting, and cash continues to earn 4.15% on the 13‑week Treasury. No other instrument currently offers a clear risk‑adjusted edge over that yield, so preserving capital by staying fully invested in cash is the prudent stance.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "3f677fadfa2c",
+   "prompt_sha": "bd8b9599dd5d",
+   "memory_sha": "ba15e64d62ea",
+   "nav_before": 100774.14,
+   "decided_utc": "2026-11-18T15:49:52+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "contrarian": {
+   "orders": [],
+   "rejected": [],
+   "note": "The desk’s top performers are up, indicating a consensus tilt toward equities; I stay on the defensive, holding cash and monitoring for a bond‑market reversal before adding new exposure.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "3f677fadfa2c",
+   "prompt_sha": "cc583b70b187",
+   "memory_sha": "3f3876f9b62b",
+   "nav_before": 88339.22,
+   "decided_utc": "2026-11-18T15:50:05+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "fx": {
+   "orders": [
+    {
+     "action": "sell",
+     "instrument": "EURUSD",
+     "qty": 4437.748221195401,
+     "price": 1.096804,
+     "amount_usd": 4867.34,
+     "reason": "Reduce USD exposure ahead of the upcoming Fed meeting with limited information",
+     "conviction": 0.6,
+     "horizon_days": 21,
+     "considered": [
+      {
+       "instrument": "AUDUSD",
+       "why_not": "lower liquidity and less clear directional bias"
+      },
+      {
+       "instrument": "GBPUSD",
+       "why_not": "potentially higher volatility without clear catalyst"
+      },
+      {
+       "instrument": "CHFUSD",
+       "why_not": "safe‑haven bias may not offset USD risk"
+      },
+      {
+       "instrument": "XAUUSD",
+       "why_not": "metal exposure not aligned with short‑term FX view"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "With the next FOMC meeting only three weeks away and no fresh data, the USD could swing either way. I prefer to preserve capital in cash rather than stay exposed to EURUSD, which is currently at a loss. The cash sweep offers a modest return while I wait for clearer direction.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "3f677fadfa2c",
+   "prompt_sha": "f0d2ceb91983",
+   "memory_sha": "cb1a814cec87",
+   "nav_before": 100634.1,
+   "decided_utc": "2026-11-18T15:50:36+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "metals": {
+   "orders": [],
+   "rejected": [],
+   "note": "Gold is down 14.40% from cost, but the combined metal exposure remains under 15% of the book and no new 5% drop over a 5‑day window is evident. I’m holding steady, waiting for the Dec FOMC to see if the macro backdrop shifts.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "3f677fadfa2c",
+   "prompt_sha": "263a00ce1ccc",
+   "memory_sha": "53cc2bcdd3a4",
+   "nav_before": 92763.69,
+   "decided_utc": "2026-11-18T15:50:39+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "index": {
+   "orders": [
+    {
+     "action": "buy",
+     "instrument": "SPY",
+     "qty": 0.13726082301589482,
+     "price": 728.54,
+     "amount_usd": 100.0,
+     "reason": "SPY is underweight by ~0.8% of NAV; buying $100 moves it toward the 25% target.",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "EFA",
+       "why_not": "Also underweighted; we will address both with separate orders."
+      }
+     ]
+    },
+    {
+     "action": "buy",
+     "instrument": "EFA",
+     "qty": 0.9980239126529472,
+     "price": 100.198,
+     "amount_usd": 100.0,
+     "reason": "EFA is underweight by ~0.8% of NAV; buying $100 moves it toward the 25% target.",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "SPY",
+       "why_not": "Also underweighted; we will address both with separate orders."
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "The core funds are modestly underweight relative to our 25% targets, and cash remains comfortably below the 27% upper bound. I will add $100 to SPY and EFA to move them toward target while keeping the portfolio balanced.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "3f677fadfa2c",
+   "prompt_sha": "9068927043b5",
+   "memory_sha": "838360990221",
+   "nav_before": 97265.66,
+   "decided_utc": "2026-11-18T15:50:52+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  }
+ }
+}
