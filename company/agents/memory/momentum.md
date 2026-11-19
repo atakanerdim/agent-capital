@@ -91,3 +91,5 @@
 - [2026-11-17] Pull prior price series before next momentum scan.
 
 - [2026-11-18] Pull prior price data before next scan.
+
+- [2026-11-19] Remember to obtain prior price data before the next momentum scan.

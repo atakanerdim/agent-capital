@@ -95,3 +95,5 @@
 - [2026-11-17] Monitor cash and core weights ahead of the 2026-12-08 FOMC meeting.
 
 - [2026-11-18] Record $100 SPY/EFA buys – monitor drift after the next FOMC.
+
+- [2026-11-19] Record $100 EFA/TLT sells for overweight drift.

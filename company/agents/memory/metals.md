@@ -99,3 +99,5 @@
 - [2026-11-17] Metals under 15%; monitor gold/silver for any further 5‑day drop.
 
 - [2026-11-18] Hold metals; monitor for any >5% drop over a 5‑day window.
+
+- [2026-11-19] Watch gold/silver trends; consider rebuilding metal exposure if prices stabilize.
