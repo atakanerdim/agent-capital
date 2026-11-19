@@ -99,3 +99,5 @@
 - [2026-11-17] Log cash idle at 4.14% and monitor upcoming FOMC for discount changes.
 
 - [2026-11-18] Log $100 TLT addition; re‑review after next 30‑day trend.
+
+- [2026-11-19] Review EMB/HYG caps after additions on next 30-day trend.

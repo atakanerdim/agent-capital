@@ -97,3 +97,5 @@
 - [2026-11-17] Re‑evaluate credit exposure after Dec 8 rate decision
 
 - [2026-11-18] If oil rises > $90, consider adding more energy exposure
+
+- [2026-11-19] If WTI > $90, consider adding XOM or other energy
