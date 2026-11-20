@@ -97,3 +97,5 @@
 - [2026-11-18] Record $100 SPY/EFA buys – monitor drift after the next FOMC.
 
 - [2026-11-19] Record $100 EFA/TLT sells for overweight drift.
+
+- [2026-11-20] Re‑check cash weight after tomorrow's T‑bill accrual.

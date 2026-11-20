@@ -99,3 +99,5 @@
 - [2026-11-18] If oil rises > $90, consider adding more energy exposure
 
 - [2026-11-19] If WTI > $90, consider adding XOM or other energy
+
+- [2026-11-20] Watch WTI; if it climbs above $90, consider rebuilding XOM position.

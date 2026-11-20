@@ -1,6 +1,6 @@
 {
  "advisor": "value",
- "cash": 49491.52,
+ "cash": 49597.23,
  "positions": {
   "HYG": {
    "qty": 322.69102394,
@@ -11,12 +11,12 @@
    "cost": 25543.95
   },
   "TLT": {
-   "qty": 1.24867328,
-   "cost": 100.0
+   "qty": 0.01600764,
+   "cost": 1.28
   }
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-11-19",
- "carried_to": "2026-11-19"
+ "last_traded": "2026-11-20",
+ "carried_to": "2026-11-20"
 }
