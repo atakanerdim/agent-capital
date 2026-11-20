@@ -101,3 +101,5 @@
 - [2026-11-18] Record: staying contrarian, no new positions, focus on cash and bond reversal signals.
 
 - [2026-11-19] Monitor gold price for reversal; consider scaling if it breaks $3,800
+
+- [2026-11-20] Track HYG vs Treasury performance for next month
