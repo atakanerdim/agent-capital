@@ -17,3 +17,5 @@
 - [2026-11-08] Add a concise cash‑deployment trigger to each brief to improve conversion rates.
 
 - [2026-11-15] Add explicit cash‑deployment trigger to each brief.
+
+- [2026-11-22] Track brief‑to‑trade conversion rate weekly as per chief notes.
