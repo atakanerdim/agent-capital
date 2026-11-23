@@ -99,3 +99,5 @@
 - [2026-11-19] Record $100 EFA/TLT sells for overweight drift.
 
 - [2026-11-20] Re‑check cash weight after tomorrow's T‑bill accrual.
+
+- [2026-11-23] Watch upcoming 2026-12-08 FOMC for bond market impact on TLT weight.

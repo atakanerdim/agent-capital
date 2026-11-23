@@ -103,3 +103,5 @@
 - [2026-11-19] Cash hold pending Dec 8 FOMC; watch EURUSD for post‑meeting weakness.
 
 - [2026-11-20] Reassess EURUSD and GBPUSD post‑Dec 8 FOMC.
+
+- [2026-11-23] Review EURUSD and GBPUSD after Dec 8 FOMC for potential long positions
