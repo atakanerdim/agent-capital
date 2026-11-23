@@ -101,3 +101,5 @@
 - [2026-11-19] Future self: keep cash until post‑FOMC; revisit if any instrument exceeds 4.15% yield.
 
 - [2026-11-20] Re‑evaluate after the 2026‑12‑08 FOMC for any yield‑driven opportunities.
+
+- [2026-11-23] Reevaluate after the 2026-12-08 FOMC for yield‑driven opportunities.

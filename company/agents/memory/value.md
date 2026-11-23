@@ -103,3 +103,5 @@
 - [2026-11-19] Review EMB/HYG caps after additions on next 30-day trend.
 
 - [2026-11-20] Watch upcoming FOMC dates for potential bond discount widening.
+
+- [2026-11-23] Re‑evaluate bond discounts after the 2026-12-08 FOMC meeting.

@@ -1,0 +1,259 @@
+{
+ "date": "2026-11-23",
+ "advisors": {
+  "momentum": {
+   "orders": [],
+   "rejected": [],
+   "note": "Without prior price data I cannot confirm any upward momentum today. Cash will continue to earn the 4.15% Treasury bill rate.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "54e4090342a6",
+   "prompt_sha": "bf7d449b108b",
+   "memory_sha": "78790d540f16",
+   "nav_before": 100832.21,
+   "decided_utc": "2026-11-23T18:27:52+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "value": {
+   "orders": [],
+   "rejected": [],
+   "note": "No instrument appears sufficiently cheap versus its recent history, so I am not adding any new positions. Cash will continue earning the 4.15% Treasury rate while I watch upcoming FOMC dates for discount opportunities.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "54e4090342a6",
+   "prompt_sha": "e61c074f59e9",
+   "memory_sha": "9000cbaf9852",
+   "nav_before": 99026.9,
+   "decided_utc": "2026-11-23T18:27:53+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "macro": {
+   "orders": [],
+   "rejected": [],
+   "note": "With WTI at $81 and rates likely to stay elevated ahead of the Dec 8 FOMC, there is no clear catalyst to add energy or extend duration. I am keeping the current mix and letting cash earn the Treasury bill rate while monitoring oil and inflation signals.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "54e4090342a6",
+   "prompt_sha": "5c00e8b8732d",
+   "memory_sha": "702c80f03eac",
+   "nav_before": 91097.48,
+   "decided_utc": "2026-11-23T18:28:24+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "careful": {
+   "orders": [],
+   "rejected": [],
+   "note": "Cash yields 4.15% annual and there is no clear edge in bonds or equities given only FOMC schedules. I will keep the book fully in cash and let the Treasury bill rate accrue.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "54e4090342a6",
+   "prompt_sha": "bd8b9599dd5d",
+   "memory_sha": "8db2fcf867c1",
+   "nav_before": 100832.21,
+   "decided_utc": "2026-11-23T18:28:51+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "contrarian": {
+   "orders": [
+    {
+     "action": "sell",
+     "instrument": "NVDA",
+     "qty": 60.412009907569626,
+     "price": 165.53,
+     "amount_usd": 10000.0,
+     "reason": "Trim oversized tech loss as crowd stays long NVDA",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "AAPL",
+       "why_not": "still modest gain"
+      }
+     ]
+    },
+    {
+     "action": "sell",
+     "instrument": "WTI",
+     "qty": 53.36179296,
+     "price": 81.08,
+     "amount_usd": 4326.57,
+     "reason": "Reduce oil exposure while market favors equities",
+     "conviction": 0.55,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "XAGUSD",
+       "why_not": "silver already over‑weighted"
+      }
+     ]
+    },
+    {
+     "action": "buy",
+     "instrument": "SHY",
+     "qty": 85.8684985279686,
+     "price": 81.52,
+     "amount_usd": 7000.0,
+     "reason": "Add short‑term Treasury as safe haven opposite to equity crowd",
+     "conviction": 0.65,
+     "horizon_days": 60,
+     "considered": [
+      {
+       "instrument": "TIP",
+       "why_not": "higher price, less liquidity"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "Equity risk remains high and the desk is still long tech and oil; I’m trimming those positions and moving into short‑term Treasuries for a contrarian safe‑haven tilt. The next FOMC meeting will likely set the direction for yields, so I’m positioning for a potential rise.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "54e4090342a6",
+   "prompt_sha": "cc583b70b187",
+   "memory_sha": "39b7d2f94f9c",
+   "nav_before": 88515.98,
+   "decided_utc": "2026-11-23T18:30:09+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "fx": {
+   "orders": [],
+   "rejected": [],
+   "note": "With the next Fed meeting on Dec 8 the direction of US monetary policy remains uncertain, so I keep the book in cash earning the 4.15% Treasury‑bill rate. No clear relative‑strength signal among the FX pairs justifies a position today.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "54e4090342a6",
+   "prompt_sha": "f0d2ceb91983",
+   "memory_sha": "395a03dd473b",
+   "nav_before": 100692.09,
+   "decided_utc": "2026-11-23T18:30:36+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "metals": {
+   "orders": [],
+   "rejected": [],
+   "note": "Gold has slipped 16.8% while silver is down 3.3%, leaving metal exposure at about 14% of NAV. The 5‑day‑window rule is satisfied by the allocation already being under 15%, so I will hold and let cash earn the 4.15% Treasury rate. I will keep monitoring any further price moves and the upcoming FOMC schedule.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "54e4090342a6",
+   "prompt_sha": "263a00ce1ccc",
+   "memory_sha": "03be3e4375ad",
+   "nav_before": 92442.73,
+   "decided_utc": "2026-11-23T18:31:55+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "index": {
+   "orders": [],
+   "rejected": [],
+   "note": "Cash sits at 26.8% of NAV, comfortably below the 27% ceiling. Core holdings (EFA, SPY, TLT) are each near 24‑25% of NAV, well within the 0.5% drift tolerance, so no rebalancing is required today.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "54e4090342a6",
+   "prompt_sha": "9068927043b5",
+   "memory_sha": "bc3e18fdcd96",
+   "nav_before": 97266.26,
+   "decided_utc": "2026-11-23T18:32:21+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  }
+ }
+}

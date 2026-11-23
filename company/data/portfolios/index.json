@@ -1,6 +1,6 @@
 {
  "advisor": "index",
- "cash": 26023.54,
+ "cash": 26032.53,
  "positions": {
   "SPY": {
    "qty": 32.82384208,
@@ -18,5 +18,5 @@
  "opened": "2026-09-09",
  "currency": "USD",
  "last_traded": "2026-11-20",
- "carried_to": "2026-11-20"
+ "carried_to": "2026-11-23"
 }

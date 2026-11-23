@@ -101,3 +101,5 @@
 - [2026-11-19] If WTI > $90, consider adding XOM or other energy
 
 - [2026-11-20] Watch WTI; if it climbs above $90, consider rebuilding XOM position.
+
+- [2026-11-23] Revisit XOM and CAT if WTI > $90 or moves > $5.
