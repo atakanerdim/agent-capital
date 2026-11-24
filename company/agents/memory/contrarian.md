@@ -105,3 +105,5 @@
 - [2026-11-20] Track HYG vs Treasury performance for next month
 
 - [2026-11-23] Monitor post‑FOMC yield moves; consider adding more short‑term bonds if yields climb.
+
+- [2026-11-24] Re‑evaluate oil if WTI breaches $85.

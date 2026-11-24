@@ -1,0 +1,121 @@
+{
+ "date": "2026-11-24",
+ "rates": {
+  "TBILL3M": {
+   "close": 4.147,
+   "source": "yahoo",
+   "symbol": "%5EIRX",
+   "raw": 4.147,
+   "transform": {
+    "invert": false,
+    "scale": 1.0
+   },
+   "asof": "2026-11-23",
+   "fetched_utc": "2026-11-24T01:53:36+00:00",
+   "adjusted": "split_and_dividend",
+   "pct": 4.147,
+   "name": "US 13-week Treasury bill yield, percent"
+  }
+ },
+ "books": {
+  "momentum": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 100832.21,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 11.62,
+   "distributions": [],
+   "credited": 11.62
+  },
+  "value": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 49614.37,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 5.72,
+   "distributions": [],
+   "credited": 5.72
+  },
+  "macro": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 4632.63,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 0.53,
+   "distributions": [],
+   "credited": 0.53
+  },
+  "careful": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 100832.21,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 11.62,
+   "distributions": [],
+   "credited": 11.62
+  },
+  "contrarian": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 14123.2,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 1.63,
+   "distributions": [],
+   "credited": 1.63
+  },
+  "fx": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 100692.09,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 11.61,
+   "distributions": [],
+   "credited": 11.61
+  },
+  "metals": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 79574.38,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 9.17,
+   "distributions": [],
+   "credited": 9.17
+  },
+  "index": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 26032.53,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 3.0,
+   "distributions": [],
+   "credited": 3.0
+  },
+  "benchmark": {
+   "since": "2026-11-23",
+   "date": "2026-11-24",
+   "days": 1,
+   "cash_before": 108.82,
+   "rate_pct": 4.15,
+   "rate_from": "since",
+   "interest": 0.01,
+   "distributions": [],
+   "credited": 0.01
+  }
+ }
+}

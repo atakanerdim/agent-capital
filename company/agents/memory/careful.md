@@ -103,3 +103,5 @@
 - [2026-11-20] Re‑evaluate after the 2026‑12‑08 FOMC for any yield‑driven opportunities.
 
 - [2026-11-23] Reevaluate after the 2026-12-08 FOMC for yield‑driven opportunities.
+
+- [2026-11-24] Maintain 100% cash through the 2026-12-08 FOMC unless an asset offers mispriced downside protection.
