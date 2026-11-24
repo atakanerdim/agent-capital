@@ -105,3 +105,5 @@
 - [2026-11-20] Watch upcoming FOMC dates for potential bond discount widening.
 
 - [2026-11-23] Re‑evaluate bond discounts after the 2026-12-08 FOMC meeting.
+
+- [2026-11-24] Hold cash swept at 4.15% until the 2026-12-08 FOMC meeting or until a clear value dislocation emerges.

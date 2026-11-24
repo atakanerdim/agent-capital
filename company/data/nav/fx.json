@@ -371,6 +371,13 @@
    "cash": 100692.09,
    "invested": 0.0,
    "unpriced": []
+  },
+  {
+   "date": "2026-11-24",
+   "nav": 100703.7,
+   "cash": 100703.7,
+   "invested": 0.0,
+   "unpriced": []
   }
  ]
 }

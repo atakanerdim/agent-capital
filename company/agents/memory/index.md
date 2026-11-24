@@ -101,3 +101,5 @@
 - [2026-11-20] Re‑check cash weight after tomorrow's T‑bill accrual.
 
 - [2026-11-23] Watch upcoming 2026-12-08 FOMC for bond market impact on TLT weight.
+
+- [2026-11-24] Check cash weight after tomorrow's T‑bill accrual; may need another $100 buy if >27%.

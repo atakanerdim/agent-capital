@@ -1,6 +1,6 @@
 {
  "advisor": "contrarian",
- "cash": 14123.2,
+ "cash": 19124.83,
  "positions": {
   "XAUUSD": {
    "qty": 3.04070203,
@@ -15,8 +15,8 @@
    "cost": 26320.61
   },
   "NVDA": {
-   "qty": 43.77001181,
-   "cost": 8214.82
+   "qty": 13.47616146,
+   "cost": 2529.23
   },
   "LQD": {
    "qty": 3.188e-05,
@@ -53,6 +53,6 @@
  },
  "opened": "2026-09-09",
  "currency": "USD",
- "last_traded": "2026-11-23",
- "carried_to": "2026-11-23"
+ "last_traded": "2026-11-24",
+ "carried_to": "2026-11-24"
 }
