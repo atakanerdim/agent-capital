@@ -107,3 +107,5 @@
 - [2026-11-23] Review EURUSD and GBPUSD after Dec 8 FOMC for potential long positions
 
 - [2026-11-24] Reassess EURUSD and GBPUSD after the Dec 8 FOMC outcome
+
+- [2026-11-25] Reassess FX after Dec 8 FOMC outcome

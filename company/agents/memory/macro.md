@@ -105,3 +105,5 @@
 - [2026-11-23] Revisit XOM and CAT if WTI > $90 or moves > $5.
 
 - [2026-11-24] Reassess XOM if WTI > $90.
+
+- [2026-11-25] If WTI climbs above $90, consider rebuilding XOM exposure.

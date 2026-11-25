@@ -1,0 +1,286 @@
+{
+ "date": "2026-11-25",
+ "advisors": {
+  "momentum": {
+   "orders": [],
+   "rejected": [],
+   "note": "All instruments lack a clear upward move without prior price data, so I keep cash earning the Treasury rate. I’ll pull the prior price series before the next scan.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "04968bbd930e",
+   "prompt_sha": "bf7d449b108b",
+   "memory_sha": "4410da4eccfc",
+   "nav_before": 100855.45,
+   "decided_utc": "2026-11-25T17:24:30+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "value": {
+   "orders": [],
+   "rejected": [],
+   "note": "EMB and HYG remain at modest discounts but are already at the 25% position cap, so no additional exposure is possible. With cash earning 4.15% and no clear cheap dislocations among the tradable list, I will keep the cash idle.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "04968bbd930e",
+   "prompt_sha": "e61c074f59e9",
+   "memory_sha": "55dc321df6eb",
+   "nav_before": 98993.47,
+   "decided_utc": "2026-11-25T17:24:31+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "macro": {
+   "orders": [
+    {
+     "action": "sell",
+     "instrument": "XAUUSD",
+     "qty": 0.7074895623278139,
+     "price": 3520.9,
+     "amount_usd": 2491.0,
+     "reason": "Gold price is down sharply and dollar strength makes it unattractive",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": []
+    },
+    {
+     "action": "buy",
+     "instrument": "LQD",
+     "qty": 23.954390839840944,
+     "price": 104.365,
+     "amount_usd": 2500.0,
+     "reason": "Investment‑grade credit offers better yield than cash in a high‑rate environment",
+     "conviction": 0.6,
+     "horizon_days": 60,
+     "considered": [
+      {
+       "instrument": "IEF",
+       "why_not": "Longer duration less appealing with rates likely steady"
+      },
+      {
+       "instrument": "SHY",
+       "why_not": "Already near 25% cap"
+      },
+      {
+       "instrument": "TIP",
+       "why_not": "Would breach 25% cap with added size"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "Oil is low at $83 and the dollar is firm, suggesting limited upside for commodities and cyclical equities. With rates likely staying high, I’m shifting from gold to investment‑grade credit to earn a higher return on cash.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "04968bbd930e",
+   "prompt_sha": "5c00e8b8732d",
+   "memory_sha": "dada8220d7ef",
+   "nav_before": 91071.99,
+   "decided_utc": "2026-11-25T17:24:54+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "careful": {
+   "orders": [],
+   "rejected": [],
+   "note": "With the 2026‑12‑08 FOMC meeting imminent and no instrument clearly offering a yield above the 4.15% Treasury bill rate, I keep the book fully in cash. The bond market shows mixed pricing but without known coupons I cannot justify taking on additional risk.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "04968bbd930e",
+   "prompt_sha": "bd8b9599dd5d",
+   "memory_sha": "eae58fa6583b",
+   "nav_before": 100855.45,
+   "decided_utc": "2026-11-25T17:25:21+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "contrarian": {
+   "orders": [],
+   "rejected": [
+    {
+     "order": {
+      "action": "buy",
+      "instrument": "IEF",
+      "amount_usd": 5000
+     },
+     "why": "you already hold 12 instruments, which is the limit; sell something before buying something new"
+    }
+   ],
+   "note": "The desk seems focused on equities and short‑term bonds while trimming longer‑duration exposure. With the Fed meeting next week, yields could ease, making intermediate‑term Treasuries attractive. I’m adding a modest IEF position as a contrarian tilt back toward bonds.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "all_rejected",
+    "why": "1 order(s) asked for, none reached the book"
+   },
+   "snapshot_id": "04968bbd930e",
+   "prompt_sha": "cc583b70b187",
+   "memory_sha": "5e7c535c9eab",
+   "nav_before": 86566.24,
+   "decided_utc": "2026-11-25T17:26:37+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "fx": {
+   "orders": [],
+   "rejected": [],
+   "note": "I remain in cash ahead of the Dec 8 FOMC meeting, waiting for guidance on USD direction. With no new data, any FX position would be speculative.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "04968bbd930e",
+   "prompt_sha": "f0d2ceb91983",
+   "memory_sha": "ba548dd67dcc",
+   "nav_before": 100715.3,
+   "decided_utc": "2026-11-25T17:27:03+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "metals": {
+   "orders": [],
+   "rejected": [],
+   "note": "Metals remain at ~13.5% of the book after recent price declines; the 5‑day combined gold‑silver drop is not currently triggering another trim, so I stay flat and let cash earn the 4.15% Treasury rate.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "04968bbd930e",
+   "prompt_sha": "263a00ce1ccc",
+   "memory_sha": "09cfdb0ea44b",
+   "nav_before": 91971.16,
+   "decided_utc": "2026-11-25T17:28:22+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "index": {
+   "orders": [
+    {
+     "action": "sell",
+     "instrument": "TLT",
+     "qty": 4.847603466036478,
+     "price": 82.515,
+     "amount_usd": 400.0,
+     "reason": "Trim overweight TLT to respect 25% cap and drift limit",
+     "conviction": 0.7,
+     "horizon_days": 30,
+     "considered": []
+    },
+    {
+     "action": "buy",
+     "instrument": "SPY",
+     "qty": 0.14142071247754945,
+     "price": 707.11,
+     "amount_usd": 100.0,
+     "reason": "Bring SPY closer to target weight after TLT trim",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": []
+    },
+    {
+     "action": "buy",
+     "instrument": "EFA",
+     "qty": 1.018381791333571,
+     "price": 98.195,
+     "amount_usd": 100.0,
+     "reason": "Bring EFA closer to target weight after TLT trim",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": []
+    }
+   ],
+   "rejected": [],
+   "note": "Cash remains comfortably within the 27% limit at ~27% of NAV, earning the 4.15% Treasury‑bill rate. TLT is still slightly above its target weight after the recent bond rally, while SPY and EFA are modestly underweight, so a small rebalancing trims TLT and nudges equity exposures back toward intended weights.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "04968bbd930e",
+   "prompt_sha": "9068927043b5",
+   "memory_sha": "fee2cada91d0",
+   "nav_before": 96843.52,
+   "decided_utc": "2026-11-25T17:28:46+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  }
+ }
+}
