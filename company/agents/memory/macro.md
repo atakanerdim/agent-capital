@@ -107,3 +107,5 @@
 - [2026-11-24] Reassess XOM if WTI > $90.
 
 - [2026-11-25] If WTI climbs above $90, consider rebuilding XOM exposure.
+
+- [2026-11-26] Watch WTI; if it breaches $90 consider adding XOM and trimming short bonds.
