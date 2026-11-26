@@ -109,3 +109,5 @@
 - [2026-11-24] Reassess EURUSD and GBPUSD after the Dec 8 FOMC outcome
 
 - [2026-11-25] Reassess FX after Dec 8 FOMC outcome
+
+- [2026-11-26] Continue cash hold pending post‑FOMC FX signals.

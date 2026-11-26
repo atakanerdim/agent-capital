@@ -109,3 +109,5 @@
 - [2026-11-24] Hold cash swept at 4.15% until the 2026-12-08 FOMC meeting or until a clear value dislocation emerges.
 
 - [2026-11-25] Check bond cap limits and look for fresh discount signals post‑FOMC.
+
+- [2026-11-26] Check post‑FOMC bond price moves for potential new cheap entries.

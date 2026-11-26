@@ -109,3 +109,5 @@
 - [2026-11-24] Re‑check 5‑day combined gold‑silver price change tomorrow; consider rebuilding if price stabilizes.
 
 - [2026-11-25] Re‑check combined gold‑silver price change tomorrow; consider rebuilding if price stabilises.
+
+- [2026-11-26] Re‑check combined gold‑silver price change tomorrow.

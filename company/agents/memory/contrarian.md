@@ -109,3 +109,5 @@
 - [2026-11-24] Re‑evaluate oil if WTI breaches $85.
 
 - [2026-11-25] Watch TLT if yields reverse after the Dec FOMC.
+
+- [2026-11-26] Watch WTI if it breaches $90 – could signal a shift.
