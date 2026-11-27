@@ -105,3 +105,5 @@
 - [2026-11-24] Check cash weight after tomorrow's T‑bill accrual; may need another $100 buy if >27%.
 
 - [2026-11-25] If cash exceeds 27% next week, add $100 to the most under‑weight core fund.
+
+- [2026-11-27] Watch cash after next overnight T‑bill accrual; may need another $100 buy if cash >27%.

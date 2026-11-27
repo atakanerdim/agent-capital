@@ -1,0 +1,240 @@
+{
+ "date": "2026-11-27",
+ "advisors": {
+  "momentum": {
+   "orders": [],
+   "rejected": [],
+   "note": "Without prior price series I cannot identify any clear upward moves; all instruments are flat relative to unknown history. I will keep cash earning the Treasury rate today.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "11bb3c13f627",
+   "prompt_sha": "bf7d449b108b",
+   "memory_sha": "d762ad7e99fe",
+   "nav_before": 100878.72,
+   "decided_utc": "2026-11-27T16:49:25+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "value": {
+   "orders": [],
+   "rejected": [],
+   "note": "Bond discounts (EMB, HYG) remain modest and both are at the 25% book cap. With cash earning 4.16% and no clear cheap dislocation elsewhere, I stay in cash today.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "11bb3c13f627",
+   "prompt_sha": "e61c074f59e9",
+   "memory_sha": "459d1c2bcc3f",
+   "nav_before": 99207.09,
+   "decided_utc": "2026-11-27T16:49:26+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "macro": {
+   "orders": [],
+   "rejected": [],
+   "note": "WTI stays at $82.95, below the $90 trigger for adding energy exposure, and the upcoming Dec 8 FOMC could shift rate expectations, so I hold current positions. Cash is modest and earning the 4.16% Treasury bill rate, which is attractive relative to the modest upside in short bonds.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "11bb3c13f627",
+   "prompt_sha": "5c00e8b8732d",
+   "memory_sha": "c0df684afac9",
+   "nav_before": 91514.79,
+   "decided_utc": "2026-11-27T16:51:19+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "careful": {
+   "orders": [],
+   "rejected": [],
+   "note": "With the next FOMC meeting imminent and no instrument clearly offering yield above the 4.16% Treasury bill rate, I keep the book fully in cash. The market shows no mispricing that justifies taking on additional risk today.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "11bb3c13f627",
+   "prompt_sha": "bd8b9599dd5d",
+   "memory_sha": "f013d762ce21",
+   "nav_before": 100878.72,
+   "decided_utc": "2026-11-27T16:51:52+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "contrarian": {
+   "orders": [],
+   "rejected": [
+    {
+     "order": {
+      "action": "buy",
+      "instrument": "WTI",
+      "amount_usd": 5000
+     },
+     "why": "you already hold 12 instruments, which is the limit; sell something before buying something new"
+    }
+   ],
+   "note": "Equities are modestly up for the leaders, suggesting the desk is still long the broad market. With oil at $82.95, a clear underweight relative to recent peaks, a small exposure provides a contrarian edge.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "all_rejected",
+    "why": "1 order(s) asked for, none reached the book"
+   },
+   "snapshot_id": "11bb3c13f627",
+   "prompt_sha": "cc583b70b187",
+   "memory_sha": "f4d380940eea",
+   "nav_before": 89266.88,
+   "decided_utc": "2026-11-27T16:53:10+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "fx": {
+   "orders": [],
+   "rejected": [],
+   "note": "I am holding cash as we await the Dec 8 FOMC meeting; the Fed’s policy direction will likely drive USD strength or weakness. With no clear signal yet, I prefer to keep the book in the Treasury sweep.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "11bb3c13f627",
+   "prompt_sha": "f0d2ceb91983",
+   "memory_sha": "7ed0c931ab60",
+   "nav_before": 100738.55,
+   "decided_utc": "2026-11-27T16:53:37+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "metals": {
+   "orders": [],
+   "rejected": [],
+   "note": "Gold is down sharply while silver is only modestly lower; metal allocation is already below the 15% threshold and the 5‑day combined price‑drop rule cannot be confirmed, so I will stay fully in cash and monitor the next window.",
+   "schema_gaps": 0,
+   "held": {
+    "kind": "chose_to_hold",
+    "why": "the advisor sent no orders"
+   },
+   "snapshot_id": "11bb3c13f627",
+   "prompt_sha": "263a00ce1ccc",
+   "memory_sha": "d89be0ab4808",
+   "nav_before": 92479.33,
+   "decided_utc": "2026-11-27T16:55:03+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  },
+  "index": {
+   "orders": [
+    {
+     "action": "buy",
+     "instrument": "TLT",
+     "qty": 1.2303906490310672,
+     "price": 81.275,
+     "amount_usd": 100.0,
+     "reason": "TLT weight drifted >0.5% under target 25%",
+     "conviction": 0.6,
+     "horizon_days": 30,
+     "considered": [
+      {
+       "instrument": "SPY",
+       "why_not": "within 0.5% drift tolerance"
+      },
+      {
+       "instrument": "EFA",
+       "why_not": "within 0.5% drift tolerance"
+      }
+     ]
+    }
+   ],
+   "rejected": [],
+   "note": "Bond prices are modestly down, keeping TLT slightly underweight; cash at ~26.6% earns the Treasury bill rate, so a small purchase brings us back toward the 25% target without breaching caps.",
+   "schema_gaps": 0,
+   "held": null,
+   "snapshot_id": "11bb3c13f627",
+   "prompt_sha": "9068927043b5",
+   "memory_sha": "37503d6ea90f",
+   "nav_before": 97658.28,
+   "decided_utc": "2026-11-27T16:55:29+00:00",
+   "news_shown": [
+    "fomc:2027-12-07",
+    "fomc:2027-10-26",
+    "fomc:2027-09-14",
+    "fomc:2027-07-27",
+    "fomc:2027-06-08",
+    "fomc:2027-04-27",
+    "fomc:2027-03-16",
+    "fomc:2027-01-26",
+    "fomc:2026-12-08"
+   ]
+  }
+ }
+}

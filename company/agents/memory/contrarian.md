@@ -111,3 +111,5 @@
 - [2026-11-25] Watch TLT if yields reverse after the Dec FOMC.
 
 - [2026-11-26] Watch WTI if it breaches $90 – could signal a shift.
+
+- [2026-11-27] Monitor the upcoming FOMC minutes for any shift in rate expectations that could impact oil demand

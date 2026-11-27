@@ -111,3 +111,5 @@
 - [2026-11-25] Check bond cap limits and look for fresh discount signals post‑FOMC.
 
 - [2026-11-26] Check post‑FOMC bond price moves for potential new cheap entries.
+
+- [2026-11-27] Re‑evaluate bond discounts after next FOMC meeting.
