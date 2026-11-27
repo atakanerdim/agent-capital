@@ -109,3 +109,5 @@
 - [2026-11-25] Re‑evaluate after 2026‑12‑08 FOMC for any yield‑driven opportunities.
 
 - [2026-11-26] Re‑evaluate after 2026‑12‑08 FOMC for any yield‑driven opportunities.
+
+- [2026-11-27] Re‑evaluate after the 2026‑12‑08 FOMC for any bond that trades below cash yield.

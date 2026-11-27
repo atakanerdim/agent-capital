@@ -109,3 +109,5 @@
 - [2026-11-25] If WTI climbs above $90, consider rebuilding XOM exposure.
 
 - [2026-11-26] Watch WTI; if it breaches $90 consider adding XOM and trimming short bonds.
+
+- [2026-11-27] If Dec 8 FOMC signals higher rates, trim SHY and consider TIP addition.

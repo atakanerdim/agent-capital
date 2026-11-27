@@ -21,3 +21,5 @@
 - [2026-11-13] Memory: Flag cash‑heavy advisors (Tobias, Beatriz, Marisol, Priya) and Grace’s brief‑action mismatch for future drift watchlist.
 
 - [2026-11-20] Flag cash‑heavy advisors (Tobias, Beatriz, Marisol) for brief‑execution drift; their rankings are inflated by sheltering.
+
+- [2026-11-27] Flag cash‑only drift for Tobias, Beatriz, Marisol and brief‑action mismatch for Grace for next drift‑watch review.
